@@ -111,3 +111,138 @@ raiserror (21000, 10, 1)
 print @@error
 raiserror ( 'Ala ma kota', 11, 1)
 print @@error
+
+----polecenia str 8 ----
+-- DATE -- 
+declare @d1 datetime, @d2 datetime
+set @d1 = '20091020'
+set @d2 = '20091025'
+
+select dateadd(hour, 112, @d1)
+-- Output: 2009-10-24 16:00:00.000 --
+
+select dateadd(day, 112, @d1)
+-- Output: 2010-02-09 00:00:00.000 --
+
+select datediff(minute, @d1, @d2)
+-- Output: 7200 --
+
+select datediff(day, @d1, @d2)
+-- Output: 5 --
+
+select datename(month, @d1)
+-- Output: October --
+select datepart(month, @d1)
+-- Output: 10 --
+
+select cast(day(@d1) as varchar) + '-' 
++ cast(month(@d2) as varchar) + '-' 
++ cast(year(@d1) as varchar);
+-- Output: 20-10-2009 --
+
+---- polecenia str 9 ----
+-- ID i NAME --
+
+select COL_LENGTH('biblioteka..pracownicy', 'imie')
+
+select db_name(1)
+-- Output: master --
+select user_id()
+-- Output: 1 --
+select user_name()
+-- Output: dbo --
+select host_id()
+-- Output: 10872 --
+select host_name()
+-- Output: DESKTOP-KL7NB97 --
+
+use biblioteka
+select object_id('Pracownicy')
+-- Output: 661577395 --
+select object_name(object_id('Pracownicy'))
+-- Output: pracownicy --
+
+---- polecenia str 10 ----
+if exists (select 1 from master.dbo.sysdatabases where name = 'test_cwiczenia')
+DROP DATABASE test_cwiczenia
+GO
+CREATE DATABASE test_cwiczenia
+GO
+use test_cwiczenia
+GO
+CREATE TABLE liczby(liczba int)
+GO
+declare @i int
+set @i = 1
+while @i < 100
+	begin
+	insert liczby VALUES(@i)
+	set @i = @i + 1
+	end
+GO
+SELECT * FROM liczby
+
+
+---- polecenia str 11 ----
+use test_cwiczenia
+GO
+if exists(select 1 from sys.objects where type = 'P' and name = 'proc_liczby')
+DROP procedure proc_liczby
+GO
+CREATE procedure proc_liczby @max int = 10
+as
+begin
+	select liczba from liczby
+	where liczba <= @max
+end
+GO
+exec proc_liczby 3
+-- Output: 1, 2, 3 --
+exec proc_liczby
+-- Output: 1 .. 10 --
+GO
+
+---- polecenia str 12 ----
+use test_cwiczenia
+GO
+if exists(select 1 from sys.objects where type = 'P' and name = 'proc_statystyka')
+DROP procedure proc_statystyka
+GO
+CREATE procedure proc_statystyka @max int output, @min int output, @aux int output
+as
+	begin 
+	set @max = (SELECT MAX(liczba) FROM liczby)
+	set @min = (SELECT MIN(liczba) FROM liczby)
+	set @aux = 10
+	end
+GO
+declare @max int, @min int, @aux2 int
+exec proc_statystyka @max output, @min output, @aux=@aux2 output
+select @max 'Max', @min 'Min', @aux2
+GO
+-- Output: 99, 1, 10
+
+---- polecenia str 13 ----
+
+-- Zad 1 - własny przykład --
+-- DROP function fn_srednia --
+
+CREATE function fn_srednia(@rodzaj VARCHAR(30)) returns MONEY
+begin
+	return (select avg(cena) from ksiazki where gatunek=@rodzaj)
+end
+GO
+
+SELECT fn_srednia('dla dzieci')
+GO
+-- Output: 25.00 --
+
+-- Zad 2 - własny przykład --
+-- DROP function funkcja --
+
+CREATE function funkcja(@min Money) returns table
+return (select * from wypozyczenia where kara >= @min)
+GO
+
+SELECT * from funkcja(5)
+GO
