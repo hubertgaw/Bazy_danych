@@ -56,3 +56,42 @@ select * from biblioteka..liczby
 -- IF..ELSE
 if EXISTS (select * from biblioteka..wypozyczenia) print ('Były wypożyczenia')
 else print('Nie było żadnych wypożyczeń')
+
+----polecenia str. 5----
+--WHILE
+declare @y int 
+set @y=0
+while (@y<10)
+begin
+	print @y
+	if (@y=5) break
+	set @y+=1 --@y=@y+1
+end
+
+--CASE
+select tytul as tytulK, cena as cenaK, [cena jest]=CASE
+       when cena<20.00 then 'Niska'
+	   when cena between 20.00 and 40.00 then 'Przystępna'
+	   when cena>40 then 'Wysoka'
+	   else 'Nieznana'
+	   end
+from biblioteka..ksiazki
+--CASE budowa:
+--CASE
+    --WHEN condition1 THEN result1
+    --WHEN condition2 THEN result2
+    --WHEN conditionN THEN resultN
+    --ELSE result
+--END;
+
+
+---- polecenia str. 6 ----
+--NULLIF - zwraca null, gdy oba wyrażenia (NULLIF(expr1, expr2)) są równe
+--select 
+--count(*) as [Liczba pracowników],
+--avg (nullif(zarobki, 0) ) as [Średnia płaca],
+--min (nullif(zarobki, 0) ) as [Płaca minimalna]
+--from Test..pracownicy
+-- Wlasny przyklad - policzmy ile kobiet jest wsrod czytelnikow za pomoca NULLIF
+SELECT count( nullif(plec, 'M') ) as [Liczba kobiet]
+FROM biblioteka..czytelnicy
