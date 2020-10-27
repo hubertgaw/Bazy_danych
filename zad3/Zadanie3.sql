@@ -93,5 +93,21 @@ from biblioteka..ksiazki
 --min (nullif(zarobki, 0) ) as [Płaca minimalna]
 --from Test..pracownicy
 -- Wlasny przyklad - policzmy ile kobiet jest wsrod czytelnikow za pomoca NULLIF
-SELECT count( nullif(plec, 'M') ) as [Liczba kobiet]
+SELECT count( nullif(plec, 'M')) as [Liczba kobiet]
 FROM biblioteka..czytelnicy
+
+--ISNULL - skladnia ISNULL(expression, value)-pozwala ustawić wartosci tam gdzie są nulle w expression
+--wlasny przyklad:
+SELECT id_w, sygn, id_cz, ISNULL(data_z, getdate())
+FROM biblioteka..wypozyczenia
+
+----polecenia str 7----
+--komunikaty o błędzie
+raiserror (21000, 10, 1)
+print @@error
+raiserror (21000, 10, 1) with seterror
+print @@error
+raiserror (21000, 10, 1)
+print @@error
+raiserror ( 'Ala ma kota', 11, 1)
+print @@error
