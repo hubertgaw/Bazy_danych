@@ -41,3 +41,19 @@ SELECT * FROM test_pracownicy.dbo.pracownicy;
 SELECT * FROM test_pracownicy.dbo.dziennik;
 
 --4.
+DECLARE @numer INT, @year INT
+SET @numer = 8902
+SET @year = (SELECT YEAR(data_zatr) FROM test_pracownicy.dbo.pracownicy WHERE nr_akt = @numer)
+BEGIN
+	IF ((YEAR(GETDATE()) - @year) > 15)
+	BEGIN
+		INSERT INTO test_pracownicy.dbo.dziennik VALUES ('pracownicy',GETDATE(),1, 
+		'Pracownik ' + CAST(@numer AS VARCHAR) + 'jest zatrudniony dluzej niz 15 lat')
+	END
+	ELSE IF ((YEAR(GETDATE()) - @year) < 15)
+	BEGIN
+		INSERT INTO test_pracownicy.dbo.dziennik VALUES ('pracownicy',GETDATE(),1, 
+		'Pracownik ' + CAST(@numer AS VARCHAR) + 'jest zatrudniony krocej niz 15 lat')
+	END
+END
+SELECT * FROM test_pracownicy.dbo.dziennik;
