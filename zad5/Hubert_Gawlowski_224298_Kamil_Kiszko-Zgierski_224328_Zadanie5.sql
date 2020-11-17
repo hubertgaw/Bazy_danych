@@ -43,6 +43,20 @@ SELECT * FROM test_pracownicy.dbo.pracownicy;
 SELECT * FROM test_pracownicy.dbo.dziennik;
 GO
 
+-- 3.
+DECLARE @year int, @counter int
+SET @year = 1989
+SET @counter = 0
+BEGIN
+    SET @counter = (SELECT COUNT(*) FROM test_pracownicy.dbo.pracownicy WHERE YEAR(data_zatr) = @year)
+	if (@counter != 0)
+		INSERT INTO test_pracownicy.dbo.dziennik VALUES('pracownicy', GETDATE(), @counter, 
+		'Zatrudniono ' + convert(varchar(5), @counter) + ' pracownikow w roku ' + convert(varchar(4), @counter))
+    else
+	     INSERT INTO test_pracownicy.dbo.dziennik VALUES('pracownicy', GETDATE(), @counter, 
+		'Nikogo nie zatrudniono w roku ' + convert(varchar(4), @counter))
+END
+
 --4.
 DECLARE @numer INT, @year INT
 SET @numer = 8902
@@ -61,6 +75,15 @@ BEGIN
 END
 SELECT * FROM test_pracownicy.dbo.dziennik;
 go
+
+-- 5.
+CREATE PROCEDURE PIERWSZA(@arg int)
+AS 
+BEGIN
+    PRINT 'Wartośc parametru wynosiła: ' + CONVERT(varchar(1), @arg)
+END
+GO
+EXEC PIERWSZA 5
 
 --6.
 --DROP PROCEDURE DRUGA
@@ -81,6 +104,34 @@ EXEC DRUGA 'Ciag wejsciowy', @wyjscie OUTPUT, 912;
 PRINT @wyjscie
 GO
 
+-- 7.
+CREATE PROCEDURE TRZECIA(
+	@dzial int = 0,
+	@procent int = 10)
+AS
+BEGIN
+	DECLARE @sum int
+	if (@dzial = 0)
+		begin
+		SET @sum = (SELECT COUNT(*) FROM test_pracownicy.dbo.pracownicy)
+		UPDATE test_pracownicy.dbo.pracownicy 
+		SET placa = placa + (placa * @procent * 0.01) 
+		end
+	else 
+		begin
+		SET @sum = (SELECT COUNT(*) FROM test_pracownicy.dbo.pracownicy WHERE id_dzialu = @dzial)
+		UPDATE test_pracownicy.dbo.pracownicy 
+		SET placa = placa + (placa * @procent * 0.01) WHERE id_dzialu = @dzial
+		end
+	if (@procent <> 0)
+	INSERT INTO test_pracownicy.dbo.dziennik 
+	VALUES('pracownicy', GETDATE(), @sum, 'Wprowadzono podwyzke o ' + CONVERT(VARCHAR(3), @procent))
+
+END
+GO
+EXEC RISE 70, 15
+GO
+SELECT * FROM test_pracownicy.dbo.dziennik
 
 --8.
 --DROP FUNCtiON udzial_procentowy
@@ -97,4 +148,23 @@ END
 GO
 
 SELECT id_dzialu, dbo.udzial_procentowy(id_dzialu) FROM test_pracownicy.dbo.pracownicy where id_dzialu is not null
+GO
+
+
+-- 9. 
+CREATE TRIGGER do_archiwum
+ON test_pracownicy.dbo.pracownicy
+FOR DELETE
+AS
+BEGIN
+    INSERT INTO test_pracownicy.dbo.prac_archiw SELECT * from deleted
+    INSERT INTO test_pracownicy.dbo.dziennik
+    VALUES ('pracownicy', GETDATE(), 1,
+            'Zwolniono pracownika numer: ' +
+            convert(VARCHAR(4), (SELECT nr_akt FROM deleted)))
+END
+GO
+DELETE FROM test_pracownicy.dbo.pracownicy WHERE nr_akt = 9025
+GO
+SELECT * FROM test_pracownicy.dbo.dziennik
 GO
