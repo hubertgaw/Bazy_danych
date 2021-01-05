@@ -4,9 +4,21 @@ CREATE DATABASE federacja
 DROP TABLE federacja.dbo.stanowiska;
 DROP TABLE federacja.dbo.ligi;
 DROP TABLE federacja.dbo.sponsorzy;
+DROP TABLE federacja.dbo.kluby;
+DROP TABLE federacja.dbo.kraje;
+DROP TABLE federacja.dbo.managerowie;
+DROP TABLE federacja.dbo.miasta;
+DROP TABLE federacja.dbo.pozycje;
+DROP TABLE federacja.dbo.sedziowie;
+DROP TABLE federacja.dbo.mecze;
+DROP TABLE federacja.dbo.pracownicy;
+DROP TABLE federacja.dbo.zawieszenia;
+DROP TABLE federacja.dbo.zawodnicy;
+DROP TABLE federacja.dbo.sponsoring;
+
 
 -----------Tworzenie tabel--------------------
---stanowiska
+--1.stanowiska
 CREATE TABLE federacja.dbo.stanowiska(
 id_stanowiska		CHAR(3) UNIQUE NOT NULL,
 nazwa_stanowiska	VARCHAR(30) NOT NULL,
@@ -21,7 +33,7 @@ ALTER TABLE federacja.dbo.stanowiska ADD CONSTRAINT placa_max_check CHECK(max_pe
 ALTER TABLE federacja.dbo.stanowiska ADD CONSTRAINT placa_check CHECK(min_pensja<=max_pensja);
 GO
 
---ligi
+--2.ligi
 CREATE TABLE federacja.dbo.ligi(
 id_ligi				CHAR(3) UNIQUE NOT NULL,
 nazwa_ligi			VARCHAR(30) NOT NULL,
@@ -41,7 +53,7 @@ ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_awansow_check CHECK(liczba_
 ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_spadkow_check CHECK(liczba_spadkow BETWEEN 0 AND liczba_druzyn);
 GO
 
---sponsorzy
+--3.sponsorzy
 CREATE TABLE federacja.dbo.sponsorzy(
 id_sponsora			CHAR(4) UNIQUE NOT NULL,
 nazwa_sponsora		VARCHAR(30) NOT NULL,
@@ -53,7 +65,7 @@ ALTER TABLE federacja.dbo.sponsorzy ADD CONSTRAINT sponsor_primary_key PRIMARY K
 ALTER TABLE federacja.dbo.sponsorzy ADD CONSTRAINT budzet_check CHECK(budzet>0);
 GO
 
---managerowie
+--4.managerowie
 CREATE TABLE federacja.dbo.managerowie(
 id_managera			CHAR(6) UNIQUE NOT NULL,
 imie_managera		VARCHAR(15) NOT NULL,
@@ -71,7 +83,7 @@ ALTER TABLE federacja.dbo.managerowie ADD CONSTRAINT prowizja_check CHECK(prowiz
 GO
 
 
---kraje
+--5.kraje
 CREATE TABLE federacja.dbo.kraje (
 id_kraju			CHAR(2) UNIQUE NOT NULL,
 nazwa_kraju			VARCHAR(20) UNIQUE NOT NULL,
@@ -80,10 +92,13 @@ miejsce_w_rankingu	INT
 
 ALTER TABLE federacja.dbo.kraje ADD CONSTRAINT kraj_primary_key PRIMARY KEY(id_kraju);
 ALTER TABLE federacja.dbo.kraje ADD CONSTRAINT miejsce_check CHECK(miejsce_w_rankingu BETWEEN 1 AND 210);
+ALTER TABLE federacja.dbo.kraje ADD CONSTRAINT id_kraju_check CHECK(	
+	SUBSTRING(id_kraju,1,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_kraju,2,1) BETWEEN 'A' AND 'Z');
 GO
 
 
---pozycje(na boisku)
+--6.pozycje(na boisku)
 CREATE TABLE federacja.dbo.pozycje(
 id_pozycji			CHAR(3) UNIQUE NOT NULL,
 nazwa_pozycji		VARCHAR(15) UNIQUE NOT NULL
@@ -93,7 +108,7 @@ GO
 ALTER TABLE federacja.dbo.pozycje ADD CONSTRAINT pozycja_primary_key PRIMARY KEY(id_pozycji);
 GO
 
---miasta
+--7.miasta
 CREATE TABLE federacja.dbo.miasta(
 id_miasta			CHAR(3) UNIQUE NOT NULL,
 nazwa_miasta		VARCHAR(20) NOT NULL,
@@ -108,16 +123,190 @@ ALTER TABLE federacja.dbo.miasta ADD CONSTRAINT miasto_kraj_foreign_key FOREIGN 
 GO
 
 
---sedziowie
+--8.sedziowie
 CREATE TABLE federacja.dbo.sedziowie(
 id_sedziego				CHAR(6) UNIQUE NOT NULL,
-data_urodzenia			DATETIME,
-data_zdobycia_licencji	DATETIME,
+data_urodzenia			DATE,
+data_zdobycia_licencji	DATE,
 id_miasta				CHAR(3)
 );
 GO
 
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_primary_key PRIMARY KEY(id_sedziego);
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT data_chech CHECK (data_zdobycia_licencji>data_urodzenia);
-ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miastp_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
+ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
+GO
+
+
+--9.kluby
+CREATE TABLE federacja.dbo.kluby(
+id_klubu			CHAR(3) UNIQUE NOT NULL,
+id_miasta			CHAR(3) NOT NULL,
+id_ligi				CHAR(3) NOT NULL,
+nazwa				VARCHAR(40) NOT NULL,
+data_zalozenia		DATE,
+barwy				VARCHAR(15),
+nazwa_stadionu		VARCHAR(20)
+);
+GO
+ 
+ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_primary_key PRIMARY KEY(id_klubu);
+ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
+ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_liga_foreign_key FOREIGN KEY(id_ligi) REFERENCES federacja.dbo.ligi(id_ligi);
+ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT id_klubu_check CHECK(	
+	SUBSTRING(id_klubu,1,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_klubu,2,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_klubu,3,1) BETWEEN 'A' AND 'Z');
+GO
+
+
+--10.pracownicy
+CREATE TABLE federacja.dbo.pracownicy(
+id_pracownika		CHAR(3) UNIQUE NOT NULL,
+id_stanowiska		CHAR(3) NOT NULL,
+id_klubu			CHAR(3) NOT NULL,
+imie				VARCHAR(15) NOT NULL,
+nazwisko			VARCHAR(30) NOT NULL,
+data_urodzenia		DATE,
+pesel				CHAR(11),
+data_zatrudnienia	DATE,
+pensja				MONEY,
+email				VARCHAR(30),
+nr_telefonu			CHAR(9)
+);
+GO
+
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_primary_key PRIMARY KEY(id_pracownika);
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_stanowisko_foreign_key FOREIGN KEY(id_stanowiska) REFERENCES federacja.dbo.stanowiska(id_stanowiska);
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_klub_foreign_key FOREIGN KEY(id_klubu) REFERENCES federacja.dbo.kluby(id_klubu);
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT data_ur_zat_chech CHECK (data_zatrudnienia>data_urodzenia);
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pesel_check CHECK(
+	SUBSTRING(pesel,1,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,2,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,3,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,4,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,5,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,6,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,7,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,8,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,9,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,10,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,11,1) BETWEEN '0' AND '9');
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT tel_check CHECK(
+	SUBSTRING(nr_telefonu,1,1) BETWEEN '1' AND '9' AND
+	SUBSTRING(nr_telefonu,2,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(nr_telefonu,3,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(nr_telefonu,4,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(nr_telefonu,5,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(nr_telefonu,6,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(nr_telefonu,7,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(nr_telefonu,8,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(nr_telefonu,9,1) BETWEEN '0' AND '9');
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @
+GO
+
+
+--11.sponsoring
+CREATE TABLE federacja.dbo.sponsoring(
+id_sponsoringu		INT IDENTITY(1,1),
+id_klubu			CHAR(3) NOT NULL,
+id_sponsora			CHAR(4) NOT NULL,
+data_zawarcia_umowy	DATETIME NOT NULL,
+kwota				MONEY,
+dlugosc_umowy		DATE
+);
+GO
+
+ALTER TABLE federacja.dbo.sponsoring ADD CONSTRAINT sponsoring_primary_key PRIMARY KEY(id_sponsoringu);
+ALTER TABLE federacja.dbo.sponsoring ADD CONSTRAINT sponsoring_klub_foreign_key FOREIGN KEY(id_klubu) REFERENCES federacja.dbo.kluby(id_klubu);
+ALTER TABLE federacja.dbo.sponsoring ADD CONSTRAINT sponsoring_sponsor_foreign_key FOREIGN KEY(id_sponsora) REFERENCES federacja.dbo.sponsorzy(id_sponsora);
+ALTER TABLE federacja.dbo.sponsoring ADD CONSTRAINT	kwota_check CHECK(kwota>0);
+GO
+
+--12. zawodnicy
+CREATE TABLE federacja.dbo.zawodnicy(
+id_zawodnika				INT IDENTITY(1,1),
+id_klubu					CHAR(3) NOT NULL,
+id_pozycji					CHAR(3),
+id_kraju					CHAR(2) NOT NULL,
+id_managera					CHAR(6) NOT NULL,
+imie						VARCHAR(15) NOT NULL,
+nazwisko					VARCHAR(30) NOT NULL,
+data_urodzenia				DATE,
+pesel						CHAR(11),
+pensja						MONEY,
+liczba_meczow				INT,
+liczba_goli					INT,
+liczba_zoltych_kartek		INT,
+liczba_czerwonych_kartek	INT
+);
+GO
+
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_primary_key PRIMARY KEY(id_zawodnika);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_klub_foreign_key FOREIGN KEY(id_klubu) REFERENCES federacja.dbo.kluby(id_klubu);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_pozycja_foreign_key FOREIGN KEY(id_pozycji) REFERENCES federacja.dbo.pozycje(id_pozycji);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_kraj_foreign_key FOREIGN KEY(id_kraju) REFERENCES federacja.dbo.kraje(id_kraju);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_manager_foreign_key FOREIGN KEY(id_managera) REFERENCES federacja.dbo.managerowie(id_managera);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT pesel_check_zawodnik CHECK(
+	SUBSTRING(pesel,1,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,2,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,3,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,4,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,5,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,6,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,7,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,8,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,9,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,10,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(pesel,11,1) BETWEEN '0' AND '9');
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT pensja_check CHECK(pensja>0);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT mecze_check CHECK(liczba_meczow>=0);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zolte_kartki_check CHECK(liczba_zoltych_kartek>=0);
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT czerwone_kartki_check CHECK(liczba_czerwonych_kartek>=0);
+GO
+
+
+--13. zawieszenia
+CREATE TABLE federacja.dbo.zawieszenia(
+id_zawieszenia			INT IDENTITY(1,1),
+id_zawodnika			INT NOT NULL,
+poczatek_zawieszenia	DATETIME NOT NULL,
+liczba_meczow			INT NOT NULL
+);
+GO
+
+ALTER TABLE federacja.dbo.zawieszenia ADD CONSTRAINT zawieszenie_primary_key PRIMARY KEY(id_zawieszenia);
+ALTER TABLE federacja.dbo.zawieszenia ADD CONSTRAINT zawiezenie_zawodnik_foreign_key FOREIGN KEY(id_zawodnika) REFERENCES federacja.dbo.zawodnicy(id_zawodnika);
+ALTER TABLE federacja.dbo.zawieszenia ADD CONSTRAINT mecze_zaw_check CHECK(liczba_meczow>0);
+GO
+
+--14. mecze
+CREATE TABLE federacja.dbo.mecze(
+id_meczu				CHAR(8) UNIQUE NOT NULL,
+id_klubu#1				CHAR(3) NOT NULL,
+id_klubu#2				CHAR(3) NOT NULL,
+id_sedziego				CHAR(6) NOT NULL,
+data_meczu				DATETIME,
+wynik					CHAR(3),
+);
+GO
+
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecze_primary_key PRIMARY KEY(id_meczu);
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#1_foreign_key FOREIGN KEY(id_klubu#1) REFERENCES federacja.dbo.kluby(id_klubu);
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#2_foreign_key FOREIGN KEY(id_klubu#2) REFERENCES federacja.dbo.kluby(id_klubu);
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_sedzia_foreign_key FOREIGN KEY(id_sedziego) REFERENCES federacja.dbo.sedziowie(id_sedziego);
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT id_meczu_check CHECK(	
+	SUBSTRING(id_meczu,1,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_meczu,2,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_meczu,3,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_meczu,4,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_meczu,5,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_meczu,6,1) BETWEEN 'A' AND 'Z' AND
+	SUBSTRING(id_meczu,7,1) BETWEEN '0' AND '9' AND
+	SUBSTRING(id_meczu,8,1) BETWEEN '0' AND '9');
+
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT wynik_check CHECK(	
+	SUBSTRING(wynik,1,1) BETWEEN '0' AND '0' AND
+	SUBSTRING(wynik,2,1) = ':' AND
+	SUBSTRING(wynik,3,1) BETWEEN '0' AND '9');
 GO
