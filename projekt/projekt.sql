@@ -21,9 +21,9 @@ DROP TABLE federacja.dbo.sponsoring;
 --1.stanowiska
 CREATE TABLE federacja.dbo.stanowiska(
 id_stanowiska		CHAR(3) UNIQUE NOT NULL,
-nazwa_stanowiska	VARCHAR(30) NOT NULL,
-min_pensja			MONEY,
-max_pensja			MONEY,
+nazwa_stanowiska	VARCHAR(40) NOT NULL,
+min_pensja			SMALLMONEY,
+max_pensja			SMALLMONEY,
 );
 GO
 
@@ -70,8 +70,8 @@ CREATE TABLE federacja.dbo.managerowie(
 id_managera			CHAR(6) UNIQUE NOT NULL,
 imie_managera		VARCHAR(15) NOT NULL,
 nazwisko_managera	VARCHAR(30) NOT NULL,
-data_urodzenia		DATETIME,
-placa				MONEY,
+data_urodzenia		SMALLDATETIME,
+placa				SMALLMONEY,
 prowizja			DECIMAL(5,2),
 w_branzy_od			DATE
 );
@@ -168,7 +168,7 @@ nazwisko			VARCHAR(30) NOT NULL,
 data_urodzenia		DATE,
 pesel				CHAR(11),
 data_zatrudnienia	DATE,
-pensja				MONEY,
+pensja				SMALLMONEY,
 email				VARCHAR(30),
 nr_telefonu			CHAR(9)
 );
@@ -189,7 +189,7 @@ CREATE TABLE federacja.dbo.sponsoring(
 id_sponsoringu		INT IDENTITY(1,1),
 id_klubu			CHAR(3) NOT NULL,
 id_sponsora			CHAR(4) NOT NULL,
-data_zawarcia_umowy	DATETIME NOT NULL,
+data_zawarcia_umowy	SMALLDATETIME NOT NULL,
 kwota				MONEY,
 dlugosc_umowy		DATE
 );
@@ -237,7 +237,7 @@ GO
 CREATE TABLE federacja.dbo.zawieszenia(
 id_zawieszenia			INT IDENTITY(1,1),
 id_zawodnika			INT NOT NULL,
-poczatek_zawieszenia	DATETIME NOT NULL,
+poczatek_zawieszenia	SMALLDATETIME NOT NULL,
 liczba_meczow			INT NOT NULL
 );
 GO
@@ -253,8 +253,9 @@ id_meczu				CHAR(8) UNIQUE NOT NULL,
 id_klubu#1				CHAR(3) NOT NULL,
 id_klubu#2				CHAR(3) NOT NULL,
 id_sedziego				CHAR(6) NOT NULL,
-data_meczu				DATETIME,
-wynik					CHAR(3),
+data_meczu				SMALLDATETIME,
+bramki#1				INT,
+bramki#2				INT
 );
 GO
 
@@ -263,11 +264,7 @@ ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#1_foreign_key FOREIGN K
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#2_foreign_key FOREIGN KEY(id_klubu#2) REFERENCES federacja.dbo.kluby(id_klubu);
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_sedzia_foreign_key FOREIGN KEY(id_sedziego) REFERENCES federacja.dbo.sedziowie(id_sedziego);
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT id_meczu_check CHECK(id_meczu LIKE id_klubu#1 + id_klubu#2 + REPLICATE('[0-9]', 2));	
-
-
-ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT wynik_check CHECK(	
-	SUBSTRING(wynik,1,1) BETWEEN '0' AND '0' AND
-	SUBSTRING(wynik,2,1) = ':' AND
-	SUBSTRING(wynik,3,1) BETWEEN '0' AND '9');
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT bramki1_check CHECK(bramki#1 >= 0)
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT bramki2_check CHECK(bramki#2 >= 0)
 GO
 
