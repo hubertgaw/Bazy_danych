@@ -73,12 +73,12 @@ nazwisko_managera	VARCHAR(30) NOT NULL,
 data_urodzenia		DATETIME,
 placa				MONEY,
 prowizja			DECIMAL(5,2),
-w_branzy_od			DATETIME
+w_branzy_od			DATE
 );
 GO
 
 ALTER TABLE federacja.dbo.managerowie ADD CONSTRAINT manager_primary_kay PRIMARY KEY(id_managera);
-ALTER TABLE federacja.dbo.managerowie ADD CONSTRAINT data_check CHECK(w_branzy_od>data_urodzenia);
+ALTER TABLE federacja.dbo.managerowie ADD CONSTRAINT data_check CHECK(w_branzy_od > data_urodzenia);
 ALTER TABLE federacja.dbo.managerowie ADD CONSTRAINT prowizja_check CHECK(prowizja BETWEEN 0 AND 25);
 GO
 
@@ -101,7 +101,7 @@ GO
 --6.pozycje(na boisku)
 CREATE TABLE federacja.dbo.pozycje(
 id_pozycji			CHAR(3) UNIQUE NOT NULL,
-nazwa_pozycji		VARCHAR(15) UNIQUE NOT NULL
+nazwa_pozycji		VARCHAR(30) UNIQUE NOT NULL
 );
 GO
 
@@ -133,7 +133,7 @@ id_miasta				CHAR(3)
 GO
 
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_primary_key PRIMARY KEY(id_sedziego);
-ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT data_chech CHECK (data_zdobycia_licencji>data_urodzenia);
+ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT data_chech CHECK (data_zdobycia_licencji > data_urodzenia);
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
 GO
 
@@ -146,7 +146,8 @@ id_ligi				CHAR(3) NOT NULL,
 nazwa				VARCHAR(40) NOT NULL,
 data_zalozenia		DATE,
 barwy				VARCHAR(15),
-nazwa_stadionu		VARCHAR(20)
+nazwa_stadionu		VARCHAR(20),
+adres				VARCHAR(40)
 );
 GO
  
@@ -176,7 +177,7 @@ GO
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_primary_key PRIMARY KEY(id_pracownika);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_stanowisko_foreign_key FOREIGN KEY(id_stanowiska) REFERENCES federacja.dbo.stanowiska(id_stanowiska);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_klub_foreign_key FOREIGN KEY(id_klubu) REFERENCES federacja.dbo.kluby(id_klubu);
-ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT data_ur_zat_chech CHECK (data_zatrudnienia>data_urodzenia);
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT data_ur_zat_chech CHECK (data_zatrudnienia > data_urodzenia);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pesel_check CHECK(pesel LIKE REPLICATE('[0-9]', 11));
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT tel_check CHECK(nr_telefonu LIKE REPLICATE('[1-9]', 1) + REPLICATE('[0-9]', 8));
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @
@@ -261,7 +262,7 @@ ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecze_primary_key PRIMARY KEY(id_
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#1_foreign_key FOREIGN KEY(id_klubu#1) REFERENCES federacja.dbo.kluby(id_klubu);
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#2_foreign_key FOREIGN KEY(id_klubu#2) REFERENCES federacja.dbo.kluby(id_klubu);
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_sedzia_foreign_key FOREIGN KEY(id_sedziego) REFERENCES federacja.dbo.sedziowie(id_sedziego);
-ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT id_meczu_check CHECK(id_meczu LIKE REPLICATE('[A-Z]', 6) + REPLICATE('[0-9]', 2));	
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT id_meczu_check CHECK(id_meczu LIKE id_klubu#1 + id_klubu#2 + REPLICATE('[0-9]', 2));	
 
 
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT wynik_check CHECK(	
@@ -269,3 +270,4 @@ ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT wynik_check CHECK(
 	SUBSTRING(wynik,2,1) = ':' AND
 	SUBSTRING(wynik,3,1) BETWEEN '0' AND '9');
 GO
+
