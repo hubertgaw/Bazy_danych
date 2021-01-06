@@ -153,10 +153,7 @@ GO
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_primary_key PRIMARY KEY(id_klubu);
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_liga_foreign_key FOREIGN KEY(id_ligi) REFERENCES federacja.dbo.ligi(id_ligi);
-ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT id_klubu_check CHECK(	
-	SUBSTRING(id_klubu,1,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_klubu,2,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_klubu,3,1) BETWEEN 'A' AND 'Z');
+ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT id_klubu_check CHECK(id_klubu LIKE REPLICATE('[A-Z]', 3));	
 GO
 
 
@@ -180,28 +177,8 @@ ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_primary_key PRIMAR
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_stanowisko_foreign_key FOREIGN KEY(id_stanowiska) REFERENCES federacja.dbo.stanowiska(id_stanowiska);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_klub_foreign_key FOREIGN KEY(id_klubu) REFERENCES federacja.dbo.kluby(id_klubu);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT data_ur_zat_chech CHECK (data_zatrudnienia>data_urodzenia);
-ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pesel_check CHECK(
-	SUBSTRING(pesel,1,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,2,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,3,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,4,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,5,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,6,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,7,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,8,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,9,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,10,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,11,1) BETWEEN '0' AND '9');
-ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT tel_check CHECK(
-	SUBSTRING(nr_telefonu,1,1) BETWEEN '1' AND '9' AND
-	SUBSTRING(nr_telefonu,2,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(nr_telefonu,3,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(nr_telefonu,4,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(nr_telefonu,5,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(nr_telefonu,6,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(nr_telefonu,7,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(nr_telefonu,8,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(nr_telefonu,9,1) BETWEEN '0' AND '9');
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pesel_check CHECK(pesel LIKE REPLICATE('[0-9]', 11));
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT tel_check CHECK(nr_telefonu LIKE REPLICATE('[1-9]', 1) + REPLICATE('[0-9]', 8));
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @
 GO
 
@@ -247,18 +224,7 @@ ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_klub_foreign_key FOR
 ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_pozycja_foreign_key FOREIGN KEY(id_pozycji) REFERENCES federacja.dbo.pozycje(id_pozycji);
 ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_kraj_foreign_key FOREIGN KEY(id_kraju) REFERENCES federacja.dbo.kraje(id_kraju);
 ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zawodnik_manager_foreign_key FOREIGN KEY(id_managera) REFERENCES federacja.dbo.managerowie(id_managera);
-ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT pesel_check_zawodnik CHECK(
-	SUBSTRING(pesel,1,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,2,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,3,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,4,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,5,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,6,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,7,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,8,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,9,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,10,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(pesel,11,1) BETWEEN '0' AND '9');
+ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT pesel_check_zawodnik CHECK(pesel LIKE REPLICATE('[0-9]', 11));
 ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT pensja_check CHECK(pensja>0);
 ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT mecze_check CHECK(liczba_meczow>=0);
 ALTER TABLE federacja.dbo.zawodnicy ADD CONSTRAINT zolte_kartki_check CHECK(liczba_zoltych_kartek>=0);
@@ -295,15 +261,8 @@ ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecze_primary_key PRIMARY KEY(id_
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#1_foreign_key FOREIGN KEY(id_klubu#1) REFERENCES federacja.dbo.kluby(id_klubu);
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_klub#2_foreign_key FOREIGN KEY(id_klubu#2) REFERENCES federacja.dbo.kluby(id_klubu);
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT mecz_sedzia_foreign_key FOREIGN KEY(id_sedziego) REFERENCES federacja.dbo.sedziowie(id_sedziego);
-ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT id_meczu_check CHECK(	
-	SUBSTRING(id_meczu,1,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_meczu,2,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_meczu,3,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_meczu,4,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_meczu,5,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_meczu,6,1) BETWEEN 'A' AND 'Z' AND
-	SUBSTRING(id_meczu,7,1) BETWEEN '0' AND '9' AND
-	SUBSTRING(id_meczu,8,1) BETWEEN '0' AND '9');
+ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT id_meczu_check CHECK(id_meczu LIKE REPLICATE('[A-Z]', 6) + REPLICATE('[0-9]', 2));	
+
 
 ALTER TABLE federacja.dbo.mecze ADD CONSTRAINT wynik_check CHECK(	
 	SUBSTRING(wynik,1,1) BETWEEN '0' AND '0' AND
