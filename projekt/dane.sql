@@ -31,6 +31,108 @@ VALUES ('PRS', 'Specjalista PR', 3000, 15000)
 INSERT INTO federacja.dbo.stanowiska
 VALUES ('MEN', 'Menedżer drużyny', 5500, 22000)
 
+-- 2. Ligi
+
+INSERT INTO federacja.dbo.ligi
+VALUES ('E01', 'PKO BP Ekstraklasa', 16, 0, 1)
+INSERT INTO federacja.dbo.ligi
+VALUES ('P01', 'Fortuna I liga', 18, 3, 1)
+INSERT INTO federacja.dbo.ligi
+VALUES ('P02', 'II liga', 19, 3, 3)
+INSERT INTO federacja.dbo.ligi
+VALUES ('G01', 'III liga - grupa 1', 22, 1, 6)
+INSERT INTO federacja.dbo.ligi
+VALUES ('G02', 'III liga - grupa 2', 22, 1, 6)
+INSERT INTO federacja.dbo.ligi
+VALUES ('G03', 'III liga - grupa 3', 19, 1, 4)
+INSERT INTO federacja.dbo.ligi
+VALUES ('G04', 'III liga - grupa 4', 21, 1, 6)
+
+-- 3. Sponsorzy
+
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('FORT', 'FORTUNA zakłady bukmacherskie', 30000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('LVBT', 'LV Bet', 50000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('XKOM', 'x-kom', 10000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('STSA', 'STS SA', 20000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('KGHM', 'Polska Miedź S.A.', 15000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('PKNO', 'PKN Orlen', 12000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('MURA', 'Murapol', 8000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('KLEP', 'Klepsydra', 8000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('FBET', 'forBET', 5000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('TOYT', 'Toyota', 9000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('LOMZ', 'Łomża', 4000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('BETC', 'Betclic', 6500000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('KTEL', 'Kar-Tel', 2000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('TMOB', 'T-Mobile Polska S.A.', 18000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('COCA', 'Coca-Cola', 7000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('PLUS', 'Plus', 11000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('FASI', 'FASING S.A.', 1000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('NOBL', 'NobleBet', 15000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('PGES', 'Polska Grupa Energetyczna S.A.', 1000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('VOTU', 'Votum S.A.', 800000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('BRUK', 'Bruk-Bet', 850000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('SUZU', 'Suzuki', 1200000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('DAPK', 'Deweloper Apklan', 650000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('PERL', 'Perła', 13000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('ETOT', 'ETOTO Zakłady bukmacherskie', 2400000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('BLAC', 'Blachotrapez Sp z o.o', 7300000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('GAZO', 'Grupa Azoty', 12500000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('NORD', 'Nord Partner', 21000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('ENEA', 'Enea S.A.', 800000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('AVIV', 'Aviva', 100000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('CERR', 'Cerrad Sp z o.o', 50000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('MAZD', 'Mazda Motor Corporation', 800000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('CUPR', 'Cuprum', 480000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('MERC', 'Mercedes-Benz', 600000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('HUMM', 'Hummel A/S', 250000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('ADID', 'Adidas', 4000000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('HELI', 'Helios S.A.', 500000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('OKOC', 'Okocim', 300000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('ASSC', 'Asseco Poland S.A.', 700000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('DINO', 'Dino Polska S.A.', 350000)
+INSERT INTO federacja.dbo.sponsorzy
+VALUES ('COMA', 'Comarch S.A.', 8000000)
+
 -- 4. managerowie
 INSERT INTO federacja.dbo.managerowie 
 VALUES('MINRAI', 'Mino', 'Raiola', '1967-11-04', 250000, 15.50, '1998-12-12')
