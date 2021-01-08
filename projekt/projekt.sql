@@ -119,22 +119,26 @@ GO
 
 ALTER TABLE federacja.dbo.miasta ADD CONSTRAINT miasto_primary_key PRIMARY KEY(id_miasta);
 ALTER TABLE federacja.dbo.miasta ADD CONSTRAINT liczba_ludnosci_check CHECK (liczba_ludnosci>0);
-ALTER TABLE federacja.dbo.miasta ADD CONSTRAINT miasto_kraj_foreign_key FOREIGN KEY(id_kraju) REFERENCES federacja.dbo.kraje(id_kraju) 
+ALTER TABLE federacja.dbo.miasta ADD CONSTRAINT miasto_kraj_foreign_key FOREIGN KEY(id_kraju) 
+REFERENCES federacja.dbo.kraje(id_kraju) 
 GO
 
 
 --8.sedziowie
 CREATE TABLE federacja.dbo.sedziowie(
 id_sedziego				CHAR(6) UNIQUE NOT NULL,
+id_miasta				CHAR(3),
+imie_sedziego			VARCHAR(15) NOT NULL,
+nazwisko_sedziego		VARCHAR(30) NOT NULL,
 data_urodzenia			DATE,
 data_zdobycia_licencji	DATE,
-id_miasta				CHAR(3)
 );
 GO
 
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_primary_key PRIMARY KEY(id_sedziego);
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT data_chech CHECK (data_zdobycia_licencji > data_urodzenia);
-ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
+ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miasto_foreign_key FOREIGN KEY(id_miasta) 
+REFERENCES federacja.dbo.miasta(id_miasta);
 GO
 
 
