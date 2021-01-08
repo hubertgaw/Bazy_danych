@@ -496,76 +496,147 @@ VALUES ('RAD', 'Radom', 213000, 'PL')
 
 -- 8.Sędziowie
 
-INSERT INTO federacja.dbo.sedziowie VALUES ('W10ADN', 'WAR', 'Hubert', 'Pietrzak', '1965-11-29', '1990-05-31')
-INSERT INTO federacja.dbo.sedziowie VALUES ('P32ND9', 'POL', 'Grzegorz', 'Wróblewski', '1966-06-20', '1989-04-12')
-INSERT INTO federacja.dbo.sedziowie VALUES ('HDK72L', 'KRA', 'Natan', 'Mazurek', '1966-09-28', '1992-02-04')
-INSERT INTO federacja.dbo.sedziowie VALUES ('UL029S', 'PLO', 'Józef', 'Jaworski', '1968-06-16', '1990-09-08')
-INSERT INTO federacja.dbo.sedziowie VALUES ('HVD92L', 'KAL', 'Aleks', 'Ostrowski', '1968-10-16', '1991-12-16')
-INSERT INTO federacja.dbo.sedziowie VALUES ('JK85D5', 'LDZ', 'Amir', 'Mróz', '1969-05-30', '1994-10-11')
-INSERT INTO federacja.dbo.sedziowie VALUES ('LPA48D', 'WRO', 'Kryspin', 'Cieślak', '1970-03-15', '1995-01-27')
-INSERT INTO federacja.dbo.sedziowie VALUES ('NBP86D', 'GDA', 'Lucjan', 'Błaszczyk', '1971-06-05', '1995-02-01')
-INSERT INTO federacja.dbo.sedziowie VALUES ('D08LC6', 'BIE', 'Franciszek', 'Jankowski', '1971-09-16', '1994-05-05')
-INSERT INTO federacja.dbo.sedziowie VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '997-06-12')
-INSERT INTO federacja.dbo.sedziowie VALUES ('JK792B', 'PRU', 'Bolesław', 'Szulc', '1974-11-16', '1998-05-14')
-INSERT INTO federacja.dbo.sedziowie VALUES ('LAO27C', 'SZC', 'Aureliusz', 'Szymczak','1975-10-19', '2000-11-22')
-INSERT INTO federacja.dbo.sedziowie VALUES ('YAS03D', 'WAR', 'Allan', 'Kucharski', '1978-05-09', '2002-09-04')
-INSERT INTO federacja.dbo.sedziowie VALUES ('KSL92H', 'BIA', 'Korneliusz', 'Szulc', '1981-02-18', '2008-02-10')
-INSERT INTO federacja.dbo.sedziowie VALUES ('BS68S4', 'KIE', 'Ignacy', 'Kaźmierczak', '1981-11-30', '2005-08-19')
-INSERT INTO federacja.dbo.sedziowie VALUES ('VS36SK', 'LDZ', 'Mieszko', 'Wójcik', '1982-08-31', '2006-07-09')
-INSERT INTO federacja.dbo.sedziowie VALUES ('GAO37F', 'BEL', 'Konrad', 'Kucharski', '1984-02-02', '2009-04-06')
-INSERT INTO federacja.dbo.sedziowie VALUES ('B23FW9', 'KAT', 'Jarosław', 'Baran', '1985-01-12', '2010-01-21')
-INSERT INTO federacja.dbo.sedziowie VALUES ('KNS31C', 'OPO', 'Kamil', 'Ziółkowska', '1985-12-17', '2009-08-18')
-INSERT INTO federacja.dbo.sedziowie VALUES ('PSB93S', 'GLI', 'Arkadiusz', 'Mazurek', '1987-12-01', '2013-03-30')
-INSERT INTO federacja.dbo.sedziowie VALUES ('ABC72C', 'RAD', 'Adrian', 'Kamiński', '1988-12-25', '2016-09-17')
-INSERT INTO federacja.dbo.sedziowie VALUES ('BCS85A', 'CHO', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15')
-INSERT INTO federacja.dbo.sedziowie VALUES ('AOFH64', 'WRO', 'Dawid', 'Zalewski', '1991-05-17', '2018-10-25')
-INSERT INTO federacja.dbo.sedziowie VALUES ('OW30JC', 'WAR', 'Łukasz', 'Szymański', '1993-03-17', '2019-05-24')
-INSERT INTO federacja.dbo.sedziowie VALUES ('BS58C8', 'LUB', 'Aureliusz', 'Wojciechowski', '1994-02-25', '2020-12-12')
-INSERT INTO federacja.dbo.sedziowie VALUES ('WF42JR', 'PLO', 'Fabian', 'Andrzejewski', '1965-01-31', '1992-10-16')
-INSERT INTO federacja.dbo.sedziowie VALUES ('VAR66F', 'WAR', 'Eustachy', 'Wojciechowski', '1965-08-09', '1991-07-18')
-INSERT INTO federacja.dbo.sedziowie VALUES ('KAL92V', 'POZ', 'Cezary', 'Szewczyk', '1967-07-13', '1995-05-02')
-INSERT INTO federacja.dbo.sedziowie VALUES ('OPO29T', 'KAT', 'Mariusz', 'Szczepański', '1970-05-10', '1996-04-25')
-INSERT INTO federacja.dbo.sedziowie VALUES ('MIZ832', 'LUW', 'Daniel', 'Górski', '1970-08-27', '1998-07-31')
-INSERT INTO federacja.dbo.sedziowie VALUES ('TIGH98', 'NSA', 'Anastazy', 'Makowski', '1972-02-28', '2001-09-20')
-INSERT INTO federacja.dbo.sedziowie VALUES ('ARP246', 'SOS', 'Kordian', 'Jankowski', '1973-01-19', '2000-03-12')
-INSERT INTO federacja.dbo.sedziowie VALUES ('BOG53L', 'OLS', 'Leszek', 'Borkowski', '1976-10-07', '2005-11-17')
-INSERT INTO federacja.dbo.sedziowie VALUES ('CZP08A', 'LDZ', 'Aleksander', 'Urbańska', '1969-10-22', '2008-10-24')
-INSERT INTO federacja.dbo.sedziowie VALUES ('GLW321', 'TYC', 'Hubert', 'Cieślak', '1978-08-02', '2011-01-03')
-INSERT INTO federacja.dbo.sedziowie VALUES ('HAI0F3', 'MIE', 'Oskar', 'Zawadzki', '1980-07-10', '2007-08-15')
-INSERT INTO federacja.dbo.sedziowie VALUES ('RECP09', 'NYS', 'Alan', 'Jaworski', '1981-02-05', '2009-03-27')
-INSERT INTO federacja.dbo.sedziowie VALUES ('ATI24G', 'LEC', 'Ludwik', 'Jakubowski', '1981-09-18', '2005-02-16')
-INSERT INTO federacja.dbo.sedziowie VALUES ('POZ19B', 'SIE', 'Oktawian', 'Zalewski', '1983-08-17', '2012-05-08')
-INSERT INTO federacja.dbo.sedziowie VALUES ('IAP24H', 'KRA', 'Juliusz', 'Krawczyk', '1984-05-27', '2011-12-13')
-INSERT INTO federacja.dbo.sedziowie VALUES ('ROG35Q', 'RZE', 'Oktawian', 'Baran', '1985-11-05', '2010-09-14')
-INSERT INTO federacja.dbo.sedziowie VALUES ('LEK22U', 'GDY', 'Borys', 'Wójcik', '1986-02-01', '2013-03-26')
-INSERT INTO federacja.dbo.sedziowie VALUES ('GIT8C8', 'WRO', 'Gracjan', 'Pietrzak', '1987-01-26', '2015-10-10')
-INSERT INTO federacja.dbo.sedziowie VALUES ('KOP24B', 'SUW', 'Milan', 'Błaszczyk', '1987-07-30', '2017-12-20')
-INSERT INTO federacja.dbo.sedziowie VALUES ('UYT5W4', 'KIE', 'Jarosław', 'Tomaszewski', '1987-08-28', '2016-06-30')
-INSERT INTO federacja.dbo.sedziowie VALUES ('ZMO6V8', 'WAR', 'Błażej', 'Zakrzewska', '1989-05-09', '2018-07-12')
-INSERT INTO federacja.dbo.sedziowie VALUES ('TVP361', 'KAL', 'Juliusz', 'Adamska', '1989-07-17', '2019-04-22')
-INSERT INTO federacja.dbo.sedziowie VALUES ('MEH29V', 'TOR', 'Lucjan', 'Jaworski', '1989-11-30', '2015-11-17')
-INSERT INTO federacja.dbo.sedziowie VALUES ('OL2V3G', 'BYD', 'Paweł', 'Kalinowski', '1992-07-02', '2018-06-18')
-INSERT INTO federacja.dbo.sedziowie VALUES ('PR35GA', 'STA', 'Gustaw', 'Witkowski', '1995-08-23', '2020-01-11')
-INSERT INTO federacja.dbo.sedziowie VALUES ('PYR9V2', 'BIA', 'Patryk', 'Czarnecki', '1995-09-14', '2019-10-01')
-INSERT INTO federacja.dbo.sedziowie VALUES ('LOK73P', 'LUB', 'Alek', 'Piotrowski', '1987-04-24', '2015-06-28')
-INSERT INTO federacja.dbo.sedziowie VALUES ('NIT26W', 'ZAB', 'Eustachy', 'Kamiński', '1988-02-19', '2018-04-30')
-INSERT INTO federacja.dbo.sedziowie VALUES ('IOP72Z', 'LDZ', 'Anatol', 'Kaźmierczak', '1989-03-18', '2016-09-03')
-INSERT INTO federacja.dbo.sedziowie VALUES ('RAM29T', 'POZ', 'Alojzy', 'Sokołowski', '1989-09-14', '2018-07-15')
-INSERT INTO federacja.dbo.sedziowie VALUES ('ZOR215', 'KAT', 'Michał', 'Przybylski', '1991-09-19', '2017-02-21')
-INSERT INTO federacja.dbo.sedziowie VALUES ('ILI062', 'NYS', 'Franciszek', 'Szulc', '1993-09-01', '2020-08-07')
-INSERT INTO federacja.dbo.sedziowie VALUES ('JEO295', 'RAD', 'Marcin', 'Wiśniewski', '1966-06-17', '2000-10-20')
-INSERT INTO federacja.dbo.sedziowie VALUES ('V09W25', 'ELB', 'Andrzej', 'Sikora', '1970-11-30', '1996-11-09')
-INSERT INTO federacja.dbo.sedziowie VALUES ('HOS203', 'OLS', 'Marian', 'Kowalski', '1973-07-19', '1999-09-04')
-INSERT INTO federacja.dbo.sedziowie VALUES ('7VLS84', 'GDA', 'Dariusz', 'Duda', '1975-01-22', '2001-02-01')
-INSERT INTO federacja.dbo.sedziowie VALUES ('RY1NV2', 'KAT', 'Milan', 'Mazurek', '1975-12-18', '2000-05-17')
-INSERT INTO federacja.dbo.sedziowie VALUES ('UIV936', 'KRA', 'Piotr', 'Zieliński', '1979-01-19', '2006-12-25')
-INSERT INTO federacja.dbo.sedziowie VALUES ('REN826', 'LDZ', 'Gabriel', 'Szymański', '1981-03-28', '2003-01-31')
-INSERT INTO federacja.dbo.sedziowie VALUES ('PFO28N', 'WAR', 'Mirosław', 'Brzeziński', '1989-04-29', '2010-01-12')
-INSERT INTO federacja.dbo.sedziowie VALUES ('QIV25G', 'GLI', 'Damian', 'Czerwiński', '1991-01-24', '2017-08-03')
-INSERT INTO federacja.dbo.sedziowie VALUES ('PVW95S', 'TOR', 'Andrzej', 'Kozłowski', '1994-12-01', '2019-06-07')
-INSERT INTO federacja.dbo.sedziowie VALUES ('VOSP36', 'WAR', 'Eugeniusz', 'Kozłowski', '1995-07-04', '2020-09-11')
-INSERT INTO federacja.dbo.sedziowie VALUES ('PGS69R', 'KOS', 'Alan', 'Wiśniewski', '1968-03-07', '1994-11-14')
-INSERT INTO federacja.dbo.sedziowie VALUES ('GI9S4B', 'RZE', 'Joachim', 'Zalewski', '1995-04-08', '2020-02-23')
-INSERT INTO federacja.dbo.sedziowie VALUES ('CPO26T', 'WAR', 'Czesław', 'Duda', '1995-09-01', '2018-05-29')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('W10ADN', 'WAR', 'Hubert', 'Pietrzak', '1965-11-29', '1990-05-31')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('P32ND9', 'POL', 'Grzegorz', 'Wróblewski', '1966-06-20', '1989-04-12')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('HDK72L', 'KRA', 'Natan', 'Mazurek', '1966-09-28', '1992-02-04')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('UL029S', 'PLO', 'Józef', 'Jaworski', '1968-06-16', '1990-09-08')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('HVD92L', 'KAL', 'Aleks', 'Ostrowski', '1968-10-16', '1991-12-16')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('JK85D5', 'LDZ', 'Amir', 'Mróz', '1969-05-30', '1994-10-11')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('LPA48D', 'WRO', 'Kryspin', 'Cieślak', '1970-03-15', '1995-01-27')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('NBP86D', 'GDA', 'Lucjan', 'Błaszczyk', '1971-06-05', '1995-02-01')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('D08LC6', 'BIE', 'Franciszek', 'Jankowski', '1971-09-16', '1994-05-05')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '997-06-12')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('JK792B', 'PRU', 'Bolesław', 'Szulc', '1974-11-16', '1998-05-14')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('LAO27C', 'SZC', 'Aureliusz', 'Szymczak','1975-10-19', '2000-11-22')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('YAS03D', 'WAR', 'Allan', 'Kucharski', '1978-05-09', '2002-09-04')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('KSL92H', 'BIA', 'Korneliusz', 'Szulc', '1981-02-18', '2008-02-10')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('BS68S4', 'KIE', 'Ignacy', 'Kaźmierczak', '1981-11-30', '2005-08-19')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('VS36SK', 'LDZ', 'Mieszko', 'Wójcik', '1982-08-31', '2006-07-09')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('GAO37F', 'BEL', 'Konrad', 'Kucharski', '1984-02-02', '2009-04-06')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('B23FW9', 'KAT', 'Jarosław', 'Baran', '1985-01-12', '2010-01-21')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('KNS31C', 'OPO', 'Kamil', 'Ziółkowska', '1985-12-17', '2009-08-18')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('PSB93S', 'GLI', 'Arkadiusz', 'Mazurek', '1987-12-01', '2013-03-30')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ABC72C', 'RAD', 'Adrian', 'Kamiński', '1988-12-25', '2016-09-17')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('BCS85A', 'CHO', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('AOFH64', 'WRO', 'Dawid', 'Zalewski', '1991-05-17', '2018-10-25')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('OW30JC', 'WAR', 'Łukasz', 'Szymański', '1993-03-17', '2019-05-24')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('BS58C8', 'LUB', 'Aureliusz', 'Wojciechowski', '1994-02-25', '2020-12-12')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('WF42JR', 'PLO', 'Fabian', 'Andrzejewski', '1965-01-31', '1992-10-16')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('VAR66F', 'WAR', 'Eustachy', 'Wojciechowski', '1965-08-09', '1991-07-18')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('KAL92V', 'POZ', 'Cezary', 'Szewczyk', '1967-07-13', '1995-05-02')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('OPO29T', 'KAT', 'Mariusz', 'Szczepański', '1970-05-10', '1996-04-25')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('MIZ832', 'LUW', 'Daniel', 'Górski', '1970-08-27', '1998-07-31')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('TIGH98', 'NSA', 'Anastazy', 'Makowski', '1972-02-28', '2001-09-20')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ARP246', 'SOS', 'Kordian', 'Jankowski', '1973-01-19', '2000-03-12')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('BOG53L', 'OLS', 'Leszek', 'Borkowski', '1976-10-07', '2005-11-17')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('CZP08A', 'LDZ', 'Aleksander', 'Urbańska', '1969-10-22', '2008-10-24')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('GLW321', 'TYC', 'Hubert', 'Cieślak', '1978-08-02', '2011-01-03')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('HAI0F3', 'MIE', 'Oskar', 'Zawadzki', '1980-07-10', '2007-08-15')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('RECP09', 'NYS', 'Alan', 'Jaworski', '1981-02-05', '2009-03-27')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ATI24G', 'LEC', 'Ludwik', 'Jakubowski', '1981-09-18', '2005-02-16')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('POZ19B', 'SIE', 'Oktawian', 'Zalewski', '1983-08-17', '2012-05-08')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('IAP24H', 'KRA', 'Juliusz', 'Krawczyk', '1984-05-27', '2011-12-13')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ROG35Q', 'RZE', 'Oktawian', 'Baran', '1985-11-05', '2010-09-14')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('LEK22U', 'GDY', 'Borys', 'Wójcik', '1986-02-01', '2013-03-26')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('GIT8C8', 'WRO', 'Gracjan', 'Pietrzak', '1987-01-26', '2015-10-10')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('KOP24B', 'SUW', 'Milan', 'Błaszczyk', '1987-07-30', '2017-12-20')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('UYT5W4', 'KIE', 'Jarosław', 'Tomaszewski', '1987-08-28', '2016-06-30')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ZMO6V8', 'WAR', 'Błażej', 'Zakrzewska', '1989-05-09', '2018-07-12')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('TVP361', 'KAL', 'Juliusz', 'Adamska', '1989-07-17', '2019-04-22')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('MEH29V', 'TOR', 'Lucjan', 'Jaworski', '1989-11-30', '2015-11-17')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('OL2V3G', 'BYD', 'Paweł', 'Kalinowski', '1992-07-02', '2018-06-18')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('PR35GA', 'STA', 'Gustaw', 'Witkowski', '1995-08-23', '2020-01-11')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('PYR9V2', 'BIA', 'Patryk', 'Czarnecki', '1995-09-14', '2019-10-01')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('LOK73P', 'LUB', 'Alek', 'Piotrowski', '1987-04-24', '2015-06-28')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('NIT26W', 'ZAB', 'Eustachy', 'Kamiński', '1988-02-19', '2018-04-30')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('IOP72Z', 'LDZ', 'Anatol', 'Kaźmierczak', '1989-03-18', '2016-09-03')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('RAM29T', 'POZ', 'Alojzy', 'Sokołowski', '1989-09-14', '2018-07-15')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ZOR215', 'KAT', 'Michał', 'Przybylski', '1991-09-19', '2017-02-21')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ILI062', 'NYS', 'Franciszek', 'Szulc', '1993-09-01', '2020-08-07')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('JEO295', 'RAD', 'Marcin', 'Wiśniewski', '1966-06-17', '2000-10-20')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('V09W25', 'ELB', 'Andrzej', 'Sikora', '1970-11-30', '1996-11-09')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('HOS203', 'OLS', 'Marian', 'Kowalski', '1973-07-19', '1999-09-04')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('7VLS84', 'GDA', 'Dariusz', 'Duda', '1975-01-22', '2001-02-01')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('RY1NV2', 'KAT', 'Milan', 'Mazurek', '1975-12-18', '2000-05-17')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('UIV936', 'KRA', 'Piotr', 'Zieliński', '1979-01-19', '2006-12-25')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('REN826', 'LDZ', 'Gabriel', 'Szymański', '1981-03-28', '2003-01-31')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('PFO28N', 'WAR', 'Mirosław', 'Brzeziński', '1989-04-29', '2010-01-12')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('QIV25G', 'GLI', 'Damian', 'Czerwiński', '1991-01-24', '2017-08-03')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('PVW95S', 'TOR', 'Andrzej', 'Kozłowski', '1994-12-01', '2019-06-07')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('VOSP36', 'WAR', 'Eugeniusz', 'Kozłowski', '1995-07-04', '2020-09-11')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('PGS69R', 'KOS', 'Alan', 'Wiśniewski', '1968-03-07', '1994-11-14')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('GI9S4B', 'RZE', 'Joachim', 'Zalewski', '1995-04-08', '2020-02-23')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('CPO26T', 'WAR', 'Czesław', 'Duda', '1995-09-01', '2018-05-29')
 
 
