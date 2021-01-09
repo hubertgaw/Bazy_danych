@@ -34,19 +34,19 @@ VALUES ('MEN', 'Menedżer drużyny', 5500, 22000)
 -- 2. Ligi
 
 INSERT INTO federacja.dbo.ligi
-VALUES ('E01', 'PKO BP Ekstraklasa', 16, 0, 1)
+VALUES ('E01', 'PKO BP Ekstraklasa', 16, 0, 1, 1)
 INSERT INTO federacja.dbo.ligi
-VALUES ('P01', 'Fortuna I liga', 18, 3, 1)
+VALUES ('P01', 'Fortuna I liga', 18, 3, 1, 2)
 INSERT INTO federacja.dbo.ligi
-VALUES ('P02', 'II liga', 19, 3, 3)
+VALUES ('P02', 'II liga', 19, 3, 3, 3)
 INSERT INTO federacja.dbo.ligi
-VALUES ('G01', 'III liga - grupa 1', 22, 1, 6)
+VALUES ('G01', 'III liga - grupa 1', 22, 1, 6, 4)
 INSERT INTO federacja.dbo.ligi
-VALUES ('G02', 'III liga - grupa 2', 22, 1, 6)
+VALUES ('G02', 'III liga - grupa 2', 22, 1, 6, 4)
 INSERT INTO federacja.dbo.ligi
-VALUES ('G03', 'III liga - grupa 3', 19, 1, 4)
+VALUES ('G03', 'III liga - grupa 3', 19, 1, 4, 4)
 INSERT INTO federacja.dbo.ligi
-VALUES ('G04', 'III liga - grupa 4', 21, 1, 6)
+VALUES ('G04', 'III liga - grupa 4', 21, 1, 6, 4)
 
 -- 3. Sponsorzy
 
@@ -135,13 +135,13 @@ VALUES ('COMA', 'Comarch S.A.', 8000000)
 
 -- 4. managerowie
 INSERT INTO federacja.dbo.managerowie 
-VALUES('MINRAI', 'Mino', 'Raiola', '1967-11-04', 250000, 15.50, '1998-12-12')
+VALUES('MINRAI', 'Mino', 'Raiola', '1967-11-04', 200000, 15.50, '1998-12-12')
 INSERT INTO federacja.dbo.managerowie
 VALUES('CEZKUC', 'Cezary', 'Kucharski', '1972-04-17', 80000, 10.24, '2005-04-12')
 INSERT INTO federacja.dbo.managerowie
 VALUES('MARPIE', 'Mariusz', 'Piekarski', '1975-03-22', 60000, 8.10, '2010-01-01')
 INSERT INTO federacja.dbo.managerowie
-VALUES('JORMEN', 'Jorge', 'Mendes', '1966-01-07',500000, 21.30, '1990-05-10')
+VALUES('JORMEN', 'Jorge', 'Mendes', '1966-01-07', 210000, 21.30, '1990-05-10')
 INSERT INTO federacja.dbo.managerowie
 VALUES('PAUSTR', 'Paul', 'Stretford', '1960-04-04', 100000, 25.00, '1980-06-12')
 INSERT INTO federacja.dbo.managerowie
@@ -232,7 +232,7 @@ VALUES('GW', 'Gwatemala', 131)
 INSERT INTO federacja.dbo.kraje
 VALUES('IN', 'Indonezja', 173)
 INSERT INTO federacja.dbo.kraje
-VALUES('PR', 'Portoryko', 179)
+VALUES('PY', 'Portoryko', 179)
 INSERT INTO federacja.dbo.kraje
 VALUES('SM', 'San Marino', 210)
 INSERT INTO federacja.dbo.kraje
@@ -271,8 +271,8 @@ INSERT INTO federacja.dbo.pozycje
 VALUES('BRA', 'Bramkarz')
 
 -- 7. miasta
-
-'
+INSERT INTO federacja.dbo.miasta
+VALUES ('WAR', 'Warszawa', 1700000, 'PL')
 INSERT INTO federacja.dbo.miasta
 VALUES ('KRA', 'Kraków', 770000, 'PL')
 INSERT INTO federacja.dbo.miasta
@@ -493,150 +493,259 @@ INSERT INTO federacja.dbo.miasta
 VALUES ('ZAC', 'Zamość', 63813, 'PL')
 INSERT INTO federacja.dbo.miasta
 VALUES ('RAD', 'Radom', 213000, 'PL')
+INSERT INTO federacja.dbo.miasta
+VALUES ('BIE', 'Bielsko-Biała', 170479, 'PL')
 
 -- 8.Sędziowie
 
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('W10ADN', 'WAR', 'Hubert', 'Pietrzak', '1965-11-29', '1990-05-31')
+VALUES ('W10ADN', 'WAR', 'Hubert', 'Pietrzak', '1965-11-29', '1990-05-31', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('P32ND9', 'POL', 'Grzegorz', 'Wróblewski', '1966-06-20', '1989-04-12')
+VALUES ('P32ND9', 'POL', 'Grzegorz', 'Wróblewski', '1966-06-20', '1989-04-12','D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('HDK72L', 'KRA', 'Natan', 'Mazurek', '1966-09-28', '1992-02-04')
+VALUES ('HDK72L', 'KRA', 'Natan', 'Mazurek', '1966-09-28', '1992-02-04', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('UL029S', 'PLO', 'Józef', 'Jaworski', '1968-06-16', '1990-09-08')
+VALUES ('UL029S', 'PLO', 'Józef', 'Jaworski', '1968-06-16', '1990-09-08', 'E')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('HVD92L', 'KAL', 'Aleks', 'Ostrowski', '1968-10-16', '1991-12-16')
+VALUES ('HVD92L', 'KAL', 'Aleks', 'Ostrowski', '1968-10-16', '1991-12-16', 'F')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('JK85D5', 'LDZ', 'Amir', 'Mróz', '1969-05-30', '1994-10-11')
+VALUES ('JK85D5', 'LDZ', 'Amir', 'Mróz', '1969-05-30', '1994-10-11', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('LPA48D', 'WRO', 'Kryspin', 'Cieślak', '1970-03-15', '1995-01-27')
+VALUES ('LPA48D', 'WRO', 'Kryspin', 'Cieślak', '1970-03-15', '1995-01-27', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('NBP86D', 'GDA', 'Lucjan', 'Błaszczyk', '1971-06-05', '1995-02-01')
+VALUES ('NBP86D', 'GDA', 'Lucjan', 'Błaszczyk', '1971-06-05', '1995-02-01', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('D08LC6', 'BIE', 'Franciszek', 'Jankowski', '1971-09-16', '1994-05-05')
+VALUES ('D08LC6', 'BIE', 'Franciszek', 'Jankowski', '1971-09-16', '1994-05-05', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '997-06-12')
+VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '997-06-12', 'G')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('JK792B', 'PRU', 'Bolesław', 'Szulc', '1974-11-16', '1998-05-14')
+VALUES ('JK792B', 'PRU', 'Bolesław', 'Szulc', '1974-11-16', '1998-05-14', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('LAO27C', 'SZC', 'Aureliusz', 'Szymczak','1975-10-19', '2000-11-22')
+VALUES ('LAO27C', 'SZC', 'Aureliusz', 'Szymczak','1975-10-19', '2000-11-22', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('YAS03D', 'WAR', 'Allan', 'Kucharski', '1978-05-09', '2002-09-04')
+VALUES ('YAS03D', 'WAR', 'Allan', 'Kucharski', '1978-05-09', '2002-09-04', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('KSL92H', 'BIA', 'Korneliusz', 'Szulc', '1981-02-18', '2008-02-10')
+VALUES ('KSL92H', 'BIA', 'Korneliusz', 'Szulc', '1981-02-18', '2008-02-10', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BS68S4', 'KIE', 'Ignacy', 'Kaźmierczak', '1981-11-30', '2005-08-19')
+VALUES ('BS68S4', 'KIE', 'Ignacy', 'Kaźmierczak', '1981-11-30', '2005-08-19', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VS36SK', 'LDZ', 'Mieszko', 'Wójcik', '1982-08-31', '2006-07-09')
+VALUES ('VS36SK', 'LDZ', 'Mieszko', 'Wójcik', '1982-08-31', '2006-07-09', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('GAO37F', 'BEL', 'Konrad', 'Kucharski', '1984-02-02', '2009-04-06')
+VALUES ('GAO37F', 'BEL', 'Konrad', 'Kucharski', '1984-02-02', '2009-04-06', 'I')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('B23FW9', 'KAT', 'Jarosław', 'Baran', '1985-01-12', '2010-01-21')
+VALUES ('B23FW9', 'KAT', 'Jarosław', 'Baran', '1985-01-12', '2010-01-21', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('KNS31C', 'OPO', 'Kamil', 'Ziółkowska', '1985-12-17', '2009-08-18')
+VALUES ('KNS31C', 'OPO', 'Kamil', 'Ziółkowska', '1985-12-17', '2009-08-18', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PSB93S', 'GLI', 'Arkadiusz', 'Mazurek', '1987-12-01', '2013-03-30')
+VALUES ('PSB93S', 'GLI', 'Arkadiusz', 'Mazurek', '1987-12-01', '2013-03-30', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ABC72C', 'RAD', 'Adrian', 'Kamiński', '1988-12-25', '2016-09-17')
+VALUES ('ABC72C', 'RAD', 'Adrian', 'Kamiński', '1988-12-25', '2016-09-17', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BCS85A', 'CHO', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15')
+VALUES ('BCS85A', 'CHO', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('AOFH64', 'WRO', 'Dawid', 'Zalewski', '1991-05-17', '2018-10-25')
+VALUES ('AOFH64', 'WRO', 'Dawid', 'Zalewski', '1991-05-17', '2018-10-25', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('OW30JC', 'WAR', 'Łukasz', 'Szymański', '1993-03-17', '2019-05-24')
+VALUES ('OW30JC', 'WAR', 'Łukasz', 'Szymański', '1993-03-17', '2019-05-24', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BS58C8', 'LUB', 'Aureliusz', 'Wojciechowski', '1994-02-25', '2020-12-12')
+VALUES ('BS58C8', 'LUB', 'Aureliusz', 'Wojciechowski', '1994-02-25', '2020-12-12', 'F')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('WF42JR', 'PLO', 'Fabian', 'Andrzejewski', '1965-01-31', '1992-10-16')
+VALUES ('WF42JR', 'PLO', 'Fabian', 'Andrzejewski', '1965-01-31', '1992-10-16', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VAR66F', 'WAR', 'Eustachy', 'Wojciechowski', '1965-08-09', '1991-07-18')
+VALUES ('VAR66F', 'WAR', 'Eustachy', 'Wojciechowski', '1965-08-09', '1991-07-18', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('KAL92V', 'POZ', 'Cezary', 'Szewczyk', '1967-07-13', '1995-05-02')
+VALUES ('KAL92V', 'POZ', 'Cezary', 'Szewczyk', '1967-07-13', '1995-05-02', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('OPO29T', 'KAT', 'Mariusz', 'Szczepański', '1970-05-10', '1996-04-25')
+VALUES ('OPO29T', 'KAT', 'Mariusz', 'Szczepański', '1970-05-10', '1996-04-25', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('MIZ832', 'LUW', 'Daniel', 'Górski', '1970-08-27', '1998-07-31')
+VALUES ('MIZ832', 'LUW', 'Daniel', 'Górski', '1970-08-27', '1998-07-31', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('TIGH98', 'NSA', 'Anastazy', 'Makowski', '1972-02-28', '2001-09-20')
+VALUES ('TIGH98', 'NSA', 'Anastazy', 'Makowski', '1972-02-28', '2001-09-20', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ARP246', 'SOS', 'Kordian', 'Jankowski', '1973-01-19', '2000-03-12')
+VALUES ('ARP246', 'SOS', 'Kordian', 'Jankowski', '1973-01-19', '2000-03-12', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BOG53L', 'OLS', 'Leszek', 'Borkowski', '1976-10-07', '2005-11-17')
+VALUES ('BOG53L', 'OLS', 'Leszek', 'Borkowski', '1976-10-07', '2005-11-17','C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('CZP08A', 'LDZ', 'Aleksander', 'Urbańska', '1969-10-22', '2008-10-24')
+VALUES ('CZP08A', 'LDZ', 'Aleksander', 'Urbańska', '1969-10-22', '2008-10-24', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('GLW321', 'TYC', 'Hubert', 'Cieślak', '1978-08-02', '2011-01-03')
+VALUES ('GLW321', 'TYC', 'Hubert', 'Cieślak', '1978-08-02', '2011-01-03', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('HAI0F3', 'MIE', 'Oskar', 'Zawadzki', '1980-07-10', '2007-08-15')
+VALUES ('HAI0F3', 'MIE', 'Oskar', 'Zawadzki', '1980-07-10', '2007-08-15', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('RECP09', 'NYS', 'Alan', 'Jaworski', '1981-02-05', '2009-03-27')
+VALUES ('RECP09', 'NYS', 'Alan', 'Jaworski', '1981-02-05', '2009-03-27', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ATI24G', 'LEC', 'Ludwik', 'Jakubowski', '1981-09-18', '2005-02-16')
+VALUES ('ATI24G', 'LEC', 'Ludwik', 'Jakubowski', '1981-09-18', '2005-02-16', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('POZ19B', 'SIE', 'Oktawian', 'Zalewski', '1983-08-17', '2012-05-08')
+VALUES ('POZ19B', 'SIE', 'Oktawian', 'Zalewski', '1983-08-17', '2012-05-08', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('IAP24H', 'KRA', 'Juliusz', 'Krawczyk', '1984-05-27', '2011-12-13')
+VALUES ('IAP24H', 'KRA', 'Juliusz', 'Krawczyk', '1984-05-27', '2011-12-13', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ROG35Q', 'RZE', 'Oktawian', 'Baran', '1985-11-05', '2010-09-14')
+VALUES ('ROG35Q', 'RZE', 'Oktawian', 'Baran', '1985-11-05', '2010-09-14', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('LEK22U', 'GDY', 'Borys', 'Wójcik', '1986-02-01', '2013-03-26')
+VALUES ('LEK22U', 'GDY', 'Borys', 'Wójcik', '1986-02-01', '2013-03-26', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('GIT8C8', 'WRO', 'Gracjan', 'Pietrzak', '1987-01-26', '2015-10-10')
+VALUES ('GIT8C8', 'WRO', 'Gracjan', 'Pietrzak', '1987-01-26', '2015-10-10', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('KOP24B', 'SUW', 'Milan', 'Błaszczyk', '1987-07-30', '2017-12-20')
+VALUES ('KOP24B', 'SUW', 'Milan', 'Błaszczyk', '1987-07-30', '2017-12-20', 'E')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('UYT5W4', 'KIE', 'Jarosław', 'Tomaszewski', '1987-08-28', '2016-06-30')
+VALUES ('UYT5W4', 'KIE', 'Jarosław', 'Tomaszewski', '1987-08-28', '2016-06-30', 'E')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ZMO6V8', 'WAR', 'Błażej', 'Zakrzewska', '1989-05-09', '2018-07-12')
+VALUES ('ZMO6V8', 'WAR', 'Błażej', 'Zakrzewska', '1989-05-09', '2018-07-12', 'F')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('TVP361', 'KAL', 'Juliusz', 'Adamska', '1989-07-17', '2019-04-22')
+VALUES ('TVP361', 'KAL', 'Juliusz', 'Adamska', '1989-07-17', '2019-04-22', 'F')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('MEH29V', 'TOR', 'Lucjan', 'Jaworski', '1989-11-30', '2015-11-17')
+VALUES ('MEH29V', 'TOR', 'Lucjan', 'Jaworski', '1989-11-30', '2015-11-17', 'G')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('OL2V3G', 'BYD', 'Paweł', 'Kalinowski', '1992-07-02', '2018-06-18')
+VALUES ('OL2V3G', 'BYD', 'Paweł', 'Kalinowski', '1992-07-02', '2018-06-18', 'G')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PR35GA', 'STA', 'Gustaw', 'Witkowski', '1995-08-23', '2020-01-11')
+VALUES ('PR35GA', 'STA', 'Gustaw', 'Witkowski', '1995-08-23', '2020-01-11', 'G')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PYR9V2', 'BIA', 'Patryk', 'Czarnecki', '1995-09-14', '2019-10-01')
+VALUES ('PYR9V2', 'BIA', 'Patryk', 'Czarnecki', '1995-09-14', '2019-10-01', 'H')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('LOK73P', 'LUB', 'Alek', 'Piotrowski', '1987-04-24', '2015-06-28')
+VALUES ('LOK73P', 'LUB', 'Alek', 'Piotrowski', '1987-04-24', '2015-06-28', 'H')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('NIT26W', 'ZAB', 'Eustachy', 'Kamiński', '1988-02-19', '2018-04-30')
+VALUES ('NIT26W', 'ZAB', 'Eustachy', 'Kamiński', '1988-02-19', '2018-04-30', 'H')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('IOP72Z', 'LDZ', 'Anatol', 'Kaźmierczak', '1989-03-18', '2016-09-03')
+VALUES ('IOP72Z', 'LDZ', 'Anatol', 'Kaźmierczak', '1989-03-18', '2016-09-03', 'I')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('RAM29T', 'POZ', 'Alojzy', 'Sokołowski', '1989-09-14', '2018-07-15')
+VALUES ('RAM29T', 'POZ', 'Alojzy', 'Sokołowski', '1989-09-14', '2018-07-15', 'I')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ZOR215', 'KAT', 'Michał', 'Przybylski', '1991-09-19', '2017-02-21')
+VALUES ('ZOR215', 'KAT', 'Michał', 'Przybylski', '1991-09-19', '2017-02-21', 'I')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ILI062', 'NYS', 'Franciszek', 'Szulc', '1993-09-01', '2020-08-07')
+VALUES ('ILI062', 'NYS', 'Franciszek', 'Szulc', '1993-09-01', '2020-08-07', 'I')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('JEO295', 'RAD', 'Marcin', 'Wiśniewski', '1966-06-17', '2000-10-20')
+VALUES ('JEO295', 'RAD', 'Marcin', 'Wiśniewski', '1966-06-17', '2000-10-20', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('V09W25', 'ELB', 'Andrzej', 'Sikora', '1970-11-30', '1996-11-09')
+VALUES ('V09W25', 'ELB', 'Andrzej', 'Sikora', '1970-11-30', '1996-11-09', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('HOS203', 'OLS', 'Marian', 'Kowalski', '1973-07-19', '1999-09-04')
+VALUES ('HOS203', 'OLS', 'Marian', 'Kowalski', '1973-07-19', '1999-09-04', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('7VLS84', 'GDA', 'Dariusz', 'Duda', '1975-01-22', '2001-02-01')
+VALUES ('7VLS84', 'GDA', 'Dariusz', 'Duda', '1975-01-22', '2001-02-01', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('RY1NV2', 'KAT', 'Milan', 'Mazurek', '1975-12-18', '2000-05-17')
+VALUES ('RY1NV2', 'KAT', 'Milan', 'Mazurek', '1975-12-18', '2000-05-17', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('UIV936', 'KRA', 'Piotr', 'Zieliński', '1979-01-19', '2006-12-25')
+VALUES ('UIV936', 'KRA', 'Piotr', 'Zieliński', '1979-01-19', '2006-12-25', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('REN826', 'LDZ', 'Gabriel', 'Szymański', '1981-03-28', '2003-01-31')
+VALUES ('REN826', 'LDZ', 'Gabriel', 'Szymański', '1981-03-28', '2003-01-31', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PFO28N', 'WAR', 'Mirosław', 'Brzeziński', '1989-04-29', '2010-01-12')
+VALUES ('PFO28N', 'WAR', 'Mirosław', 'Brzeziński', '1989-04-29', '2010-01-12', 'A')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('QIV25G', 'GLI', 'Damian', 'Czerwiński', '1991-01-24', '2017-08-03')
+VALUES ('QIV25G', 'GLI', 'Damian', 'Czerwiński', '1991-01-24', '2017-08-03', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PVW95S', 'TOR', 'Andrzej', 'Kozłowski', '1994-12-01', '2019-06-07')
+VALUES ('PVW95S', 'TOR', 'Andrzej', 'Kozłowski', '1994-12-01', '2019-06-07', 'E')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VOSP36', 'WAR', 'Eugeniusz', 'Kozłowski', '1995-07-04', '2020-09-11')
+VALUES ('VOSP36', 'WAR', 'Eugeniusz', 'Kozłowski', '1995-07-04', '2020-09-11', 'F')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PGS69R', 'KOS', 'Alan', 'Wiśniewski', '1968-03-07', '1994-11-14')
+VALUES ('PGS69R', 'KOS', 'Alan', 'Wiśniewski', '1968-03-07', '1994-11-14', 'G')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('GI9S4B', 'RZE', 'Joachim', 'Zalewski', '1995-04-08', '2020-02-23')
+VALUES ('GI9S4B', 'RZE', 'Joachim', 'Zalewski', '1995-04-08', '2020-02-23', 'H')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('CPO26T', 'WAR', 'Czesław', 'Duda', '1995-09-01', '2018-05-29')
+VALUES ('CPO26T', 'WAR', 'Czesław', 'Duda', '1995-09-01', '2018-05-29', 'I')
 
 
+INSERT INTO federacja.dbo.kluby
+VALUES('LEG', 'WAR', 'E01', 'Legia Warszawa', '1916-03-24', 'biało-zielone', 'Stadion Wojska Polskiego', 'ul. Łazienkowska 3');
+INSERT INTO federacja.dbo.kluby
+VALUES('LPO', 'POZ', 'E01', 'Lech Poznań', '1922-03-19', 'niebiesko-białe', 'Stadion Miejski w Poznaniu', 'ul. Bułgarska 17');
+INSERT INTO federacja.dbo.kluby
+VALUES('PIA', 'GLI', 'E01', 'Piast Gliwice', '1954-06-18', 'niebiesko-czerwone', 'Stadion Miejski w Gliwicach', 'ul. Okrzei 29');
+INSERT INTO federacja.dbo.kluby
+VALUES('LGD', 'GDA', 'E01', 'Lechia Gdańsk', '1945-09-18', 'biało-zielone', 'Stadion Energa', 'ul. Pokoleń Lechii Gdańsk 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('ŚLĄ', 'WRO', 'E01', 'Śląsk Wrocław', '1946-03-18', 'zielono-białe', 'Stadion Miejki we Wrocławiu', 'ul. Oporowska 62');
+INSERT INTO federacja.dbo.kluby
+VALUES('POG', 'SZC', 'E01', 'Pogoń Szczecin', '1948-04-21', 'granatowo-bordowe', 'Stadion Miejski im. Floriana Krygiera', 'ul. Karłowicza 28');
+INSERT INTO federacja.dbo.kluby
+VALUES('CRA', 'KRA', 'E01', 'Cracovia Kraków', '1906-06-13', 'biało-czerwone', 'Stadion Cracovii', 'ul. Józefa Kałuży 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('JAG', 'BIA', 'E01', 'Jagiellonia Białystok', '1920-05-30', 'żółto-czerwone', 'Stadion Miejski w Białymstoku', 'ul. Jurowiecka 21');
+INSERT INTO federacja.dbo.kluby
+VALUES('GZA', 'ZAB', 'E01', 'Górnik Zabrze', '1948-12-14', 'niebiesko-czerwone', 'Stadion im. Ernesta Pohla', 'ul. Franklina Roosevelta 81');
+INSERT INTO federacja.dbo.kluby
+VALUES('RAK', 'CZE', 'E01', 'Raków Częstochowa', '1921-04-25', 'czerwono-niebieskie', 'GIEKSA Arena (Bełchatów)', 'ul. Limanowskiego 83');
+INSERT INTO federacja.dbo.kluby
+VALUES('ZLU', 'LUI', 'E01', 'Zagłębie Lubin', '1946-03-14', 'pomarańczowo-białe', 'Stadion Zagłebia Lubin', 'ul. M. Skłodowskiej Curie 98');
+INSERT INTO federacja.dbo.kluby
+VALUES('WPŁ', 'PŁO', 'E01', 'Wisła Płock', '1947-06-12', 'niebiesko-białe', 'Stadion im. Kazimierza Górskiego', 'ul. Łukasiewicza 34');
+INSERT INTO federacja.dbo.kluby
+VALUES('WKR', 'KRA', 'E01', 'Wisła Kraków', '1906-08-26', 'czerwono-białe', 'Stadion Miejski w Krakowie', 'ul. Władysława Reymonta 20');
+INSERT INTO federacja.dbo.kluby
+VALUES('ARK', 'GDY', 'P01', 'Arka Gdynia', '1929-07-12', 'żółto-zielone', 'Stadion Miejski w Gdyni', 'ul. Olimpijska 5/9');
+INSERT INTO federacja.dbo.kluby
+VALUES('KOR', 'KIE', 'P01', 'Korona Kielce', '1973-07-10', 'żółto-czerwone', 'Suzuki Arena', 'ul. Ściegiennego 8');
+INSERT INTO federacja.dbo.kluby
+VALUES('ŁKS', 'ŁDZ', 'P01', 'ŁKS Łódź', '1908-04-10', 'biało-czerwone', 'Stadion przy al. Unii Lubelskiej 2', 'al. Unii Lubelskiej 2');
+INSERT INTO federacja.dbo.kluby
+VALUES('SMI', 'MIE', 'E01', 'Stal Mielec', '1961-03-19', 'biało-niebieskie', 'Stadion przy ul. Solskiego 1', 'ul. Ludwika Solskiego 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('POD', 'BIE', 'E01', 'Podbeskidzie Bielsko-Biała', '1997-08-12', 'czerwono-białe', 'Stadion Miejski w Bielsko-Białej', 'ul. Rychlińskiego 21');
+INSERT INTO federacja.dbo.kluby
+VALUES('WAR', 'POZ', 'E01', 'Warta Poznań', '1912-06-15', 'zielono-białe', 'Stadion Dyskobolii (Grodzisk Mazowiecki)', 'ul. Droga Dębińska 12');
+INSERT INTO federacja.dbo.kluby
+VALUES('RAD', 'RAD', 'P01', 'Radomiak Radom', '1910-02-14', 'zielono-białe', 'Stadion im. Braci Czachorów', 'ul. Struga 63');
+INSERT INTO federacja.dbo.kluby
+VALUES('MIE', 'LEG', 'P01', 'Miedź Legnica', '1971-07-28', 'zielono-niebieskie', 'Stadion Miejski w Legnicy', 'al. Orła Białego 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('CHG', 'GŁO', 'P01', 'Chrobry Głogów', '1946-02-12', 'pomarańczowo-czarne', 'Stadion Chrobrego', 'ul. Wita Stwosza 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('PNI', 'NIP', 'P01', 'Puszcza Niepołomice', '1923-10-01', 'żóto-zielone', 'Stadion Miejski w Niepołomicach', 'ul. Kusocińskiego 2');
+INSERT INTO federacja.dbo.kluby
+VALUES('TYC', 'TYC', 'P01', 'GKS Tychy', '1971-04-20', 'zielono-czarne', 'Stadion Miejski w Tychach', 'ul. Edukacji 7');
+INSERT INTO federacja.dbo.kluby
+VALUES('STO', 'OLS', 'P01', 'Stomil Olsztyn', '1945-07-15', 'biało-niebieskie', 'Stadion OSiR', 'ul. Piłsudskiego 69a');
+INSERT INTO federacja.dbo.kluby
+VALUES('ZSO', 'SOS', 'P01', 'Zagłębie Sosnowiec', '1906-09-13', 'czarno-czerwone', 'Stadion Ludowy', 'ul. Kresowa 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('SNS', 'NSA', 'P01', 'Sandecja Nowy Sącz', '1910-03-20', 'biało-czarne', 'Stadion im. ojca Władysława Augustynka', 'ul. Jana Kilińskiego 47');
+INSERT INTO federacja.dbo.kluby
+VALUES('ODO', 'OPO', 'P01', 'Odra Opole', '1945-06-16', 'niebiesko-czerwone', 'Stadion Miejski w Opolu', 'ul. Oleska 51');
+INSERT INTO federacja.dbo.kluby
+VALUES('JAS', 'JAS', 'P01', 'GKS 1962 Jastrzębie', '1961-01-01', 'zielono-czarne', 'Stadion Odry Wodzisław (Wodzisław Śląski)', 'ul. Harcerska 14b');
+INSERT INTO federacja.dbo.kluby
+VALUES('BEŁ', 'BEŁ', 'P01', 'GKS Bełchatów(kozaki)', '1977-11-26', 'biało-zielone', 'GIEKSA Arena', 'ul. Sportowa 3');
+INSERT INTO federacja.dbo.kluby
+VALUES('GKŁ', 'LEC', 'P01', 'Górnik Łęczna', '1979-09-20', 'zielono-czarne', 'Stadion Górnika Łęczna', 'al. Jana Pawła II 13');
+INSERT INTO federacja.dbo.kluby
+VALUES('WID', 'ŁDZ', 'P01', 'Widzew Łódź', '1948-03-14', 'czerwono-białe', 'Stadion Widzewa Łódź', 'al. Piłsudskiego 138');
+INSERT INTO federacja.dbo.kluby
+VALUES('RES', 'RZE', 'P01', 'Resovia', '1910-12-09', 'biało-czerwone', 'Stadion Resovii', 'ul. Stanisława Wyspiańskiego 22');
+INSERT INTO federacja.dbo.kluby
+VALUES('BBT', 'NIE', 'P01', 'Bruk-Bet Termalica Nieciecza', '1922-05-14', 'pomarańczowo-żółte', 'Stadion Nieciecza KS', 'Nieciecza 150');
+INSERT INTO federacja.dbo.kluby
+VALUES('GKA', 'KAT', 'P02', 'GKS Katowice', '1964-02-27', 'żółto-zielone', 'Stadion GKS Katowice', 'ul. Bukowa 1A');
+INSERT INTO federacja.dbo.kluby
+VALUES('POL', 'POL', 'P02', 'Górnik Polkowice', '1947-07-13', 'zielono-czarne', 'Stadion Miejski w Polkowicach', 'ul. Kopalniana 4');
+INSERT INTO federacja.dbo.kluby
+VALUES('CHO', 'CHC', 'P02', 'Chojniczanka', '1930-03-10', 'żółto-czerwone', 'Stadion Miejski w Chojnicach', 'ul. A. Mickiewicza 12');
+INSERT INTO federacja.dbo.kluby
+VALUES('WIG', 'SUW', 'P02', 'Wigry Suwałki', '1947-01-10', 'biało-niebieskie', 'Stadion Miejski w Suwałkach', 'Zarzecze 26');
+INSERT INTO federacja.dbo.kluby
+VALUES('SKR', 'CZE', 'P02', 'Skra Częstochowa', '1926-02-16', 'czerwono-niebieskie', 'Stolzle Stadion STO', 'ul. Loretańska 20');
+INSERT INTO federacja.dbo.kluby
+VALUES('KKS', 'KAL', 'P02', 'KKS Kalisz', '1925-03-20', 'niebieskie-białe', 'Stadion Miejski w Kaliszu', 'ul. Łódzka 19/29');
+INSERT INTO federacja.dbo.kluby
+VALUES('ŚL2', 'WRO', 'P02', 'Śląsk Wrocław 2', '1947-01-01', 'zielono-białe', 'Stadion Miejski we Wrocławiu', 'ul. Oporowska 62');
+INSERT INTO federacja.dbo.kluby
+VALUES('SOK', 'OST', 'P02', 'Sokół Ostróda', '1945-09-12', 'wiśniowo-białe', 'Stadion Miejski w Ostródzie', 'ul. 3 Maja 19');
+INSERT INTO federacja.dbo.kluby
+VALUES('STA', 'RZE', 'P02', 'Stal Rzeszów', '1944-05-16', 'biało-niebieskie', 'Stadion Miejski w Rzeszowie', 'ul. Hetmańska 69');
+INSERT INTO federacja.dbo.kluby
+VALUES('GAR', 'KRA', 'P02', 'Garbarnia Kraków', '1921-11-10', 'brązowo-białe', 'Stadion Garbarnii', 'ul. Rydlówka 23');
+INSERT INTO federacja.dbo.kluby
+VALUES('MOT', 'LUB', 'P02', 'Motor Lublin', '1950-08-12', 'żółto-białe', 'Arena Lublin', 'ul. Stadionowa 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('PSI', 'SIE', 'P02', 'Pogoń Siedlce', '1944-12-01', 'biało-niebieskie', 'Stadion ROSRRiT', 'ul. Jana Pawła II 6');
+INSERT INTO federacja.dbo.kluby
+VALUES('BYT', 'BYT', 'P02', 'Bytovia Bytów', '1946-03-14', 'czarno-czerwone', 'Stadion MOSiR', 'ul. Mickiewicza 13');
+INSERT INTO federacja.dbo.kluby
+VALUES('BŁĘ', 'STA', 'P02', 'Błękitni Stargard', '1945-05-18', 'błękitno-białe', 'Stadion Miejski w Stargardzie', 'ul. Ceglana 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('OLI', 'ELB', 'P02', 'Olimpia Elbląg', '1945-03-13', 'żółto-niebieskie', 'Stadion Miejski w Elblągu', 'ul. Agrykola 8');
+INSERT INTO federacja.dbo.kluby
+VALUES('ZNI', 'PRU', 'P02', 'Znicz Pruszków', '1923-12-19', 'żółto-czerwone', 'Stadion Piłkarski MZOS', 'ul. Bohaterów Warszawy 4');
+INSERT INTO federacja.dbo.kluby
+VALUES('LP2', 'POZ', 'P02', 'Lech Poznań 2', '1953-07-09', 'niebiesko-białe', 'Stadion Amiki Wronki', 'ul. Bułgarska 17');
+INSERT INTO federacja.dbo.kluby
+VALUES('OGR', 'GRU', 'P02', 'Olimpia Grudziądz', '1923-06-30', 'biało-zielone', 'Stadion Miejski w Grudziądze', 'ul, Piłsudskiego 14');
+INSERT INTO federacja.dbo.kluby
+VALUES('HUT', 'KRA', 'P02', 'Hutnik Kraków', '1950-03-21', 'biało-błękitne', 'Stadion Miejski Hutnik Kraków', 'ul. T. Ptaszyckiego 4b');
+SELECT * FROM federacja.dbo.kluby

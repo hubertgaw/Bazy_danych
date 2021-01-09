@@ -1,20 +1,21 @@
 ----------Tworzenie bazy danych-----------------
-CREATE DATABASE federacja
-
-DROP TABLE federacja.dbo.stanowiska;
-DROP TABLE federacja.dbo.ligi;
-DROP TABLE federacja.dbo.sponsorzy;
-DROP TABLE federacja.dbo.kluby;
-DROP TABLE federacja.dbo.kraje;
-DROP TABLE federacja.dbo.managerowie;
-DROP TABLE federacja.dbo.miasta;
-DROP TABLE federacja.dbo.pozycje;
-DROP TABLE federacja.dbo.sedziowie;
-DROP TABLE federacja.dbo.mecze;
-DROP TABLE federacja.dbo.pracownicy;
-DROP TABLE federacja.dbo.zawieszenia;
-DROP TABLE federacja.dbo.zawodnicy;
-DROP TABLE federacja.dbo.sponsoring;
+--DROP DATABASE federacja;
+--CREATE DATABASE federacja
+--GO
+--DROP TABLE federacja.dbo.stanowiska;
+--DROP TABLE federacja.dbo.ligi;
+--DROP TABLE federacja.dbo.sponsorzy;
+--DROP TABLE federacja.dbo.kluby;
+--DROP TABLE federacja.dbo.kraje;
+--DROP TABLE federacja.dbo.managerowie;
+--DROP TABLE federacja.dbo.miasta;
+--DROP TABLE federacja.dbo.pozycje;
+--DROP TABLE federacja.dbo.sedziowie;
+--DROP TABLE federacja.dbo.mecze;
+--DROP TABLE federacja.dbo.pracownicy;
+--DROP TABLE federacja.dbo.zawieszenia;
+--DROP TABLE federacja.dbo.zawodnicy;
+--DROP TABLE federacja.dbo.sponsoring;
 
 
 -----------Tworzenie tabel--------------------
@@ -39,7 +40,8 @@ id_ligi				CHAR(3) UNIQUE NOT NULL,
 nazwa_ligi			VARCHAR(30) NOT NULL,
 liczba_druzyn		INT NOT NULL,
 liczba_awansow		INT,
-liczba_spadkow		INT
+liczba_spadkow		INT,
+poziom_rozgrywkowy	INT
 );
 GO
 
@@ -50,6 +52,7 @@ ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT nazwa_ligi_check CHECK(
 	SUBSTRING(id_ligi,3,1) BETWEEN '0' AND '9');
 ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_druzyn_check CHECK(liczba_druzyn BETWEEN 1 AND 25);
 ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_awansow_check CHECK(liczba_awansow BETWEEN 0 AND liczba_druzyn);
+ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT poziom_check CHECK (poziom_rozgrywkowy BETWEEN 1 AND 8);
 ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_spadkow_check CHECK(liczba_spadkow BETWEEN 0 AND liczba_druzyn);
 GO
 
@@ -111,7 +114,7 @@ GO
 --7.miasta
 CREATE TABLE federacja.dbo.miasta(
 id_miasta			CHAR(3) UNIQUE NOT NULL,
-nazwa_miasta		VARCHAR(20) NOT NULL,
+nazwa_miasta		VARCHAR(30) NOT NULL,
 liczba_ludnosci		INT,
 id_kraju			CHAR(2)
 );
@@ -123,7 +126,6 @@ ALTER TABLE federacja.dbo.miasta ADD CONSTRAINT miasto_kraj_foreign_key FOREIGN 
 REFERENCES federacja.dbo.kraje(id_kraju) 
 GO
 
-
 --8.sedziowie
 CREATE TABLE federacja.dbo.sedziowie(
 id_sedziego				CHAR(6) UNIQUE NOT NULL,
@@ -132,15 +134,16 @@ imie_sedziego			VARCHAR(15) NOT NULL,
 nazwisko_sedziego		VARCHAR(30) NOT NULL,
 data_urodzenia			DATE,
 data_zdobycia_licencji	DATE,
+typ_licencji			CHAR(1)
 );
 GO
 
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_primary_key PRIMARY KEY(id_sedziego);
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT data_chech CHECK (data_zdobycia_licencji > data_urodzenia);
+ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT licencja_check CHECK (typ_licencji LIKE '[A-I]')
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miasto_foreign_key FOREIGN KEY(id_miasta) 
 REFERENCES federacja.dbo.miasta(id_miasta);
 GO
-
 
 --9.kluby
 CREATE TABLE federacja.dbo.kluby(
@@ -149,9 +152,9 @@ id_miasta			CHAR(3) NOT NULL,
 id_ligi				CHAR(3) NOT NULL,
 nazwa				VARCHAR(40) NOT NULL,
 data_zalozenia		DATE,
-barwy				VARCHAR(15),
-nazwa_stadionu		VARCHAR(20),
-adres				VARCHAR(40)
+barwy				VARCHAR(30),
+nazwa_stadionu		VARCHAR(50),
+adres				VARCHAR(70)
 );
 GO
  
