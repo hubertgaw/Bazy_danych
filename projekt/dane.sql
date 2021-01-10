@@ -330,8 +330,6 @@ VALUES ('PRU', 'Pruszków', 61000, 'PL')
 INSERT INTO federacja.dbo.miasta
 VALUES ('MIE', 'Mielec', 60000, 'PL')
 INSERT INTO federacja.dbo.miasta
-VALUES ('BBI', 'Bielsko-Biała', 171259, 'PL')
-INSERT INTO federacja.dbo.miasta
 VALUES ('TYC', 'Tychy', 127000, 'PL')
 INSERT INTO federacja.dbo.miasta
 VALUES ('GLO', 'Głogów', 67500, 'PL')
@@ -494,7 +492,9 @@ VALUES ('ZAC', 'Zamość', 63813, 'PL')
 INSERT INTO federacja.dbo.miasta
 VALUES ('RAD', 'Radom', 213000, 'PL')
 INSERT INTO federacja.dbo.miasta
-VALUES ('BIE', 'Bielsko-Biała', 170479, 'PL')
+VALUES ('BIE', 'Bielsko-Biała', 171259, 'PL')
+INSERT INTO federacja.dbo.miasta
+VALUES ('TMZ', 'Tomaszów Mazowiecki', 212567, 'PL')
 
 -- 8.Sędziowie
 
@@ -748,4 +748,72 @@ INSERT INTO federacja.dbo.kluby
 VALUES('OGR', 'GRU', 'P02', 'Olimpia Grudziądz', '1923-06-30', 'biało-zielone', 'Stadion Miejski w Grudziądze', 'ul, Piłsudskiego 14');
 INSERT INTO federacja.dbo.kluby
 VALUES('HUT', 'KRA', 'P02', 'Hutnik Kraków', '1950-03-21', 'biało-błękitne', 'Stadion Miejski Hutnik Kraków', 'ul. T. Ptaszyckiego 4b');
+INSERT INTO federacja.dbo.kluby
+VALUES('PGR', 'GRM', 'G01', 'Pogoń Grodzisk Mazowiecki', '1922-09-12', 'czerwono-białe', 'Miejski Stadion Sportowy', 'Al. Mokronoskich 4');
+INSERT INTO federacja.dbo.kluby
+VALUES('ŚWI', 'NDM', 'G01', 'Świt Nowy Dwór Mazowiecki', '1935-01-01', 'biało-zielone', 'Stadion Miejski w Nowym Dworze Mazowieckim', 'ul. Sportowa 66');
+INSERT INTO federacja.dbo.kluby
+VALUES('POL', 'WAR', 'G01', 'Polonia Warszawa', '1911-11-19', 'czarno-białe', 'Stadion Polonii Warszawa im. gen. Kazimierza Sosnowskiego', 'ul. Konwiktorska 6');
+INSERT INTO federacja.dbo.kluby
+VALUES('ZBP', 'BLP', 'G01', 'Znicz Biała Piska', '1954-07-18', 'czerwono-zielone', 'Stadion Znicz Biała Piska', 'Pl. Mickiewicza 125');
+INSERT INTO federacja.dbo.kluby
+VALUES('LG2', 'WAR', 'G01', 'Legia II Warszawa', '1929-09-12', 'biało-zielone', 'Dozbud Arena', 'ul. Łazienkowska 3');
+INSERT INTO federacja.dbo.kluby
+VALUES('UNI', 'SKI', 'G01', 'Unia Skierniewice', '1945-11-15', 'niebiesko-zółte', 'Stadion Miejski w Skierniewicach', 'ul. Pomologiczna 8a');
+INSERT INTO federacja.dbo.kluby
+VALUES('LEN', 'LEO', 'G01', 'Legionovia Legionowo', '1930-04-25', 'żółto-czerwone', 'Stadion Miejski w Legionowie', 'ul. Parkowa 27a');
+INSERT INTO federacja.dbo.kluby
+VALUES('PEL', 'LOW', 'G01', 'Pelikan Łowicz', '1945-05-26', 'biało-zielone', 'Stadion Pelikana Łowicz', 'ul. Starzyńskiego 6/8');
+INSERT INTO federacja.dbo.kluby
+VALUES('SOA', 'ALE', 'G01', 'Sokół Aleksandrów Łódzki', '1998-02-12', 'zielono-białe', 'Stadion MOSiR', 'ul. 11 listopada 98');
+INSERT INTO federacja.dbo.kluby
+VALUES('KSK', 'KUT', 'G01', 'KS Kutno', '1993-04-22', 'żółto-niebieskie', 'Stadion im. Henryka Reymana', 'ul. Kościuszki 26');
+INSERT INTO federacja.dbo.kluby
+VALUES('JA2', 'BIA', 'G01', 'Jagiellonia Białystok II', '1927-05-27', 'żółto-czerwone', 'Stadion Miejski w Białymstoku', 'ul. Jurowiecka 21');
+INSERT INTO federacja.dbo.kluby
+VALUES('RKS', 'RAO', 'G01', 'RKS Radomsko', '1979-08-25', 'żółto-niebieskie', 'Stadion Miejski w Radomsku', 'ul. Brzeźnicka 26');
+INSERT INTO federacja.dbo.kluby
+VALUES('WIK', 'WIK', 'G01', 'GKS Wikielec', '1958-01-19', 'zielono-czarne', 'Stadion GKS Wikielec', 'Wikielec 65B');
+INSERT INTO federacja.dbo.kluby
+VALUES('BŁO', 'BLO', 'G01', 'Błonianka Błonie', '1917-05-10', 'biało-zielone', 'Stadion Miejski w Błoniu', 'ul.Legionów 3a');
+INSERT INTO federacja.dbo.kluby
+VALUES('BRO', 'RAD', 'G01', 'Broń Radom', '1926-03-21', 'biało-niebieskie', 'Stadion MOSiR', 'ul. Narutowicza 9');
+INSERT INTO federacja.dbo.kluby
+VALUES('URS', 'WAR', 'G01', 'Ursus Warszawa', '1935-01-01', 'biało-pomarańczowe', 'Stadion RKS Ursus', 'ul. Sosnkowskiego 3');
+INSERT INTO federacja.dbo.kluby
+VALUES('CON', 'ELB', 'G01', 'Concordia Elbląg', '1986-11-12', 'pomarańczowo-czarne', 'Stadion Concordii', 'ul. Krakusa 25');
+INSERT INTO federacja.dbo.kluby
+VALUES('RWY', 'WYM', 'G01', 'Ruch Wysokie Mazowieckie', '1955-08-11', 'niebiesko-białe', 'Stadion Miejski w Wysokiem Mazowieckim', 'ul. 1 Maja 14');
+INSERT INTO federacja.dbo.kluby
+VALUES('LTM', 'TMZ', 'G01', 'Lechia Tomaszów Mazowiecki', '1923-07-15', 'zielono-czerwone', 'Stadion Miejski im. Braci Gadajów', 'ul. Nowowiejksa 9/27');
+INSERT INTO federacja.dbo.kluby
+VALUES('HUR', 'MOR', 'G01', 'Huragan Morąg', '1945-07-13', 'czarno-czerwone', 'Stadion Huragana Morąg', 'ul. Sportowa 2');
+INSERT INTO federacja.dbo.kluby
+VALUES('OZA', 'ZAM', 'G01', 'Olimpia Zambrów', '1953-02-09', 'biało-niebieskie', 'Stadion Miejski w Zambrowie', 'ul. Wyszyńskiego 8');
+INSERT INTO federacja.dbo.kluby
+VALUES('KSW', 'WAS', 'G01', 'KS Wasilków', '1946-09-12', 'niebiesko-czerwone', 'Stadion Miejski w Wasilkowie', 'ul. Białostocka 7');
+INSERT INTO federacja.dbo.kluby
+VALUES('RST', 'STE', 'G02', 'Radunia Stężyca', '1982-03-15', 'niebiesko-białe', 'Arena Radunia', 'ul. Abrahama 11');
+INSERT INTO federacja.dbo.kluby
+VALUES('MGN', 'GNI', 'G02', 'Mieszko Gniezno', '1974-05-16', 'biało-niebieskie', 'Stadion Miejski w Gnieźnie', 'ul, Strumykowa 8');
+INSERT INTO federacja.dbo.kluby
+VALUES('ELA', 'TOR', 'G02', 'Elana Toruń', '1968-07-12', 'żółto-niebieskie', 'Stadion Miejski im. Grzegorza Duneckiego', 'ul. gen. Józefa Bema 23/29');
+INSERT INTO federacja.dbo.kluby
+VALUES('POM', 'TOR', 'G02', 'Pomorzanin Toruń', '1935-09-11', 'niebiesko-czerwone', 'Stadion Miejski im. Grzegorza Duneckiego', 'Szosa Chełmińska 75');
+INSERT INTO federacja.dbo.kluby
+VALUES('RCH', 'CHR', 'G03', 'Ruch Chorzów', '1920-04-20', 'niebiesko-białe', 'Stadion Ruchu Chorów', 'ul. Cicha 06');
+INSERT INTO federacja.dbo.kluby
+VALUES('BTM', 'BYM', 'G03', 'Polonia Bytom', '1920-01-04', 'niebiesko-czerwone', 'Stadion Szombierek Bytom', 'ul. Kolejowa 2a');
+INSERT INTO federacja.dbo.kluby
+VALUES('GOC', 'GOZ', 'G03', 'LKS Goczałkowice Zdrój', '1960-02-04', 'niebiesko-białe', 'Stadion Goczałkowice', 'ul. Uzdrowiskowa 48');
+INSERT INTO federacja.dbo.kluby
+VALUES('REK', 'BIE', 'G03', 'Rekord Bielsko-Biała', '1994-04-18', 'biało-zielone', 'Stadion Rekordu', 'ul. Startowa 13');
+INSERT INTO federacja.dbo.kluby
+VALUES('PŁW', 'PUL', 'G04', 'Wisła Puławy', '1923-04-01', 'biało-niebieskie', 'Stadion MOSiR', 'ul. Haule-Bosaka 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('WDB', 'DEB', 'G04', 'Wisłoka Dębica', '1908-06-13', 'biało-zielone', 'Stadion Wisłoki Dębica', 'ul. Parkowa 1');
+INSERT INTO federacja.dbo.kluby
+VALUES('KSZ', 'OSS', 'G04', 'KSZO Ostrowiec', '1929-08-11', 'pomarańczowo-czarne', 'Miejski Stadion Sportowy "KSZO"', 'ul. Świętokrzyska 11');
+INSERT INTO federacja.dbo.kluby
+VALUES('SIT', 'TAR', 'G04', 'Siarka Tarnobrzeg', '1957-10-19', 'żółto-czarne', 'Stadion MOSiR', 'al. Niepodległości 2');
 SELECT * FROM federacja.dbo.kluby
