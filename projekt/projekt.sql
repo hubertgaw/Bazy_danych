@@ -1,4 +1,4 @@
-----------Tworzenie bazy danych-----------------
+﻿----------Tworzenie bazy danych-----------------
 --DROP DATABASE federacja;
 --CREATE DATABASE federacja
 --GO
@@ -164,7 +164,6 @@ ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_liga_foreign_key FOREIGN KEY
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT id_klubu_check CHECK(id_klubu LIKE REPLICATE('[A-Z]', 2));
 GO
 
-
 --10.pracownicy
 CREATE TABLE federacja.dbo.pracownicy(
 id_pracownika		CHAR(3) UNIQUE NOT NULL,
@@ -177,7 +176,8 @@ pesel				CHAR(11),
 data_zatrudnienia	DATE,
 pensja				SMALLMONEY,
 email				VARCHAR(30),
-nr_telefonu			CHAR(9)
+nr_telefonu			CHAR(9),
+plec				CHAR(1)
 );
 GO
 
@@ -187,9 +187,11 @@ ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_klub_foreign_key F
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT data_ur_zat_chech CHECK (data_zatrudnienia > data_urodzenia);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pesel_check CHECK(pesel LIKE REPLICATE('[0-9]', 11));
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT tel_check CHECK(nr_telefonu LIKE REPLICATE('[1-9]', 1) + REPLICATE('[0-9]', 8));
-ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @
+--ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @ (nie działa)
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT plec_check CHECK (plec IN('K', 'M'));  
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT date_uro_zat_check CHECK (data_urodzenia < data_zatrudnienia);
 GO
-
+ALTER TABLE pracownicy DROP CONsTRAINT date_uro_zat_chech
 
 --11.sponsoring
 CREATE TABLE federacja.dbo.sponsoring(
