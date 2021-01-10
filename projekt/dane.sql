@@ -272,7 +272,7 @@ VALUES('BRA', 'Bramkarz')
 
 -- 7. miasta
 
-'
+
 INSERT INTO federacja.dbo.miasta
 VALUES ('KRA', 'Kraków', 770000, 'PL')
 INSERT INTO federacja.dbo.miasta
