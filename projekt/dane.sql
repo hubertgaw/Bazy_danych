@@ -516,7 +516,7 @@ VALUES ('NBP86D', 'GDA', 'Lucjan', 'Błaszczyk', '1971-06-05', '1995-02-01', 'C'
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('D08LC6', 'BIE', 'Franciszek', 'Jankowski', '1971-09-16', '1994-05-05', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '997-06-12', 'G')
+VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '1997-06-12', 'G')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('JK792B', 'PRU', 'Bolesław', 'Szulc', '1974-11-16', '1998-05-14', 'B')
 INSERT INTO federacja.dbo.sedziowie 
@@ -540,7 +540,7 @@ VALUES ('PSB93S', 'GLI', 'Arkadiusz', 'Mazurek', '1987-12-01', '2013-03-30', 'D'
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('ABC72C', 'RAD', 'Adrian', 'Kamiński', '1988-12-25', '2016-09-17', 'B')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BCS85A', 'CHO', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15', 'A')
+VALUES ('BCS85A', 'CHR', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15', 'A')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('AOFH64', 'WRO', 'Dawid', 'Zalewski', '1991-05-17', '2018-10-25', 'B')
 INSERT INTO federacja.dbo.sedziowie 
@@ -550,7 +550,7 @@ VALUES ('BS58C8', 'LUB', 'Aureliusz', 'Wojciechowski', '1994-02-25', '2020-12-12
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('WF42JR', 'PLO', 'Fabian', 'Andrzejewski', '1965-01-31', '1992-10-16', 'D')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VAR66F', 'WAR', 'Eustachy', 'Wojciechowski', '1965-08-09', '1991-07-18', 'A')
+VALUES ('CAD33T', 'WAR', 'Eustachy', 'Wojciechowski', '1965-08-09', '1991-07-18', 'A')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('KAL92V', 'POZ', 'Cezary', 'Szewczyk', '1967-07-13', '1995-05-02', 'A')
 INSERT INTO federacja.dbo.sedziowie 
@@ -752,7 +752,7 @@ VALUES('PGR', 'GRM', 'G01', 'Pogoń Grodzisk Mazowiecki', '1922-09-12', 'czerwon
 INSERT INTO federacja.dbo.kluby
 VALUES('ŚWI', 'NDM', 'G01', 'Świt Nowy Dwór Mazowiecki', '1935-01-01', 'biało-zielone', 'Stadion Miejski w Nowym Dworze Mazowieckim', 'ul. Sportowa 66');
 INSERT INTO federacja.dbo.kluby
-VALUES('POL', 'WAR', 'G01', 'Polonia Warszawa', '1911-11-19', 'czarno-białe', 'Stadion Polonii Warszawa im. gen. Kazimierza Sosnowskiego', 'ul. Konwiktorska 6');
+VALUES('PLW', 'WAR', 'G01', 'Polonia Warszawa', '1911-11-19', 'czarno-białe', 'Stadion Polonii Warszawa im. gen. Kazimierza Sosnowskiego', 'ul. Konwiktorska 6');
 INSERT INTO federacja.dbo.kluby
 VALUES('ZBP', 'BLP', 'G01', 'Znicz Biała Piska', '1954-07-18', 'czerwono-zielone', 'Stadion Znicz Biała Piska', 'Pl. Mickiewicza 125');
 INSERT INTO federacja.dbo.kluby
@@ -808,7 +808,7 @@ VALUES('GOC', 'GOZ', 'G03', 'LKS Goczałkowice Zdrój', '1960-02-04', 'niebiesko
 INSERT INTO federacja.dbo.kluby
 VALUES('REK', 'BIE', 'G03', 'Rekord Bielsko-Biała', '1994-04-18', 'biało-zielone', 'Stadion Rekordu', 'ul. Startowa 13');
 INSERT INTO federacja.dbo.kluby
-VALUES('PŁW', 'PUL', 'G04', 'Wisła Puławy', '1923-04-01', 'biało-niebieskie', 'Stadion MOSiR', 'ul. Haule-Bosaka 1');
+VALUES('WPU', 'PUL', 'G04', 'Wisła Puławy', '1923-04-01', 'biało-niebieskie', 'Stadion MOSiR', 'ul. Haule-Bosaka 1');
 INSERT INTO federacja.dbo.kluby
 VALUES('WDB', 'DEB', 'G04', 'Wisłoka Dębica', '1908-06-13', 'biało-zielone', 'Stadion Wisłoki Dębica', 'ul. Parkowa 1');
 INSERT INTO federacja.dbo.kluby
@@ -819,15 +819,15 @@ SELECT * FROM federacja.dbo.kluby
 
 --10. pracownicy
 INSERT INTO federacja.dbo.pracownicy
-VALUES('T01', 'TRG', 'POG', 'Andrzej', 'Nowak', '1989/11/01','89110104024', '2015/06/11', 20000, 'andrzejnowak@gmail.com','672182821', 'M')
+VALUES('T01', 'TRG', 'POG', 'Kosta', 'Runjaic', '1972/09/12','72091289098', '2017/12/11', 62000, 'kostarun@gmail.com','672182821', 'M')
 INSERT INTO federacja.dbo.pracownicy
 VALUES('T02', 'TRA', 'POG', 'Tomasz', 'Kowalski', '1976/06/12','76061234729', '2005/08/15',8000,'kowalski@gmail.com','547952178', 'M')
 INSERT INTO federacja.dbo.pracownicy
 VALUES('D01', 'DYR', 'POG', 'Zofia', 'Kurowska', '1970/12/23','70122355387', '2010/08/17',13000,'zofiak@pogon.pl','765876432', 'K')
 INSERT INTO federacja.dbo.pracownicy
-VALUES('T03', 'TRB', 'POG', 'Miłosz', 'Krus', '1998/08/07', '98080787654', '2019/04/12',3000,'krus@o2.pl','756436785', 'M')
+VALUES('T32', 'TRB', 'POG', 'Miłosz', 'Krus', '1998/08/07', '98080787654', '2019/04/12',3000,'krus@o2.pl','756436785', 'M')
 INSERT INTO federacja.dbo.pracownicy
-VALUES('T04', 'TRF', 'POG', 'Anna', 'Kowal', '1987/08/25', '87082578963', '2015/07/14',10000,'ania@cos.pl','975432457', 'K')
+VALUES('T27', 'TRF', 'POG', 'Anna', 'Kowal', '1987/08/25', '87082578963', '2015/07/14',10000,'ania@cos.pl','975432457', 'K')
 INSERT INTO federacja.dbo.pracownicy
 VALUES('F01', 'FIZ', 'POG', 'Teresa', 'Zimoch', '1964/07/01', '64070166543', '1990/11/04',6000,'ter@o2.pl','654827656', 'K')
 INSERT INTO federacja.dbo.pracownicy
@@ -837,8 +837,128 @@ VALUES('P01', 'PSY', 'POG', 'Roman', 'Osuch', '1971/06/21', '71062198745', '2013
 INSERT INTO federacja.dbo.pracownicy
 VALUES('S01', 'STA', 'POG', 'Monika', 'Pyrek', '1980/05/15', '80051574390', '2010/09/12',8000,'mon@gmail.com','569871236', 'K')
 INSERT INTO federacja.dbo.pracownicy
-VALUES('D01', 'DIE', 'POG', 'Sylwia', 'Dudek', '2000/12/09', '00120987652', '2020/11/01',4000,'hej@onet.pl','478632165', 'K')
+VALUES('I01', 'DIE', 'POG', 'Sylwia', 'Dudek', '2000/12/09', '00120987652', '2020/11/01',4000,'hej@onet.pl','478632165', 'K')
 INSERT INTO federacja.dbo.pracownicy
 VALUES('X00', 'PRE', 'POG', 'Roman', 'Bieniek', '1960/05/12', '60051274365', '1999/10/28',30000,'prezes@pogon.pl','412587965', 'M')
 INSERT INTO federacja.dbo.pracownicy
-VALUES('W01', 'WIC', 'POG', 'Tadeusz', 'Soplica', '1975/03/30', '75033081456', '2018/09/20',8000,'wice@pogon.pl','556321236', 'M')
+VALUES('W01', 'WPR', 'POG', 'Tadeusz', 'Soplica', '1975/03/30', '75033081456', '2018/09/20',8000,'wice@pogon.pl','556321236', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('L01', 'LEK', 'POG', 'Marek', 'Jóźwiak', '1985/12/30', '85123012345', '2010/06/11',10000,'marjoz@pogon.pl','569896547', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('R01', 'PRS', 'POG', 'Anna', 'Sowa', '1990/07/15', '90071576467', '2013/11/10',6000,'anna@onet.pl','698858475', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('E01', 'MEN', 'POG', 'Tomasz', 'Iwan', '1970/04/11', '70041165985', '1995/11/03',15000,'mena@pogon.pl','589874745', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T03', 'TRA', 'POG', 'Arkadiusz', 'Pol', '1960/08/12', '60081255236', '1980/07/24',17000,'arek@o2.pl','589741236', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('R02', 'PRS', 'POG', 'Wanda', 'Rokicka', '1989/12/01', '89120175790', '2010/05/12',7000,'pr@pogon.pl','879789654', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T04', 'TRG', 'LEG', 'Czesław', 'Michniewicz', '1972/05/18', '72051876890', '2020/10/19',90000,'czesiu@legła.com','569632365', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T05', 'TRG', 'LPO', 'Dariusz', 'Żuraw', '1978/07/12', '78071298789', '2017/09/14',85000,'zuro@lpo.pl','589874789', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T06', 'TRG', 'LGD', 'Piotr', 'Stokowiec', '1974/08/17', '74081763890', '2016/05/29',70000,'stok@lechia.com','565654123', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T07', 'TRG', 'BEŁ', 'Marcin', 'Węglewski', '1980/04/30', '80043056512', '2020/07/01',5000,'wegl@gmail.com','636985654', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T08', 'TRG', 'ŁKS', 'Wojciech', 'Stawowy', '1959/09/28', '59092865698', '2018/06/10',10000,'stawo@lkslodz.pl','896321236', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T09', 'TRG', 'PIA', 'Waldemar', 'Fornalik', '1961/10/12', '61101258552', '2017/08/30',78000,'fornal@onet.pl','898741463', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T10', 'TRG', 'RAK', 'Marek', 'Papszun', '1978/02/12', '78021298678', '2017/04/12',50000,'papsz@rakow.pl','596369852', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T11', 'TRG', 'WKR', 'Peter', 'Hyballa', '1989/12/01', '89120175790', '2020/12/09',68000,'phyb@wisla.pl','879982671', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T12', 'TRG', 'CRA', 'Michał', 'Probierz', '1973/08/12', '73081222123', '2017/09/22',80000,'prob@crac.pl','589632563', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T13', 'TRG', 'TYC', 'Artur', 'Derbin', '1977/02/21', '77022190987', '2020/05/12',27000,'artedr@o2.pl','856963236', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T14', 'TRG', 'GKŁ', 'Kamil', 'Kiereś', '1975/06/23', '75062356989', '2019/09/12',37000,'kk@leczna.pl','562147414', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T15', 'TRG', 'BBT', 'Mariusz', 'Lewandowski', '1980/04/30', '80043098091', '2020/01/10',40000,'lewy@brukbet.pl','589634356', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T16', 'TRG', 'PNI', 'Tomasz', 'Tułacz', '1970/09/01', '70090169654', '2015/08/05',28000,'tomtul@onet.pl','421546986', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T17', 'TRG', 'RES', 'Radosław', 'Mroczkowski', '1968/05/17', '68051762636', '2020/12/01',15000,'radmro@rzeszow.pl','987456321', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T18', 'TRG', 'POL', 'Janusz', 'Niedźwiedź', '1983/01/16', '83011678541', '2020/06/12',16000,'janie@onet.pl','695874478', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T19', 'TRG', 'KKS', 'Ryszard', 'Wieczorek', '1963/04/19', '63041963487', '2019/07/28',13000,'rwie@kks.pl','745698214', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T20', 'TRG', 'LP2', 'Rafał', 'Ulatowski', '1975/11/04', '75110402013', '2019/02/15',13500,'ula@lpo.pl','656984563', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T21', 'TRG', 'ZNI', 'Piotr', 'Kobierecki', '1985/05/23', '85052356545', '2021/01/02',6900,'kobi@gmail.com','865478523', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T22', 'TRG', 'PGR', 'Krzysztof', 'Chrobak', '1957/03/29', '57032963214', '2020/01/01',8000,'kchr@onet.pl','636541236', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T23', 'TRG', 'ZBP', 'Ryszard', 'Borkowski', '1975/12/03', '75120365987', '2016/09/12',7500,'bork@p2.pl','565213698', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T24', 'TRG', 'ELA', 'Maciej', 'Kalkowski', '1977/04/22', '77042269632', '2020/11/23',8200,'kalko@o2.pl','632145698', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T25', 'TRG', 'REK', 'Dariusz', 'Mrożek', '1975/09/22', '75092255632', '2019/12/01',5000,'darmroz@rekord.pl','698523654', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T26', 'TRG', 'WDB', 'Dariusz', 'Kantor', '1987/02/28', '87022866324', '2017/09/12',5800,'kantor@interia.pl','786541478', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T28', 'TRA', 'LPO', 'Anita', 'Maj', '1990/05/13', '90051336545', '2016/12/01',7000,'anita@lech.pl','878965478', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T29', 'TRA', 'BEŁ', 'Wojciech', 'Madaj', '1977/03/14', '77031465876', '2020/01/13',4200,'wojtek@gks.pl','632145632', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T30', 'TRF', 'LPO', 'Andrzej', 'Tomczewski', '1995/07/11', '95071185093', '2018/06/12',12000,'trfiz@lpo.pl','654563298', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T31', 'TRB', 'LEG', 'Mateusz', 'Michniewicz', '2001/09/24', '01092493891', '2020/11/29',17000,'czesmich@legia.pl','785965256', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('P02', 'PSY', 'LGD', 'Aleksandra', 'Bobek', '1989/10/06', '89100636635', '2017/11/01',10870,'olabob@onet.pl','565258565', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('D02', 'DYR', 'LPO', 'Monika', 'Szwed', '1971/04/19', '71041955369', '2014/06/22',32000,'monszw@lpo.pl','412365956', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('F03', 'FIZ', 'LPO', 'Igor', 'Leleń', '1968/12/02', '68120236356', '2014/09/11',11000,'igi@lpo.pl','556214563', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('M02', 'MAS', 'LPO', 'Krzystof', 'Kil', '1987/04/22', '87042256636', '2021/01/10',7800,'kk@lpo.pl','747569856', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('S02', 'STA', 'WAR', 'Wiktoria', 'Pilch', '1992/02/22', '92022298312', '2017/06/30',7800,'wpilch@o2.pl','863236985', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('I02', 'DIE', 'POD', 'Paweł', 'Marciniak', '1965/12/21', '65122191832', '2000/09/10',6900,'pawmar@onet.pl','636565321', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('X02', 'PRE', 'JAG', 'Aldona', 'Witek', '1970/08/10', '70081084398', '2010/06/01',41000,'aldona@jaga.pl','695632369', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('W02', 'WPR', 'JAG', 'Julia', 'Płacheta', '1990/07/20', '90072063213', '2010/06/01',23000,'wiceprezes@jaga.pl','659326547', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('L02', 'LEK', 'CRA', 'Mariusz', 'Kowal', '1958/08/10', '58081036214', '2015/08/12',22000,'lekarz@pasy.pl','639832147', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('R04', 'PRS', 'ZLU', 'Paulina', 'Nowak', '1991/07/24', '91072463541', '2019/04/01',9900,'paunowak@onet.pl','652365987', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('E02', 'MEN', 'KOR', 'Sonia', 'Ren', '1978/04/12', '78041234256', '2003/02/12',15000,'soniamen@korona.pl','963563296', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('L03', 'LEK', 'PNI', 'Tomasz', 'Witek', '1969/12/14', '69121463545', '2006/03/29',7200,'tomwit@onet.pl','749863265', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('L04', 'LEK', 'POL', 'Marek', 'Sobczak', '1977/11/03', '77110332145', '2019/03/03',6000,'sobczak@gmail.com','423698544', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('M04', 'MEN', 'ZSO', 'Jakub', 'Kot', '1989/08/12', '89081263987', '2014/05/12',7000,'jkot@onet.pl','759874213', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('I03', 'DIE', 'GAR', 'Joanna', 'Jabłońska', '1999/11/02', '99110282019', '2020/12/03',4900,'jablo@garbarnia.pl','345213256', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('R03', 'PRS', 'WIK', 'Katarzyna', 'Kruszyńska', '1992/07/13', '92071363987', '2014/06/22',3000,'katkru@gmail.com','598743695', 'K')
+
+
+--11. sponsoring
+INSERT INTO federacja.dbo.sponsoring
+VALUES('LPO', 'XKOM', '2018/04/12', '520000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('LPO', 'PLUS', '2019/03/22 12:00', '480000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('LPO', 'HELI', '2017/06/10 14:00', '120000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('LEG', 'BLAC', '2020/04/10 10:00', '1000000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ŚlĄ', 'AVIV', '2021/01/01 10:00', '600000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('LEG', 'ADID', '2018/08/20 16:00', '300000', 50);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('LGD', 'HUMM', '2019/01/02 18:00', '500000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ARK', 'OKOC', '2018/05/10 10:00', '100000', 72);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('RAK', 'COCA', '2020/06/01 17:00', '751000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ZLU', 'GAZO', '2017/04/12 16:00', '198000', 48);
+SELECT * FROM federacja.dbo.sponsoring
