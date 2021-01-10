@@ -1,5 +1,4 @@
 -- 1. Stanowiska
-
 INSERT INTO federacja.dbo.stanowiska 
 VALUES ('TRG', 'Główny trenera', 5000, 100000)
 INSERT INTO federacja.dbo.stanowiska 
@@ -817,3 +816,29 @@ VALUES('KSZ', 'OSS', 'G04', 'KSZO Ostrowiec', '1929-08-11', 'pomarańczowo-czarn
 INSERT INTO federacja.dbo.kluby
 VALUES('SIT', 'TAR', 'G04', 'Siarka Tarnobrzeg', '1957-10-19', 'żółto-czarne', 'Stadion MOSiR', 'al. Niepodległości 2');
 SELECT * FROM federacja.dbo.kluby
+
+--10. pracownicy
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T01', 'TRG', 'POG', 'Andrzej', 'Nowak', '1989/11/01','89110104024', '2015/06/11', 20000, 'andrzejnowak@gmail.com','672182821', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T02', 'TRA', 'POG', 'Tomasz', 'Kowalski', '1976/06/12','76061234729', '2005/08/15',8000,'kowalski@gmail.com','547952178', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('D01', 'DYR', 'POG', 'Zofia', 'Kurowska', '1970/12/23','70122355387', '2010/08/17',13000,'zofiak@pogon.pl','765876432', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T03', 'TRB', 'POG', 'Miłosz', 'Krus', '1998/08/07', '98080787654', '2019/04/12',3000,'krus@o2.pl','756436785', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('T04', 'TRF', 'POG', 'Anna', 'Kowal', '1987/08/25', '87082578963', '2015/07/14',10000,'ania@cos.pl','975432457', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('F01', 'FIZ', 'POG', 'Teresa', 'Zimoch', '1964/07/01', '64070166543', '1990/11/04',6000,'ter@o2.pl','654827656', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('M01', 'MAS', 'POG', 'Igor', 'Witold', '1990/10/10', '90101076542', '2018/03/12',7000,'igi@onet.pl','523697412', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('P01', 'PSY', 'POG', 'Roman', 'Osuch', '1971/06/21', '71062198745', '2013/11/09',11900,'123@op.pl','852369741', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('S01', 'STA', 'POG', 'Monika', 'Pyrek', '1980/05/15', '80051574390', '2010/09/12',8000,'mon@gmail.com','569871236', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('D01', 'DIE', 'POG', 'Sylwia', 'Dudek', '2000/12/09', '00120987652', '2020/11/01',4000,'hej@onet.pl','478632165', 'K')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('X00', 'PRE', 'POG', 'Roman', 'Bieniek', '1960/05/12', '60051274365', '1999/10/28',30000,'prezes@pogon.pl','412587965', 'M')
+INSERT INTO federacja.dbo.pracownicy
+VALUES('W01', 'WIC', 'POG', 'Tadeusz', 'Soplica', '1975/03/30', '75033081456', '2018/09/20',8000,'wice@pogon.pl','556321236', 'M')
