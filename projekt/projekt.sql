@@ -1,20 +1,21 @@
-----------Tworzenie bazy danych-----------------
-CREATE DATABASE federacja
-
-DROP TABLE federacja.dbo.stanowiska;
-DROP TABLE federacja.dbo.ligi;
-DROP TABLE federacja.dbo.sponsorzy;
-DROP TABLE federacja.dbo.kluby;
-DROP TABLE federacja.dbo.kraje;
-DROP TABLE federacja.dbo.managerowie;
-DROP TABLE federacja.dbo.miasta;
-DROP TABLE federacja.dbo.pozycje;
-DROP TABLE federacja.dbo.sedziowie;
-DROP TABLE federacja.dbo.mecze;
-DROP TABLE federacja.dbo.pracownicy;
-DROP TABLE federacja.dbo.zawieszenia;
-DROP TABLE federacja.dbo.zawodnicy;
-DROP TABLE federacja.dbo.sponsoring;
+﻿----------Tworzenie bazy danych-----------------
+--DROP DATABASE federacja;
+--CREATE DATABASE federacja
+--GO
+--DROP TABLE federacja.dbo.stanowiska;
+--DROP TABLE federacja.dbo.ligi;
+--DROP TABLE federacja.dbo.sponsorzy;
+--DROP TABLE federacja.dbo.kluby;
+--DROP TABLE federacja.dbo.kraje;
+--DROP TABLE federacja.dbo.managerowie;
+--DROP TABLE federacja.dbo.miasta;
+--DROP TABLE federacja.dbo.pozycje;
+--DROP TABLE federacja.dbo.sedziowie;
+--DROP TABLE federacja.dbo.mecze;
+--DROP TABLE federacja.dbo.pracownicy;
+--DROP TABLE federacja.dbo.zawieszenia;
+--DROP TABLE federacja.dbo.zawodnicy;
+--DROP TABLE federacja.dbo.sponsoring;
 
 
 -----------Tworzenie tabel--------------------
@@ -39,7 +40,8 @@ id_ligi				CHAR(3) UNIQUE NOT NULL,
 nazwa_ligi			VARCHAR(30) NOT NULL,
 liczba_druzyn		INT NOT NULL,
 liczba_awansow		INT,
-liczba_spadkow		INT
+liczba_spadkow		INT,
+poziom_rozgrywkowy	INT
 );
 GO
 
@@ -50,6 +52,7 @@ ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT nazwa_ligi_check CHECK(
 	SUBSTRING(id_ligi,3,1) BETWEEN '0' AND '9');
 ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_druzyn_check CHECK(liczba_druzyn BETWEEN 1 AND 25);
 ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_awansow_check CHECK(liczba_awansow BETWEEN 0 AND liczba_druzyn);
+ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT poziom_check CHECK (poziom_rozgrywkowy BETWEEN 1 AND 8);
 ALTER TABLE federacja.dbo.ligi ADD CONSTRAINT liczba_spadkow_check CHECK(liczba_spadkow BETWEEN 0 AND liczba_druzyn);
 GO
 
@@ -111,7 +114,7 @@ GO
 --7.miasta
 CREATE TABLE federacja.dbo.miasta(
 id_miasta			CHAR(3) UNIQUE NOT NULL,
-nazwa_miasta		VARCHAR(20) NOT NULL,
+nazwa_miasta		VARCHAR(30) NOT NULL,
 liczba_ludnosci		INT,
 id_kraju			CHAR(2)
 );
@@ -123,7 +126,6 @@ ALTER TABLE federacja.dbo.miasta ADD CONSTRAINT miasto_kraj_foreign_key FOREIGN 
 REFERENCES federacja.dbo.kraje(id_kraju) 
 GO
 
-
 --8.sedziowie
 CREATE TABLE federacja.dbo.sedziowie(
 id_sedziego				CHAR(6) UNIQUE NOT NULL,
@@ -132,34 +134,35 @@ imie_sedziego			VARCHAR(15) NOT NULL,
 nazwisko_sedziego		VARCHAR(30) NOT NULL,
 data_urodzenia			DATE,
 data_zdobycia_licencji	DATE,
+typ_licencji			CHAR(1)
 );
 GO
 
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_primary_key PRIMARY KEY(id_sedziego);
 ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT data_chech CHECK (data_zdobycia_licencji > data_urodzenia);
-ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
+ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT licencja_check CHECK (typ_licencji LIKE '[A-I]')
+ALTER TABLE federacja.dbo.sedziowie ADD CONSTRAINT sedzia_miasto_foreign_key FOREIGN KEY(id_miasta) 
+REFERENCES federacja.dbo.miasta(id_miasta);
 GO
-
 
 --9.kluby
 CREATE TABLE federacja.dbo.kluby(
-id_klubu			CHAR(3) UNIQUE NOT NULL,
+id_klubu			CHAR(3) NOT NULL,
 id_miasta			CHAR(3) NOT NULL,
 id_ligi				CHAR(3) NOT NULL,
 nazwa				VARCHAR(40) NOT NULL,
 data_zalozenia		DATE,
-barwy				VARCHAR(15),
-nazwa_stadionu		VARCHAR(20),
-adres				VARCHAR(40)
+barwy				VARCHAR(30),
+nazwa_stadionu		VARCHAR(70),
+adres				VARCHAR(70)
 );
 GO
  
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_primary_key PRIMARY KEY(id_klubu);
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_liga_foreign_key FOREIGN KEY(id_ligi) REFERENCES federacja.dbo.ligi(id_ligi);
-ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT id_klubu_check CHECK(id_klubu LIKE REPLICATE('[A-Z]', 3));	
+ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT id_klubu_check CHECK(id_klubu LIKE REPLICATE('[A-Z]', 3));
 GO
-
 
 --10.pracownicy
 CREATE TABLE federacja.dbo.pracownicy(
@@ -173,7 +176,8 @@ pesel				CHAR(11),
 data_zatrudnienia	DATE,
 pensja				SMALLMONEY,
 email				VARCHAR(30),
-nr_telefonu			CHAR(9)
+nr_telefonu			CHAR(9),
+plec				CHAR(1)
 );
 GO
 
@@ -183,9 +187,11 @@ ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_klub_foreign_key F
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT data_ur_zat_chech CHECK (data_zatrudnienia > data_urodzenia);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pesel_check CHECK(pesel LIKE REPLICATE('[0-9]', 11));
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT tel_check CHECK(nr_telefonu LIKE REPLICATE('[1-9]', 1) + REPLICATE('[0-9]', 8));
-ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @
+--ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @ (nie działa)
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT plec_check CHECK (plec IN('K', 'M'));  
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT date_uro_zat_check CHECK (data_urodzenia < data_zatrudnienia);
 GO
-
+ALTER TABLE pracownicy DROP CONsTRAINT date_uro_zat_chech
 
 --11.sponsoring
 CREATE TABLE federacja.dbo.sponsoring(
