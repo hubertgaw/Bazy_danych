@@ -1,7 +1,7 @@
 ﻿----------Tworzenie bazy danych-----------------
---DROP DATABASE federacja;
---CREATE DATABASE federacja
---GO
+--DROP DATABASE federacja
+CREATE DATABASE federacja
+GO
 --DROP TABLE federacja.dbo.stanowiska;
 --DROP TABLE federacja.dbo.ligi;
 --DROP TABLE federacja.dbo.sponsorzy;
@@ -92,6 +92,7 @@ id_kraju			CHAR(2) UNIQUE NOT NULL,
 nazwa_kraju			VARCHAR(20) UNIQUE NOT NULL,
 miejsce_w_rankingu	INT
 );
+GO
 
 ALTER TABLE federacja.dbo.kraje ADD CONSTRAINT kraj_primary_key PRIMARY KEY(id_kraju);
 ALTER TABLE federacja.dbo.kraje ADD CONSTRAINT miejsce_check CHECK(miejsce_w_rankingu BETWEEN 1 AND 210);
@@ -187,20 +188,20 @@ ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pracownik_klub_foreign_key F
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT data_ur_zat_chech CHECK (data_zatrudnienia > data_urodzenia);
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT pesel_check CHECK(pesel LIKE REPLICATE('[0-9]', 11));
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT tel_check CHECK(nr_telefonu LIKE REPLICATE('[1-9]', 1) + REPLICATE('[0-9]', 8));
---ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @ (nie działa)
+ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT mail_check CHECK (CHARINDEX('@', email)>0); --sprawdzamy czy w mailu jest @ (nie działa)
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT plec_check CHECK (plec IN('K', 'M'));  
 ALTER TABLE federacja.dbo.pracownicy ADD CONSTRAINT date_uro_zat_check CHECK (data_urodzenia < data_zatrudnienia);
 GO
-ALTER TABLE pracownicy DROP CONsTRAINT date_uro_zat_chech
+--ALTER TABLE pracownicy DROP CONsTRAINT date_uro_zat_chech
 
 --11.sponsoring
 CREATE TABLE federacja.dbo.sponsoring(
-id_sponsoringu		INT IDENTITY(1,1),
-id_klubu			CHAR(3) NOT NULL,
-id_sponsora			CHAR(4) NOT NULL,
-data_zawarcia_umowy	SMALLDATETIME NOT NULL,
-kwota				MONEY,
-dlugosc_umowy		DATE
+id_sponsoringu			INT IDENTITY(1,1),
+id_klubu				CHAR(3) NOT NULL,
+id_sponsora				CHAR(4) NOT NULL,
+data_zawarcia_umowy		SMALLDATETIME NOT NULL,
+kwota					MONEY,
+dlugosc_umowy_miesiace	INT
 );
 GO
 
