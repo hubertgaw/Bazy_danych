@@ -247,7 +247,7 @@ GO
 CREATE TABLE federacja.dbo.zawieszenia(
 id_zawieszenia			INT IDENTITY(1,1),
 id_zawodnika			INT NOT NULL,
-poczatek_zawieszenia	SMALLDATETIME NOT NULL,
+poczatek_zawieszenia	DATE NOT NULL,
 liczba_meczow			INT NOT NULL
 );
 GO

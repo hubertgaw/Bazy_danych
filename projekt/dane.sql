@@ -950,7 +950,7 @@ VALUES('LPO', 'HELI', '2017/06/10 14:00', '120000', 60);
 INSERT INTO federacja.dbo.sponsoring
 VALUES('LEG', 'BLAC', '2020/04/10 10:00', '1000000', 24);
 INSERT INTO federacja.dbo.sponsoring
-VALUES('ŚlĄ', 'AVIV', '2021/01/01 10:00', '600000', 36);
+VALUES('ŚLĄ', 'AVIV', '2021/01/01 10:00', '600000', 36);
 INSERT INTO federacja.dbo.sponsoring
 VALUES('LEG', 'ADID', '2018/08/20 16:00', '300000', 50);
 INSERT INTO federacja.dbo.sponsoring
@@ -960,11 +960,101 @@ VALUES('ARK', 'OKOC', '2018/05/10 10:00', '100000', 72);
 INSERT INTO federacja.dbo.sponsoring
 VALUES('RAK', 'COCA', '2020/06/01 17:00', '751000', 24);
 INSERT INTO federacja.dbo.sponsoring
+VALUES('CRA', 'KGHM', '2021/01/01 13:00', '875000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JAG', 'MURA', '2018/02/22 18:30', '430000', 60);
+INSERT INTO federacja.dbo.sponsoring
 VALUES('ZLU', 'GAZO', '2017/04/12 16:00', '198000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('RAK', 'XKOM', '2019/06/22 19:00', '400000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ZLU', 'KGHM', '2015/03/30 11:00', '780000', 72);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WPŁ', 'KLEP', '2019/11/09 16:00', '150000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WKR', 'MURA', '2018/08/14 17:00', '373000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KOR', 'LOMZ', '2020/01/20 12:00', '400000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WKR', 'TOYT', '2019/12/10 10:00', '500000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SMI', 'KTEL', '2018/08/10 10:45', '98000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ŁKS', 'FBET', '2020/10/22 16:00', '350000', 70);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('POD', 'PLUS', '2019/11/21 16:00', '420000', 80);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('RAD', 'FASI', '2020/05/10 14:00', '95000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('MIE', 'BETC', '2018/10/22 11:00', '148000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('PNI', 'VOTU', '2018/02/28 12:20', '78000', 50);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('TYC', 'NOBL', '2019/05/20 17:30', '120000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SMI', 'PGES', '2020/02/20 13:00', '500000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('STO', 'ETOT', '2019/04/12 14:00', '100000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('CHG', 'ENEA', '2019/02/20 14:00', '130000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SNS', 'AVIV', '2020/05/07 20:00', '250000', 40);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ODO', 'MAZD', '2017/02/19 10:00', '120000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ZLU', 'GAZO', '2017/04/12 16:00', '198000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JAS', 'CUPR', '2019/06/10 13:00', '80000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BEŁ', 'HELI', '2020/11/27 10:30', '40000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WID', 'ADID', '2019/03/03 14:00', '220000', 30);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BBT', 'BRUK', '2015/01/20 10:00', '500000', 120);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('CHO', 'OKOC', '2018/03/22 11:00', '40000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WIG', 'ASSC', '2019/03/19 17:00', '80000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KKS', 'COMA', '2020/04/16 13:00', '100000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SOK', 'COMA', '2019/02/22 12:00', '40000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('GAR', 'DAPK', '2018/06/04 11:00', '30000', 56);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ZNI', 'SUZU', '2020/07/06 20:00', '17000', 12);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BŁĘ', 'VOTU', '2018/02/20 11:00', '50000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('PGR', 'ADID', '2019/12/03 18:00', '20000', 50);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('HUT', 'NOBL', '2016/07/20 17:00', '12000', 72);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ŚWI', 'GAZO', '2018/04/12 14:00', '10000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SOA', 'ETOT', '2020/01/22 16:30', '15000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JA2', 'PERL', '2021/01/10 13:00', '8000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JA2', 'CERR', '2019/03/22 11:00', '10000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('URS', 'AVIV', '2020/01/02 11:00', '16500', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('RWY', 'MERC', '2018/01/12 15:00', '70000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('OZA', 'DINO', '2019/02/22 17:00', '6500', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KSW', 'BETC', '2020/02/10 13:00', '11000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ELA', 'TMOB', '2018/04/10 11:00', '15000', 39);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BTM', 'COCA', '2019/11/12 11:00', '18000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KSZ', 'ADID', '2020/01/20 17:00', '9000', 60);
+
 SELECT * FROM federacja.dbo.sponsoring
 
 --12. zawodnicy
-
 
 INSERT INTO federacja.dbo.zawodnicy VALUES('ARK', 'BRA', 'PL', 'JORMEN', 'Aleksy', 'Witkowski', '1984-09-19', '84091967136', 11167, 18, 0, 0, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('ARK', 'BRA', 'PL', 'RADOSU', 'Jacek', 'Piotrowski', '1987-11-14', '87111468718', 3857, 0, 0, 0, 0)
@@ -1966,3 +2056,56 @@ INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'LWC', 'PL', 'PRZPAŃ', 'Przem
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'PWC', 'PL', 'CEZKUC', 'Jacek', 'Zakrzewska', '1985-05-03', '85050328618', 2868, 0, 0, 0, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'ŚPD', 'PL', 'BARBOL', 'Franciszek', 'Kamiński', '1983-05-30', '83053086456', 3147, 13, 0, 7, 1)
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'ŚPD', 'PL', 'MARKUB', 'Błażej', 'Laskowski', '1992-08-22', '92082298598', 2809, 11, 0, 4, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LEG', 'ŚPD', 'FR', 'MINRAI', 'Paul', 'Pogba', '1995-01-29', '95012987290', 50000, 5, 0, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'NAP', 'PR', 'PAUSTR', 'Diogo', 'Jota', '1998-04-10', '98041028472', 40000, 15, 7, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('RAK', 'PWC', 'HI', 'JARKOŁ', 'Dani', 'Carvajal', '1985-04-12', '85041287264', 15000, 20, 3, 6, 2)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ŚWI', 'POB', 'PR', 'BARBOL', 'Joao', 'Cancelo', '1990-01-20', '90012087654', 5000, 20, 2, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ŚLĄ', 'PSZ', 'SK', 'CEZKUC', 'Adam', 'Siplak', '1980-01-20', '80012059636', 4000, 18, 0, 10, 3)
+INSERT INTO federacja.dbo.zawodnicy VALUES('POG', 'LOB', 'SK', 'MARPIE', 'Sławek', 'Rasak', '1970-09-19', '70091963698', 8000, 15, 1, 8, 2)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ODO', 'LWC', 'SK', 'JORMEN', 'Marek', 'Kozak', '1995-04-10', '95041058965', 7000, 15, 4, 2, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('GKŁ', 'NAP', 'RS', 'PAUSTR', 'Andriej', 'Arshavin', '1975-03-12', '75031247456', 5000, 20, 15, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚOB', 'BE', 'RADOSU', 'Jan', 'Verthongen', '1980-10-22', '80102266983', 7000, 19, 1, 5, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LEN', 'LWC', 'BR', 'JARKOŁ', 'Marcelo', 'Da Silva', '1981-03-15', '81031532142', 6000, 15, 5, 6, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('RKS', 'ŚOB', 'WE', 'TOMMAG', 'Willy', 'Orban', '1987-10-11', '87101134787', 4000, 22, 0, 6, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ARK', 'LSZ', 'WŁ', 'PRZPAŃ', 'Lorenzo', 'Insigne', '1991-07-12', '99071233214', 26000, 20, 20, 4, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WKR', 'BRA', 'CR', 'MARKUB', 'Darijo', 'Subasic', '1982-03-11', '82031163698', 16000, 19, 0, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WKR', 'NAP', 'MK', 'MARKUB', 'Javier', 'Hernandez', '1988-03-01', '88030123696', 11000, 11, 14, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('RAK', 'ŚPO', 'FR', 'JORMEN', 'Dimitry', 'Payet', '1985-11-09', '85110965236', 8000, 19, 12, 7, 1)
+
+SELECT * FROM federacja.dbo.zawodnicy
+
+--13. zawieszenia
+INSERT INTO federacja.dbo.zawieszenia VALUES(4, '2020-11-04', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(5, '2020-09-12', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(9, '2020-09-23', 4);
+INSERT INTO federacja.dbo.zawieszenia VALUES(23, '2020-07-12', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(41, '2020-08-18', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(42, '2020-09-05', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(43, '2020-12-12', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(45, '2020-06-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(119, '2020-07-10', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(119, '2020-09-14', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(168, '2020-07-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(172, '2020-06-15', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(172, '2020-06-30', 5);
+INSERT INTO federacja.dbo.zawieszenia VALUES(287, '2020-07-13', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(287, '2020-09-22', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(282, '2020-06-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(316, '2020-07-17', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(323, '2020-09-20', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(323, '2020-10-19', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(345, '2020-08-12', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(345, '2020-11-09', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(436, '2020-12-02', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(443, '2020-07-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(443, '2020-10-11', 5);
+INSERT INTO federacja.dbo.zawieszenia VALUES(537, '2020-12-03', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(539, '2020-11-09', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(676, '2020-07-05', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(676, '2020-08-11', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(993, '2020-12-20', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(999, '2020-11-02', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(999, '2020-10-05', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(1003, '2020-06-12', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(1003, '2020-07-22', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(1003, '2020-11-23', 3);
