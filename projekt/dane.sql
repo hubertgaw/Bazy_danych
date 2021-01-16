@@ -1966,3 +1966,138 @@ INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'LWC', 'PL', 'PRZPAŃ', 'Przem
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'PWC', 'PL', 'CEZKUC', 'Jacek', 'Zakrzewska', '1985-05-03', '85050328618', 2868, 0, 0, 0, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'ŚPD', 'PL', 'BARBOL', 'Franciszek', 'Kamiński', '1983-05-30', '83053086456', 3147, 13, 0, 7, 1)
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'ŚPD', 'PL', 'MARKUB', 'Błażej', 'Laskowski', '1992-08-22', '92082298598', 2809, 11, 0, 4, 0)
+
+
+-- 13. Zawieszenia
+
+
+-- 14. Mecze
+-- rozegrane 
+
+INSERT INTO federacja.dbo.mecze VALUES('JAGWKR01', 'JAG', 'WKR', 'W10ADN',  '2020-08-24 18:00', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('GZAPOD01', 'GZA', 'POD', 'BCS85A',  '2020-08-23 17:30', 4, 2);
+INSERT INTO federacja.dbo.mecze VALUES('WARLGD01', 'WAR', 'LGD', 'LAO27C',  '2020-08-23 15:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁSMI01', 'WPŁ', 'SMI', 'LPA48D',  '2020-08-23 12:30', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('RAKLEG01', 'RAK', 'LEG', 'KAL92V',  '2020-08-22 20:00', 1, 2);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄPIA01', 'ŚLĄ', 'PIA', 'CAD33T',  '2020-08-22 17:30', 2, 0);
+INSERT INTO federacja.dbo.mecze VALUES('CRAPOG01', 'CRA', 'POG', 'JK85D5',  '2020-08-22 15:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('ZLULPO01', 'ZLU', 'LPO', 'PFO28N',  '2020-08-21 18:00', 2, 1);
+
+INSERT INTO federacja.dbo.mecze VALUES('LPOWPŁ02', 'LPO', 'WPŁ', 'BCS85A',  '2020-08-30 17:30', 2, 2);
+INSERT INTO federacja.dbo.mecze VALUES('PODCRA02', 'POD', 'CRA', 'LAO27C',  '2020-08-30 15:00', 2, 2);
+INSERT INTO federacja.dbo.mecze VALUES('PIAPOG02', 'PIA', 'POG', 'JK85D5',  '2020-08-30 12:30', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LEGJAG02', 'LEG', 'JAG', 'KAL92V',  '2020-08-29 20:00', 1, 2);
+INSERT INTO federacja.dbo.mecze VALUES('WKRŚLĄ02', 'WKR', 'ŚLĄ', 'CAD33T',  '2020-08-29 17:30', 1, 3);
+INSERT INTO federacja.dbo.mecze VALUES('LGDRAK02', 'LGD', 'RAK', 'LPA48D',  '2020-08-29 15:00', 1, 3);
+INSERT INTO federacja.dbo.mecze VALUES('SMIGZA02', 'SMI', 'GZA', 'W10ADN',  '2020-08-28 20:30', 0, 2);
+INSERT INTO federacja.dbo.mecze VALUES('ZLUWAR02', 'ZLU', 'WAR', 'JEO295',  '2020-08-28 18:00', 1, 0);
+
+INSERT INTO federacja.dbo.mecze VALUES('RAKZLU03', 'RAK', 'ZLU', 'HDK72L',  '2020-09-14 18:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('GZALGD03', 'GZA', 'LGD', 'KAL92V',  '2020-09-13 17:30', 3, 0);
+INSERT INTO federacja.dbo.mecze VALUES('POGWKR03', 'POG', 'WKR', 'JK85D5',  '2020-09-13 15:00', 2, 2);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄLPO03', 'ŚLĄ', 'LPO', 'JEO295',  '2020-09-12 20:00', 3, 3);
+INSERT INTO federacja.dbo.mecze VALUES('WARPIA03', 'WAR', 'PIA', 'PFO28N',  '2020-09-12 17:30', 0, 0);
+INSERT INTO federacja.dbo.mecze VALUES('CRASMI03', 'CRA', 'SMI', 'CAD33T',  '2020-09-12 15:00', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁLEG03', 'WPŁ', 'LEG', 'LPA48D',  '2020-09-11 20:30', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('JAGPOD03', 'JAG', 'POD', 'W10ADN',  '2020-09-11 18:00', 2, 2);
+
+INSERT INTO federacja.dbo.mecze VALUES('PIAJAG04', 'PIA', 'JAG', 'KAL92V',  '2020-09-21 18:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LPOWAR04', 'LPO', 'WAR', 'BCS85A',  '2020-09-20 17:30', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('ZLUCRA04', 'ZLU', 'CRA', 'LAO27C',  '2020-09-20 15:00', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LEGGZA04', 'LEG', 'GZA', 'JK85D5',  '2020-09-19 20:00', 1, 3);
+INSERT INTO federacja.dbo.mecze VALUES('POGŚLĄ04', 'POG', 'ŚLĄ', 'HDK72L',  '2020-09-19 17:30', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('LGDSMI04', 'LGD', 'SMI', 'PFO28N',  '2020-09-19 15:00', 4, 2);
+INSERT INTO federacja.dbo.mecze VALUES('WKRWPŁ04', 'WKR', 'WPŁ', 'CAD33T',  '2020-09-18 20:30', 0, 3);
+INSERT INTO federacja.dbo.mecze VALUES('PODRAK04', 'POD', 'RAK', 'W10ADN',  '2020-09-18 18:00', 1, 4);
+
+INSERT INTO federacja.dbo.mecze VALUES('LPOPOG05', 'LPO', 'POG', 'W10ADN',  '2020-12-16 20:30', 0, 4);
+INSERT INTO federacja.dbo.mecze VALUES('LEGŚLĄ05', 'LEG', 'ŚLĄ', 'LAO27C',  '2020-10-21 18:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('SMIPIA05', 'SMI', 'PIA', 'JEO295',  '2020-09-28 18:00', 3, 2);
+INSERT INTO federacja.dbo.mecze VALUES('JAGZLU05', 'JAG', 'ZLU', 'HDK72L',  '2020-09-26 20:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LGDPOD05', 'LGD', 'POD', 'JK85D5',  '2020-09-26 17:30', 4, 0);
+INSERT INTO federacja.dbo.mecze VALUES('CRARAK05', 'CRA', 'RAK', 'CAD33T',  '2020-09-26 15:00', 2, 2);
+INSERT INTO federacja.dbo.mecze VALUES('GZAWKR05', 'GZA', 'WKR', 'LPA48D',  '2020-09-25 20:30', 0, 0);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁWAR05', 'WPŁ', 'WAR', 'W10ADN',  '2020-09-25 18:00', 1, 3);
+
+INSERT INTO federacja.dbo.mecze VALUES('WARLEG06', 'WAR', 'LEG', 'JEO295',  '2020-11-02 18:00', 0, 3);
+INSERT INTO federacja.dbo.mecze VALUES('POGJAG06', 'POG', 'JAG', 'HDK72L',  '2020-10-30 18:00', 3, 0);
+INSERT INTO federacja.dbo.mecze VALUES('WKRLGD06', 'WKR', 'LGD', 'KAL92V',  '2020-10-28 18:00', 1, 3);
+INSERT INTO federacja.dbo.mecze VALUES('PIALPO06', 'PIA', 'LPO', 'W10ADN',  '2020-10-04 17:30', 1, 4);
+INSERT INTO federacja.dbo.mecze VALUES('ZLUGZA06', 'ZLU', 'GZA', 'PFO28N',  '2020-10-03 20:00', 2, 0);
+INSERT INTO federacja.dbo.mecze VALUES('PODSMI06', 'POD', 'SMI', 'CAD33T',  '2020-10-03 15:00', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄCRA06', 'ŚLĄ', 'CRA', 'KAL92V',  '2020-10-02 20:30', 3, 1);
+INSERT INTO federacja.dbo.mecze VALUES('RAKWPŁ06', 'RAK', 'WPŁ', 'JK85D5',  '2020-10-02 18:00', 3, 0);
+
+INSERT INTO federacja.dbo.mecze VALUES('LGDPOG07', 'LGD', 'POG', 'W10ADN',  '2020-10-19 20:30', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('PODWAR07', 'POD', 'WAR', 'LPA48D',  '2020-10-19 18:00', 1, 2);
+INSERT INTO federacja.dbo.mecze VALUES('LEGZLU07', 'LEG', 'ZLU', 'KAL92V',  '2020-10-18 17:30', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('SMIWKR07', 'SMI', 'WKR', 'CAD33T',  '2020-10-18 15:00', 0, 6);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁŚLĄ07', 'WPŁ', 'ŚLĄ', 'LAO27C',  '2020-10-18 12:30', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('JAGLPO07', 'JAG', 'LPO', 'BCS85A',  '2020-10-17 20:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('GZARAK07', 'GZA', 'RAK', 'HDK72L',  '2020-10-17 17:30', 1, 3);
+INSERT INTO federacja.dbo.mecze VALUES('CRAPIA07', 'CRA', 'PIA', 'PFO28N',  '2020-10-17 15:00', 1, 0);
+
+INSERT INTO federacja.dbo.mecze VALUES('WARGZA08', 'WAR', 'GZA', 'HDK72L',  '2020-10-26 18:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LPOCRA08', 'LPO', 'CRA', 'W10ADN',  '2020-10-25 17:30', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('RAKSMI08', 'RAK', 'SMI', 'PFO28N',  '2020-10-25 15:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('POGLEG08', 'POG', 'LEG', 'LAO27C',  '2020-10-24 20:00', 0, 0);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄJAG08', 'ŚLĄ', 'JAG', 'CAD33T',  '2020-10-24 17:30', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('WKRPOD08', 'WKR', 'POD', 'JK85D5',  '2020-10-24 15:00', 3, 0);
+INSERT INTO federacja.dbo.mecze VALUES('ZLULGD08', 'ZLU', 'LGD', 'BCS85A',  '2020-10-23 20:30', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('PIAWPŁ08', 'PIA', 'WPŁ', 'KAL92V',  '2020-10-23 18:00', 2, 2);
+
+INSERT INTO federacja.dbo.mecze VALUES('LGDPOG09', 'LGD', 'POG', 'JK85D5',  '2020-12-02 18:00', 0, 0);
+INSERT INTO federacja.dbo.mecze VALUES('PODZLU09', 'POD', 'ZLU', 'KAL92V',  '2020-11-24 18:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('GZAPIA09', 'GZA', 'PIA', 'CAD33T',  '2020-11-20 20:30', 1, 2);
+INSERT INTO federacja.dbo.mecze VALUES('LGDŚLĄ09', 'LGD', 'ŚLĄ', 'HDK72L',  '2020-11-20 18:00', 3, 2);
+INSERT INTO federacja.dbo.mecze VALUES('RAKWKR09', 'RAK', 'WKR', 'LAO27C',  '2020-11-08 17:30', 0, 0);
+INSERT INTO federacja.dbo.mecze VALUES('LEGLPO09', 'LEG', 'LPO', 'BCS85A',  '2020-11-08 15:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('CRAJAG09', 'CRA', 'JAG', 'JEO295',  '2020-11-07 17:30', 3, 1);
+INSERT INTO federacja.dbo.mecze VALUES('SMIWAR09', 'SMI', 'WAR', 'LPA48D',  '2020-11-07 15:00', 0, 1);
+
+INSERT INTO federacja.dbo.mecze VALUES('JAGWPŁ10', 'JAG', 'WPŁ', 'W10ADN',  '2020-11-23 20:30', 5, 2);
+INSERT INTO federacja.dbo.mecze VALUES('PIALGD10', 'PIA', 'LGD', 'BCS85A',  '2020-11-23 18:00', 2, 0);
+INSERT INTO federacja.dbo.mecze VALUES('CRALEG10', 'CRA', 'LEG', 'JK85D5',  '2020-11-22 17:30', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LPORAK10', 'LPO', 'RAK', 'LAO27C',  '2020-11-22 12:30', 3, 3);
+INSERT INTO federacja.dbo.mecze VALUES('WARWKR10', 'WAR', 'WKR', 'JEO295',  '2020-11-21 20:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('ZLUSMI10', 'ZLU', 'SMI', 'KAL92V',  '2020-11-21 17:30', 2, 2);
+INSERT INTO federacja.dbo.mecze VALUES('POGPOD10', 'POG', 'POD', 'HDK72L',  '2020-11-09 18:00', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄGZA10', 'ŚLĄ', 'GZA', 'CAD33T',  '2020-11-07 20:00', 0, 0);
+
+INSERT INTO federacja.dbo.mecze VALUES('LGDLPO11', 'LGD', 'LPO', 'JK85D5',  '2020-11-30 18:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LEGPIA11', 'LEG', 'PIA', 'JEO295',  '2020-11-29 17:30', 2, 2);
+INSERT INTO federacja.dbo.mecze VALUES('RAKWAR11', 'RAK', 'WAR', 'PFO28N',  '2020-11-29 15:00', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('WKRZLU11', 'WKR', 'ZLU', 'BCS85A',  '2020-11-28 20:00', 1, 2);
+INSERT INTO federacja.dbo.mecze VALUES('PODŚLĄ11', 'POD', 'ŚLĄ', 'CAD33T',  '2020-11-28 17:30', 0, 2);
+INSERT INTO federacja.dbo.mecze VALUES('SMIJAG11', 'SMI', 'JAG', 'LPA48D',  '2020-11-28 15:00', 3, 1);
+INSERT INTO federacja.dbo.mecze VALUES('GZAPOG11', 'GZA', 'POG', 'HDK72L',  '2020-11-27 20:30', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁCRA11', 'WPŁ', 'CRA', 'W10ADN',  '2020-11-27 18:00', 0, 1);
+
+INSERT INTO federacja.dbo.mecze VALUES('WPŁGZA12', 'WPŁ', 'GZA', 'PFO28N',  '2020-12-07 20:30', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('POGSMI12', 'POG', 'SMI', 'BCS85A',  '2020-12-07 18:00', 2, 0);
+INSERT INTO federacja.dbo.mecze VALUES('LPOPOD12', 'LPO', 'POD', 'W10ADN',  '2020-12-06 17:30', 4, 0);
+INSERT INTO federacja.dbo.mecze VALUES('PIAZLU12', 'PIA', 'ZLU', 'JEO295',  '2020-12-06 15:00', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('LEGLGD12', 'LEG', 'LGD', 'LAO27C',  '2020-12-05 20:00', 2, 0);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄRAK12', 'ŚLĄ', 'RAK', 'KAL92V',  '2020-12-05 17:30', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('JAGWAR12', 'JAG', 'WAR', 'CAD33T',  '2020-12-05 15:00', 4, 3);
+INSERT INTO federacja.dbo.mecze VALUES('CRAWKR12', 'CRA', 'WKR', 'LPA48D',  '2020-12-04 20:30', 1, 1);
+
+INSERT INTO federacja.dbo.mecze VALUES('LGDWPŁ13', 'LGD', 'WPŁ', 'W10ADN',  '2020-12-14 18:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('RAKJAG13', 'RAK', 'JAG', 'PFO28N',  '2020-12-13 17:30', 3, 2);
+INSERT INTO federacja.dbo.mecze VALUES('SMILPO13', 'SMI', 'LPO', 'JK85D5',  '2020-12-13 15:00', 1, 1);
+INSERT INTO federacja.dbo.mecze VALUES('WKRLEG13', 'WKR', 'LEG', 'KAL92V',  '2020-12-12 20:00', 1, 2);
+INSERT INTO federacja.dbo.mecze VALUES('GZACRA13', 'GZA', 'CRA', 'CAD33T',  '2020-12-12 17:30', 0, 2);
+INSERT INTO federacja.dbo.mecze VALUES('WARPOG13', 'WAR', 'POG', 'LPA48D',  '2020-12-12 15:00', 1, 2);
+INSERT INTO federacja.dbo.mecze VALUES('ZLUŚLĄ13', 'ZLU', 'ŚLĄ', 'JEO295',  '2020-12-11 20:30', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('PODPIA13', 'POD', 'PIA', 'BCS85A',  '2020-12-11 18:00', 0, 5);
+
+INSERT INTO federacja.dbo.mecze VALUES('JAGGZA14', 'JAG', 'GZA', 'LPA48D',  '2020-11-20 17:30', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('PIARAK14', 'PIA', 'RAK', 'KAL92V',  '2020-10-20 15:00', 0, 0);
+INSERT INTO federacja.dbo.mecze VALUES('LPOWKR14', 'LPO', 'WKR', 'BCS85A',  '2020-10-19 20:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('CRALGD14', 'CRA', 'LGD', 'JEO295',  '2020-10-19 17:30', 0, 3);
+INSERT INTO federacja.dbo.mecze VALUES('POGZLU14', 'POG', 'ZLU', 'W10ADN',  '2020-10-19 15:00', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('LEGSMI14', 'LEG', 'SMI', 'HDK72L',  '2020-10-18 20:30', 2, 3);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁPOD14', 'WPŁ', 'POD', 'PFO28N',  '2020-10-18 18:00', 4, 1);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄWAR14', 'ŚLĄ', 'WAR', 'JK85D5',  '2020-10-17 18:00', 2, 1);
+
+-- nierozegrane
