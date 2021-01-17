@@ -2252,7 +2252,7 @@ INSERT INTO federacja.dbo.mecze VALUES('WKRJAG16', 'WKR', 'JAG', 'HDK72L',  '202
 INSERT INTO federacja.dbo.mecze VALUES('SMIWPŁ16', 'SMI', 'WPŁ', 'PFO28N',  '2020-02-07 17:30', NULL, NULL);
 INSERT INTO federacja.dbo.mecze VALUES('PODGZA16', 'POD', 'GZA', 'JK85D5',  '2020-02-08 18:00', NULL, NULL);
 
-INSERT INTO federacja.dbo.mecze VALUES('ŚLĄWKR17', 'ŚLĄ', 'WKR', 'LPA48D',  '2020-02-12 30:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄWKR17', 'ŚLĄ', 'WKR', 'LPA48D',  '2020-02-12 20:30', NULL, NULL);
 INSERT INTO federacja.dbo.mecze VALUES('CRAPOD17', 'CRA', 'POD', 'KAL92V',  '2020-02-13 15:00', NULL, NULL);
 INSERT INTO federacja.dbo.mecze VALUES('POGPIA17', 'POG', 'PIA', 'BCS85A',  '2020-02-13 17:30', NULL, NULL);
 INSERT INTO federacja.dbo.mecze VALUES('RAKLGD17', 'RAK', 'LGD', 'JEO295',  '2020-02-13 20:00', NULL, NULL);
