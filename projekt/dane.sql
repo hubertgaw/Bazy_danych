@@ -648,7 +648,7 @@ VALUES('LGD', 'GDA', 'E01', 'Lechia Gdańsk', '1945-09-18', 'biało-zielone', 'S
 INSERT INTO federacja.dbo.kluby
 VALUES('ŚLĄ', 'WRO', 'E01', 'Śląsk Wrocław', '1946-03-18', 'zielono-białe', 'Stadion Miejki we Wrocławiu', 43302, 'ul. Oporowska 62');
 INSERT INTO federacja.dbo.kluby
-VALUES('POG', 'SZC', 'E01', 'Pogoń Szczecin', '1948-04-21', 'granatowo-bordowe', 'Stadion Miejski im. Floriana Krygiera', 20 500, 'ul. Karłowicza 28');
+VALUES('POG', 'SZC', 'E01', 'Pogoń Szczecin', '1948-04-21', 'granatowo-bordowe', 'Stadion Miejski im. Floriana Krygiera', 20500, 'ul. Karłowicza 28');
 INSERT INTO federacja.dbo.kluby
 VALUES('CRA', 'KRA', 'E01', 'Cracovia Kraków', '1906-06-13', 'biało-czerwone', 'Stadion Cracovii', 15114, 'ul. Józefa Kałuży 1');
 INSERT INTO federacja.dbo.kluby
@@ -704,7 +704,7 @@ VALUES('WID', 'LDZ', 'P01', 'Widzew Łódź', '1948-03-14', 'czerwono-białe', '
 INSERT INTO federacja.dbo.kluby
 VALUES('RES', 'RZE', 'P01', 'Resovia', '1910-12-09', 'biało-czerwone', 'Stadion Resovii', 3420, 'ul. Stanisława Wyspiańskiego 22');
 INSERT INTO federacja.dbo.kluby
-VALUES('BBT', 'NIE', 'P01', 'Bruk-Bet Termalica Nieciecza', '1922-05-14', 'pomarańczowo-żółte', 4666, 'Stadion Nieciecza KS', 'Nieciecza 150');
+VALUES('BBT', 'NIE', 'P01', 'Bruk-Bet Termalica Nieciecza', '1922-05-14', 'pomarańczowo-żółte', 'Stadion Nieciecza KS', 4666,'Nieciecza 150');
 INSERT INTO federacja.dbo.kluby
 VALUES('GKA', 'KAT', 'P02', 'GKS Katowice', '1964-02-27', 'żółto-zielone', 'Stadion GKS Katowice', 9511, 'ul. Bukowa 1A');
 INSERT INTO federacja.dbo.kluby
