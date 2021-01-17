@@ -155,6 +155,7 @@ nazwa				VARCHAR(40) NOT NULL,
 data_zalozenia		DATE,
 barwy				VARCHAR(30),
 nazwa_stadionu		VARCHAR(70),
+pojemnosc_stadionu	INT,
 adres				VARCHAR(70)
 );
 GO
@@ -163,6 +164,7 @@ ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_primary_key PRIMARY KEY(id_k
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_miasto_foreign_key FOREIGN KEY(id_miasta) REFERENCES federacja.dbo.miasta(id_miasta);
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT klub_liga_foreign_key FOREIGN KEY(id_ligi) REFERENCES federacja.dbo.ligi(id_ligi);
 ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT id_klubu_check CHECK(id_klubu LIKE REPLICATE('[A-Z]', 2) + REPLICATE('[A-Z,2]', 1));
+ALTER TABLE federacja.dbo.kluby ADD CONSTRAINT pojemnosc_check CHECK(pojemnosc_stadionu >= 0);
 GO
 
 --10.pracownicy
