@@ -1,6 +1,6 @@
 -- 1. Stanowiska
 INSERT INTO federacja.dbo.stanowiska 
-VALUES ('TRG', 'Główny trenera', 5000, 100000)
+VALUES ('TRG', 'Główny trener', 5000, 100000)
 INSERT INTO federacja.dbo.stanowiska 
 VALUES ('TRA', 'Asystent trenera', 4000, 25000)
 INSERT INTO federacja.dbo.stanowiska
