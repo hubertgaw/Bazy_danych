@@ -498,65 +498,57 @@ VALUES ('TMZ', 'Tomaszów Mazowiecki', 212567, 'PL')
 -- 8.Sędziowie
 
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('W10ADN', 'WAR', 'Hubert', 'Pietrzak', '1965-11-29', '1990-05-31', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('P32ND9', 'POL', 'Grzegorz', 'Wróblewski', '1966-06-20', '1989-04-12','D')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('HDK72L', 'KRA', 'Natan', 'Mazurek', '1966-09-28', '1992-02-04', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('UL029S', 'PLO', 'Józef', 'Jaworski', '1968-06-16', '1990-09-08', 'E')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('HVD92L', 'KAL', 'Aleks', 'Ostrowski', '1968-10-16', '1991-12-16', 'F')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('JK85D5', 'LDZ', 'Amir', 'Mróz', '1969-05-30', '1994-10-11', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('LPA48D', 'WRO', 'Kryspin', 'Cieślak', '1970-03-15', '1995-01-27', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('NBP86D', 'GDA', 'Lucjan', 'Błaszczyk', '1971-06-05', '1995-02-01', 'C')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('D08LC6', 'BIE', 'Franciszek', 'Jankowski', '1971-09-16', '1994-05-05', 'D')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '1997-06-12', 'G')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('JK792B', 'PRU', 'Bolesław', 'Szulc', '1974-11-16', '1998-05-14', 'B')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('LAO27C', 'SZC', 'Aureliusz', 'Szymczak','1975-10-19', '2000-11-22', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('YAS03D', 'WAR', 'Allan', 'Kucharski', '1978-05-09', '2002-09-04', 'B')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('KSL92H', 'BIA', 'Korneliusz', 'Szulc', '1981-02-18', '2008-02-10', 'C')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BS68S4', 'KIE', 'Ignacy', 'Kaźmierczak', '1981-11-30', '2005-08-19', 'B')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('VS36SK', 'LDZ', 'Mieszko', 'Wójcik', '1982-08-31', '2006-07-09', 'D')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('GAO37F', 'BEL', 'Konrad', 'Kucharski', '1984-02-02', '2009-04-06', 'I')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('B23FW9', 'KAT', 'Jarosław', 'Baran', '1985-01-12', '2010-01-21', 'C')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('KNS31C', 'OPO', 'Kamil', 'Ziółkowska', '1985-12-17', '2009-08-18', 'D')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PSB93S', 'GLI', 'Arkadiusz', 'Mazurek', '1987-12-01', '2013-03-30', 'D')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('ABC72C', 'RAD', 'Adrian', 'Kamiński', '1988-12-25', '2016-09-17', 'B')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BCS85A', 'CHR', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('AOFH64', 'WRO', 'Dawid', 'Zalewski', '1991-05-17', '2018-10-25', 'B')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('OW30JC', 'WAR', 'Łukasz', 'Szymański', '1993-03-17', '2019-05-24', 'C')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('BS58C8', 'LUB', 'Aureliusz', 'Wojciechowski', '1994-02-25', '2020-12-12', 'F')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('WF42JR', 'PLO', 'Fabian', 'Andrzejewski', '1965-01-31', '1992-10-16', 'D')
+VALUES ('JEO295', 'RAD', 'Marcin', 'Wiśniewski', '1966-06-17', '2000-10-20', 'A')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('CAD33T', 'WAR', 'Eustachy', 'Wojciechowski', '1965-08-09', '1991-07-18', 'A')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('KAL92V', 'POZ', 'Cezary', 'Szewczyk', '1967-07-13', '1995-05-02', 'A')
 INSERT INTO federacja.dbo.sedziowie 
+VALUES ('BCS85A', 'CHR', 'Rafał', 'Piotrowski', '1990-10-25', '2018-12-15', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('LAO27C', 'SZC', 'Aureliusz', 'Szymczak','1975-10-19', '2000-11-22', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('PFO28N', 'WAR', 'Mirosław', 'Brzeziński', '1989-04-29', '2010-01-12', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('W10ADN', 'WAR', 'Hubert', 'Pietrzak', '1965-11-29', '1990-05-31', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('P32ND9', 'POL', 'Grzegorz', 'Wróblewski', '1966-06-20', '1989-04-12','A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('HDK72L', 'KRA', 'Natan', 'Mazurek', '1966-09-28', '1992-02-04', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('UL029S', 'PLO', 'Józef', 'Jaworski', '1968-06-16', '1990-09-08', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('HVD92L', 'KAL', 'Aleks', 'Ostrowski', '1968-10-16', '1991-12-16', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('JK85D5', 'LDZ', 'Amir', 'Mróz', '1969-05-30', '1994-10-11', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('LPA48D', 'WRO', 'Kryspin', 'Cieślak', '1970-03-15', '1995-01-27', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('NBP86D', 'GDA', 'Lucjan', 'Błaszczyk', '1971-06-05', '1995-02-01', 'A')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('JK792B', 'PRU', 'Bolesław', 'Szulc', '1974-11-16', '1998-05-14', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('YAS03D', 'WAR', 'Allan', 'Kucharski', '1978-05-09', '2002-09-04', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('BS68S4', 'KIE', 'Ignacy', 'Kaźmierczak', '1981-11-30', '2005-08-19', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('ABC72C', 'RAD', 'Adrian', 'Kamiński', '1988-12-25', '2016-09-17', 'B')
+INSERT INTO federacja.dbo.sedziowie 
 VALUES ('OPO29T', 'KAT', 'Mariusz', 'Szczepański', '1970-05-10', '1996-04-25', 'B')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('MIZ832', 'LUW', 'Daniel', 'Górski', '1970-08-27', '1998-07-31', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('V09W25', 'ELB', 'Andrzej', 'Sikora', '1970-11-30', '1996-11-09', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('AOFH64', 'WRO', 'Dawid', 'Zalewski', '1991-05-17', '2018-10-25', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('REN826', 'LDZ', 'Gabriel', 'Szymański', '1981-03-28', '2003-01-31', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('GLW321', 'TYC', 'Hubert', 'Cieślak', '1978-08-02', '2011-01-03', 'B')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('KSL92H', 'BIA', 'Korneliusz', 'Szulc', '1981-02-18', '2008-02-10', 'C')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('OW30JC', 'WAR', 'Łukasz', 'Szymański', '1993-03-17', '2019-05-24', 'C')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('TIGH98', 'NSA', 'Anastazy', 'Makowski', '1972-02-28', '2001-09-20', 'C')
 INSERT INTO federacja.dbo.sedziowie 
@@ -566,7 +558,23 @@ VALUES ('BOG53L', 'OLS', 'Leszek', 'Borkowski', '1976-10-07', '2005-11-17','C')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('CZP08A', 'LDZ', 'Aleksander', 'Urbańska', '1969-10-22', '2008-10-24', 'C')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('GLW321', 'TYC', 'Hubert', 'Cieślak', '1978-08-02', '2011-01-03', 'B')
+VALUES ('UIV936', 'KRA', 'Piotr', 'Zieliński', '1979-01-19', '2006-12-25', 'C')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('B23FW9', 'KAT', 'Jarosław', 'Baran', '1985-01-12', '2010-01-21', 'C')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('HOS203', 'OLS', 'Marian', 'Kowalski', '1973-07-19', '1999-09-04', 'C')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('VS36SK', 'LDZ', 'Mieszko', 'Wójcik', '1982-08-31', '2006-07-09', 'D')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('7VLS84', 'GDA', 'Dariusz', 'Duda', '1975-01-22', '2001-02-01', 'D')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('RY1NV2', 'KAT', 'Milan', 'Mazurek', '1975-12-18', '2000-05-17', 'D')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('QIV25G', 'GLI', 'Damian', 'Czerwiński', '1991-01-24', '2017-08-03', 'D')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('WF42JR', 'PLO', 'Fabian', 'Andrzejewski', '1965-01-31', '1992-10-16', 'D')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('D08LC6', 'BIE', 'Franciszek', 'Jankowski', '1971-09-16', '1994-05-05', 'D')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('HAI0F3', 'MIE', 'Oskar', 'Zawadzki', '1980-07-10', '2007-08-15', 'D')
 INSERT INTO federacja.dbo.sedziowie 
@@ -583,6 +591,10 @@ INSERT INTO federacja.dbo.sedziowie
 VALUES ('LEK22U', 'GDY', 'Borys', 'Wójcik', '1986-02-01', '2013-03-26', 'D')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('GIT8C8', 'WRO', 'Gracjan', 'Pietrzak', '1987-01-26', '2015-10-10', 'D')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('GAO37F', 'BEL', 'Konrad', 'Kucharski', '1984-02-02', '2009-04-06', 'I')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('BS58C8', 'LUB', 'Aureliusz', 'Wojciechowski', '1994-02-25', '2020-12-12', 'F')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('KOP24B', 'SUW', 'Milan', 'Błaszczyk', '1987-07-30', '2017-12-20', 'E')
 INSERT INTO federacja.dbo.sedziowie 
@@ -612,24 +624,6 @@ VALUES ('ZOR215', 'KAT', 'Michał', 'Przybylski', '1991-09-19', '2017-02-21', 'I
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('ILI062', 'NYS', 'Franciszek', 'Szulc', '1993-09-01', '2020-08-07', 'I')
 INSERT INTO federacja.dbo.sedziowie 
-VALUES ('JEO295', 'RAD', 'Marcin', 'Wiśniewski', '1966-06-17', '2000-10-20', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('V09W25', 'ELB', 'Andrzej', 'Sikora', '1970-11-30', '1996-11-09', 'B')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('HOS203', 'OLS', 'Marian', 'Kowalski', '1973-07-19', '1999-09-04', 'C')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('7VLS84', 'GDA', 'Dariusz', 'Duda', '1975-01-22', '2001-02-01', 'D')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('RY1NV2', 'KAT', 'Milan', 'Mazurek', '1975-12-18', '2000-05-17', 'D')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('UIV936', 'KRA', 'Piotr', 'Zieliński', '1979-01-19', '2006-12-25', 'C')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('REN826', 'LDZ', 'Gabriel', 'Szymański', '1981-03-28', '2003-01-31', 'B')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('PFO28N', 'WAR', 'Mirosław', 'Brzeziński', '1989-04-29', '2010-01-12', 'A')
-INSERT INTO federacja.dbo.sedziowie 
-VALUES ('QIV25G', 'GLI', 'Damian', 'Czerwiński', '1991-01-24', '2017-08-03', 'D')
-INSERT INTO federacja.dbo.sedziowie 
 VALUES ('PVW95S', 'TOR', 'Andrzej', 'Kozłowski', '1994-12-01', '2019-06-07', 'E')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('VOSP36', 'WAR', 'Eugeniusz', 'Kozłowski', '1995-07-04', '2020-09-11', 'F')
@@ -639,6 +633,8 @@ INSERT INTO federacja.dbo.sedziowie
 VALUES ('GI9S4B', 'RZE', 'Joachim', 'Zalewski', '1995-04-08', '2020-02-23', 'H')
 INSERT INTO federacja.dbo.sedziowie 
 VALUES ('CPO26T', 'WAR', 'Czesław', 'Duda', '1995-09-01', '2018-05-29', 'I')
+INSERT INTO federacja.dbo.sedziowie 
+VALUES ('VAR66F', 'ZAB', 'Dorian', 'Czarnecki', '1973-12-03', '1997-06-12', 'G')
 
 
 INSERT INTO federacja.dbo.kluby
@@ -950,7 +946,7 @@ VALUES('LPO', 'HELI', '2017/06/10 14:00', '120000', 60);
 INSERT INTO federacja.dbo.sponsoring
 VALUES('LEG', 'BLAC', '2020/04/10 10:00', '1000000', 24);
 INSERT INTO federacja.dbo.sponsoring
-VALUES('ŚlĄ', 'AVIV', '2021/01/01 10:00', '600000', 36);
+VALUES('ŚLĄ', 'AVIV', '2021/01/01 10:00', '600000', 36);
 INSERT INTO federacja.dbo.sponsoring
 VALUES('LEG', 'ADID', '2018/08/20 16:00', '300000', 50);
 INSERT INTO federacja.dbo.sponsoring
@@ -960,11 +956,101 @@ VALUES('ARK', 'OKOC', '2018/05/10 10:00', '100000', 72);
 INSERT INTO federacja.dbo.sponsoring
 VALUES('RAK', 'COCA', '2020/06/01 17:00', '751000', 24);
 INSERT INTO federacja.dbo.sponsoring
+VALUES('CRA', 'KGHM', '2021/01/01 13:00', '875000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JAG', 'MURA', '2018/02/22 18:30', '430000', 60);
+INSERT INTO federacja.dbo.sponsoring
 VALUES('ZLU', 'GAZO', '2017/04/12 16:00', '198000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('RAK', 'XKOM', '2019/06/22 19:00', '400000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ZLU', 'KGHM', '2015/03/30 11:00', '780000', 72);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WPŁ', 'KLEP', '2019/11/09 16:00', '150000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WKR', 'MURA', '2018/08/14 17:00', '373000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KOR', 'LOMZ', '2020/01/20 12:00', '400000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WKR', 'TOYT', '2019/12/10 10:00', '500000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SMI', 'KTEL', '2018/08/10 10:45', '98000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ŁKS', 'FBET', '2020/10/22 16:00', '350000', 70);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('POD', 'PLUS', '2019/11/21 16:00', '420000', 80);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('RAD', 'FASI', '2020/05/10 14:00', '95000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('MIE', 'BETC', '2018/10/22 11:00', '148000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('PNI', 'VOTU', '2018/02/28 12:20', '78000', 50);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('TYC', 'NOBL', '2019/05/20 17:30', '120000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SMI', 'PGES', '2020/02/20 13:00', '500000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('STO', 'ETOT', '2019/04/12 14:00', '100000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('CHG', 'ENEA', '2019/02/20 14:00', '130000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SNS', 'AVIV', '2020/05/07 20:00', '250000', 40);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ODO', 'MAZD', '2017/02/19 10:00', '120000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ZLU', 'GAZO', '2017/04/12 16:00', '198000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JAS', 'CUPR', '2019/06/10 13:00', '80000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BEŁ', 'HELI', '2020/11/27 10:30', '40000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WID', 'ADID', '2019/03/03 14:00', '220000', 30);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BBT', 'BRUK', '2015/01/20 10:00', '500000', 120);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('CHO', 'OKOC', '2018/03/22 11:00', '40000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('WIG', 'ASSC', '2019/03/19 17:00', '80000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KKS', 'COMA', '2020/04/16 13:00', '100000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SOK', 'COMA', '2019/02/22 12:00', '40000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('GAR', 'DAPK', '2018/06/04 11:00', '30000', 56);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ZNI', 'SUZU', '2020/07/06 20:00', '17000', 12);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BŁĘ', 'VOTU', '2018/02/20 11:00', '50000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('PGR', 'ADID', '2019/12/03 18:00', '20000', 50);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('HUT', 'NOBL', '2016/07/20 17:00', '12000', 72);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ŚWI', 'GAZO', '2018/04/12 14:00', '10000', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('SOA', 'ETOT', '2020/01/22 16:30', '15000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JA2', 'PERL', '2021/01/10 13:00', '8000', 24);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('JA2', 'CERR', '2019/03/22 11:00', '10000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('URS', 'AVIV', '2020/01/02 11:00', '16500', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('RWY', 'MERC', '2018/01/12 15:00', '70000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('OZA', 'DINO', '2019/02/22 17:00', '6500', 36);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KSW', 'BETC', '2020/02/10 13:00', '11000', 48);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('ELA', 'TMOB', '2018/04/10 11:00', '15000', 39);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('BTM', 'COCA', '2019/11/12 11:00', '18000', 60);
+INSERT INTO federacja.dbo.sponsoring
+VALUES('KSZ', 'ADID', '2020/01/20 17:00', '9000', 60);
+
 SELECT * FROM federacja.dbo.sponsoring
 
 --12. zawodnicy
-
 
 INSERT INTO federacja.dbo.zawodnicy VALUES('ARK', 'BRA', 'PL', 'JORMEN', 'Aleksy', 'Witkowski', '1984-09-19', '84091967136', 11167, 18, 0, 0, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('ARK', 'BRA', 'PL', 'RADOSU', 'Jacek', 'Piotrowski', '1987-11-14', '87111468718', 3857, 0, 0, 0, 0)
@@ -1326,54 +1412,54 @@ INSERT INTO federacja.dbo.zawodnicy VALUES('BEŁ', 'PSZ', 'PL', 'JORMEN', 'Allan
 INSERT INTO federacja.dbo.zawodnicy VALUES('BEŁ', 'PSZ', 'PL', 'TOMMAG', 'Fabian', 'Górecki', '1981-07-06', '81070622471', 6454, 11, 0, 0, 1)
 INSERT INTO federacja.dbo.zawodnicy VALUES('BEŁ', 'NAP', 'PL', 'MINRAI', 'Kornel', 'Włodarczyk', '1993-10-05', '93100535431', 10593, 15, 6, 0, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('BEŁ', 'NAP', 'PL', 'BARBOL', 'Bronisław', 'Tomaszewski', '1988-12-07', '88120796616', 3947, 14, 8, 6, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'BRA', 'PL', 'MARKUB', 'Gabriel', 'Marciniak', '1997-01-10', '97011066714', 5442, 18, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'BRA', 'PL', 'PAUSTR', 'Bartosz', 'Brzeziński', '1984-11-10', '84111058136', 2909, 0, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'BRA', 'PL', 'JORMEN', 'Adrian', 'Jakubowski', '1991-01-30', '91013084974', 2390, 0, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚOB', 'PL', 'PAUSTR', 'Grzegorz', 'Krupa', '1992-11-22', '92112296394', 4614, 17, 3, 3, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚOB', 'PL', 'PRZPAŃ', 'Arkadiusz', 'Duda', '1991-12-26', '91122624478', 2833, 17, 1, 8, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚOB', 'PL', 'MARKUB', 'Bruno', 'Włodarczyk', '1984-07-18', '84071813794', 6461, 6, 0, 3, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚOB', 'PL', 'TOMMAG', 'Bartłomiej', 'Szymański', '1997-04-09', '97040967194', 2686, 2, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚOB', 'PL', 'RADOSU', 'Lucjan', 'Cieślak', '1983-07-10', '83071015373', 3748, 0, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'LOB', 'PL', 'RADOSU', 'Ireneusz', 'Szewczyk', '1995-05-17', '95051791793', 12780, 19, 1, 8, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'LOB', 'PL', 'JORMEN', 'Ludwik', 'Kalinowski', '1986-10-03', '86100358414', 3196, 7, 1, 4, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'POB', 'PL', 'TOMMAG', 'Krzysztof', 'Witkowski', '1993-05-25', '93052541119', 7577, 15, 1, 5, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'POB', 'PL', 'JORMEN', 'Janusz', 'Jakubowski', '1994-11-28', '94112852998', 4000, 1, 0, 1, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'LWC', 'PL', 'BARBOL', 'Jarosław', 'Maciejewski', '1991-06-02', '91060267492', 2365, 7, 1, 3, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'PWC', 'PL', 'MARKUB', 'Leszek', 'Krajewska', '1991-04-06', '91040656753', 3158, 0, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚPD', 'PL', 'CEZKUC', 'Mateusz', 'Krawczyk', '1987-01-12', '87011271113', 2629, 13, 1, 2, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚPD', 'PL', 'TOMMAG', 'Mirosław', 'Laskowska', '2001-02-13', '01021326656', 12925, 2, 0, 1, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚPC', 'PL', 'JORMEN', 'Denis', 'Głowacka', '1984-12-01', '84120164875', 8718, 14, 5, 4, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'ŚPO', 'PL', 'MARPIE', 'Oktawian', 'Pawlak', '1993-07-01', '93070172856', 12414, 19, 4, 7, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'LSZ', 'PL', 'CEZKUC', 'Bartłomiej', 'Zakrzewska', '1996-06-23', '96062358179', 4354, 15, 7, 0, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'LSZ', 'PL', 'TOMMAG', 'Jerzy', 'Malinowski', '1999-09-20', '99092024872', 7162, 9, 4, 4, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'PSZ', 'PL', 'MARKUB', 'Miron', 'Andrzejewski', '1993-09-19', '93091916835', 2193, 16, 6, 8, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'PSZ', 'PL', 'CEZKUC', 'Michał', 'Szymczak', '1999-06-16', '99061624414', 2693, 10, 2, 4, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'NAP', 'PL', 'BARBOL', 'Joachim', 'Górecki', '2001-07-27', '01072749213', 2306, 15, 5, 1, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('LEC', 'NAP', 'PL', 'MARKUB', 'Remigiusz', 'Pietrzak', '2000-10-29', '00102948154', 8375, 14, 5, 4, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'BRA', 'PL', 'MARKUB', 'Lucjan', 'Pietrzak', '1981-06-08', '81060856798', 12693, 20, 0, 1, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'BRA', 'PL', 'RADOSU', 'Joachim', 'Sokołowski', '1995-04-16', '95041677856', 2462, 1, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'BRA', 'PL', 'TOMMAG', 'Denis', 'Tomaszewski', '1999-03-16', '99031654595', 4614, 1, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚOB', 'PL', 'TOMMAG', 'Maurycy', 'Andrzejewski', '1995-11-24', '95112495398', 11655, 17, 0, 9, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚOB', 'PL', 'TOMMAG', 'Mariusz', 'Mróz', '1991-10-18', '91101893297', 11064, 15, 0, 3, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚOB', 'PL', 'PAUSTR', 'Konrad', 'Andrzejewski', '1999-07-01', '99070131879', 3085, 6, 0, 3, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚOB', 'PL', 'BARBOL', 'Radosław', 'Sobczak', '2001-09-29', '01092951733', 3140, 0, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚOB', 'PL', 'MINRAI', 'Dawid', 'Kamiński', '1986-04-08', '86040815279', 2258, 0, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'LOB', 'PL', 'BARBOL', 'Mieszko', 'Nowak', '2000-06-11', '00061197194', 3553, 18, 2, 9, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'LOB', 'PL', 'MARPIE', 'Klaudiusz', 'Szewczyk', '1988-02-03', '88020394316', 6880, 9, 0, 4, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'POB', 'PL', 'PAUSTR', 'Oskar', 'Szymczak', '1998-07-26', '98072634755', 3107, 19, 0, 9, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'POB', 'PL', 'JORMEN', 'Gustaw', 'Borkowski', '1982-12-28', '82122889374', 4000, 2, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'LWC', 'PL', 'MARKUB', 'Mikołaj', 'Przybylski', '2004-04-08', '04040885652', 4843, 1, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'PWC', 'PL', 'PRZPAŃ', 'Leszek', 'Mróz', '1997-10-17', '97101741752', 6064, 9, 0, 5, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚPD', 'PL', 'MARPIE', 'Robert', 'Mazurek', '1981-03-25', '81032528276', 10662, 16, 0, 7, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚPD', 'PL', 'PAUSTR', 'Norbert', 'Malinowski', '2000-01-21', '00012171677', 10481, 1, 0, 0, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚPC', 'PL', 'PAUSTR', 'Konrad', 'Rutkowski', '1998-06-14', '98061423979', 7880, 15, 4, 0, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'ŚPO', 'PL', 'JORMEN', 'Natan', 'Kowalczyk', '2001-09-04', '01090461535', 8942, 14, 7, 3, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'LSZ', 'PL', 'TOMMAG', 'Gniewomir', 'Sikorska', '1990-05-27', '90052762751', 4999, 17, 5, 2, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'LSZ', 'PL', 'PAUSTR', 'Kryspin', 'Ziółkowska', '1995-08-11', '95081128417', 2055, 11, 3, 5, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'PSZ', 'PL', 'RADOSU', 'Alojzy', 'Witkowski', '1981-12-13', '81121315316', 7689, 17, 7, 9, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'PSZ', 'PL', 'PRZPAŃ', 'Józef', 'Szulc', '2000-01-24', '00012428291', 4757, 11, 3, 3, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'NAP', 'PL', 'BARBOL', 'Albert', 'Kalinowski', '1984-10-22', '84102252675', 7906, 16, 11, 4, 1)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ŁDZ', 'NAP', 'PL', 'JORMEN', 'Aleksy', 'Nowak', '1981-07-20', '81072097954', 3758, 15, 0, 0, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'BRA', 'PL', 'MARKUB', 'Gabriel', 'Marciniak', '1997-01-10', '97011066714', 5442, 18, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'BRA', 'PL', 'PAUSTR', 'Bartosz', 'Brzeziński', '1984-11-10', '84111058136', 2909, 0, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'BRA', 'PL', 'JORMEN', 'Adrian', 'Jakubowski', '1991-01-30', '91013084974', 2390, 0, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚOB', 'PL', 'PAUSTR', 'Grzegorz', 'Krupa', '1992-11-22', '92112296394', 4614, 17, 3, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚOB', 'PL', 'PRZPAŃ', 'Arkadiusz', 'Duda', '1991-12-26', '91122624478', 2833, 17, 1, 8, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚOB', 'PL', 'MARKUB', 'Bruno', 'Włodarczyk', '1984-07-18', '84071813794', 6461, 6, 0, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚOB', 'PL', 'TOMMAG', 'Bartłomiej', 'Szymański', '1997-04-09', '97040967194', 2686, 2, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚOB', 'PL', 'RADOSU', 'Lucjan', 'Cieślak', '1983-07-10', '83071015373', 3748, 0, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'LOB', 'PL', 'RADOSU', 'Ireneusz', 'Szewczyk', '1995-05-17', '95051791793', 12780, 19, 1, 8, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'LOB', 'PL', 'JORMEN', 'Ludwik', 'Kalinowski', '1986-10-03', '86100358414', 3196, 7, 1, 4, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'POB', 'PL', 'TOMMAG', 'Krzysztof', 'Witkowski', '1993-05-25', '93052541119', 7577, 15, 1, 5, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'POB', 'PL', 'JORMEN', 'Janusz', 'Jakubowski', '1994-11-28', '94112852998', 4000, 1, 0, 1, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'LWC', 'PL', 'BARBOL', 'Jarosław', 'Maciejewski', '1991-06-02', '91060267492', 2365, 7, 1, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'PWC', 'PL', 'MARKUB', 'Leszek', 'Krajewska', '1991-04-06', '91040656753', 3158, 0, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚPD', 'PL', 'CEZKUC', 'Mateusz', 'Krawczyk', '1987-01-12', '87011271113', 2629, 13, 1, 2, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚPD', 'PL', 'TOMMAG', 'Mirosław', 'Laskowska', '2001-02-13', '01021326656', 12925, 2, 0, 1, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚPC', 'PL', 'JORMEN', 'Denis', 'Głowacka', '1984-12-01', '84120164875', 8718, 14, 5, 4, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'ŚPO', 'PL', 'MARPIE', 'Oktawian', 'Pawlak', '1993-07-01', '93070172856', 12414, 19, 4, 7, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'LSZ', 'PL', 'CEZKUC', 'Bartłomiej', 'Zakrzewska', '1996-06-23', '96062358179', 4354, 15, 7, 0, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'LSZ', 'PL', 'TOMMAG', 'Jerzy', 'Malinowski', '1999-09-20', '99092024872', 7162, 9, 4, 4, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'PSZ', 'PL', 'MARKUB', 'Miron', 'Andrzejewski', '1993-09-19', '93091916835', 2193, 16, 6, 8, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'PSZ', 'PL', 'CEZKUC', 'Michał', 'Szymczak', '1999-06-16', '99061624414', 2693, 10, 2, 4, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'NAP', 'PL', 'BARBOL', 'Joachim', 'Górecki', '2001-07-27', '01072749213', 2306, 15, 5, 1, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'NAP', 'PL', 'MARKUB', 'Remigiusz', 'Pietrzak', '2000-10-29', '00102948154', 8375, 14, 5, 4, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'BRA', 'PL', 'MARKUB', 'Lucjan', 'Pietrzak', '1981-06-08', '81060856798', 12693, 20, 0, 1, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'BRA', 'PL', 'RADOSU', 'Joachim', 'Sokołowski', '1995-04-16', '95041677856', 2462, 1, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'BRA', 'PL', 'TOMMAG', 'Denis', 'Tomaszewski', '1999-03-16', '99031654595', 4614, 1, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚOB', 'PL', 'TOMMAG', 'Maurycy', 'Andrzejewski', '1995-11-24', '95112495398', 11655, 17, 0, 9, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚOB', 'PL', 'TOMMAG', 'Mariusz', 'Mróz', '1991-10-18', '91101893297', 11064, 15, 0, 3, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚOB', 'PL', 'PAUSTR', 'Konrad', 'Andrzejewski', '1999-07-01', '99070131879', 3085, 6, 0, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚOB', 'PL', 'BARBOL', 'Radosław', 'Sobczak', '2001-09-29', '01092951733', 3140, 0, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚOB', 'PL', 'MINRAI', 'Dawid', 'Kamiński', '1986-04-08', '86040815279', 2258, 0, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'LOB', 'PL', 'BARBOL', 'Mieszko', 'Nowak', '2000-06-11', '00061197194', 3553, 18, 2, 9, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'LOB', 'PL', 'MARPIE', 'Klaudiusz', 'Szewczyk', '1988-02-03', '88020394316', 6880, 9, 0, 4, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'POB', 'PL', 'PAUSTR', 'Oskar', 'Szymczak', '1998-07-26', '98072634755', 3107, 19, 0, 9, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'POB', 'PL', 'JORMEN', 'Gustaw', 'Borkowski', '1982-12-28', '82122889374', 4000, 2, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'LWC', 'PL', 'MARKUB', 'Mikołaj', 'Przybylski', '2004-04-08', '04040885652', 4843, 1, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'PWC', 'PL', 'PRZPAŃ', 'Leszek', 'Mróz', '1997-10-17', '97101741752', 6064, 9, 0, 5, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚPD', 'PL', 'MARPIE', 'Robert', 'Mazurek', '1981-03-25', '81032528276', 10662, 16, 0, 7, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚPD', 'PL', 'PAUSTR', 'Norbert', 'Malinowski', '2000-01-21', '00012171677', 10481, 1, 0, 0, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚPC', 'PL', 'PAUSTR', 'Konrad', 'Rutkowski', '1998-06-14', '98061423979', 7880, 15, 4, 0, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚPO', 'PL', 'JORMEN', 'Natan', 'Kowalczyk', '2001-09-04', '01090461535', 8942, 14, 7, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'LSZ', 'PL', 'TOMMAG', 'Gniewomir', 'Sikorska', '1990-05-27', '90052762751', 4999, 17, 5, 2, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'LSZ', 'PL', 'PAUSTR', 'Kryspin', 'Ziółkowska', '1995-08-11', '95081128417', 2055, 11, 3, 5, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'PSZ', 'PL', 'RADOSU', 'Alojzy', 'Witkowski', '1981-12-13', '81121315316', 7689, 17, 7, 9, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'PSZ', 'PL', 'PRZPAŃ', 'Józef', 'Szulc', '2000-01-24', '00012428291', 4757, 11, 3, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'NAP', 'PL', 'BARBOL', 'Albert', 'Kalinowski', '1984-10-22', '84102252675', 7906, 16, 11, 4, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'NAP', 'PL', 'JORMEN', 'Aleksy', 'Nowak', '1981-07-20', '81072097954', 3758, 15, 0, 0, 1)
 INSERT INTO federacja.dbo.zawodnicy VALUES('GKŁ', 'BRA', 'PL', 'PAUSTR', 'Konstanty', 'Maciejewski', '1988-06-18', '88061823374', 11192, 18, 0, 1, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('GKŁ', 'BRA', 'PL', 'PAUSTR', 'Mariusz', 'Krupa', '1990-03-31', '90033178298', 2785, 0, 0, 0, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('GKŁ', 'BRA', 'PL', 'RADOSU', 'Korneliusz', 'Szczepański', '1980-12-05', '80120569719', 3672, 1, 0, 0, 0)
@@ -1966,13 +2052,61 @@ INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'LWC', 'PL', 'PRZPAŃ', 'Przem
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'PWC', 'PL', 'CEZKUC', 'Jacek', 'Zakrzewska', '1985-05-03', '85050328618', 2868, 0, 0, 0, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'ŚPD', 'PL', 'BARBOL', 'Franciszek', 'Kamiński', '1983-05-30', '83053086456', 3147, 13, 0, 7, 1)
 INSERT INTO federacja.dbo.zawodnicy VALUES('POL', 'ŚPD', 'PL', 'MARKUB', 'Błażej', 'Laskowski', '1992-08-22', '92082298598', 2809, 11, 0, 4, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LEG', 'ŚPD', 'FR', 'MINRAI', 'Paul', 'Pogba', '1995-01-29', '95012987290', 50000, 5, 0, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LPO', 'NAP', 'PR', 'PAUSTR', 'Diogo', 'Jota', '1998-04-10', '98041028472', 40000, 15, 7, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('RAK', 'PWC', 'HI', 'JARKOŁ', 'Dani', 'Carvajal', '1985-04-12', '85041287264', 15000, 20, 3, 6, 2)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ŚWI', 'POB', 'PR', 'BARBOL', 'Joao', 'Cancelo', '1990-01-20', '90012087654', 5000, 20, 2, 3, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ŚLĄ', 'PSZ', 'SK', 'CEZKUC', 'Adam', 'Siplak', '1980-01-20', '80012059636', 4000, 18, 0, 10, 3)
+INSERT INTO federacja.dbo.zawodnicy VALUES('POG', 'LOB', 'SK', 'MARPIE', 'Sławek', 'Rasak', '1970-09-19', '70091963698', 8000, 15, 1, 8, 2)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ODO', 'LWC', 'SK', 'JORMEN', 'Marek', 'Kozak', '1995-04-10', '95041058965', 7000, 15, 4, 2, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('GKŁ', 'NAP', 'RS', 'PAUSTR', 'Andriej', 'Arshavin', '1975-03-12', '75031247456', 5000, 20, 15, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WID', 'ŚOB', 'BE', 'RADOSU', 'Jan', 'Verthongen', '1980-10-22', '80102266983', 7000, 19, 1, 5, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('LEN', 'LWC', 'BR', 'JARKOŁ', 'Marcelo', 'Da Silva', '1981-03-15', '81031532142', 6000, 15, 5, 6, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('RKS', 'ŚOB', 'WE', 'TOMMAG', 'Willy', 'Orban', '1987-10-11', '87101134787', 4000, 22, 0, 6, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ARK', 'LSZ', 'WŁ', 'PRZPAŃ', 'Lorenzo', 'Insigne', '1991-07-12', '99071233214', 26000, 20, 20, 4, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WKR', 'BRA', 'CR', 'MARKUB', 'Darijo', 'Subasic', '1982-03-11', '82031163698', 16000, 19, 0, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('WKR', 'NAP', 'MK', 'MARKUB', 'Javier', 'Hernandez', '1988-03-01', '88030123696', 11000, 11, 14, 2, 0)
+INSERT INTO federacja.dbo.zawodnicy VALUES('RAK', 'ŚPO', 'FR', 'JORMEN', 'Dimitry', 'Payet', '1985-11-09', '85110965236', 8000, 19, 12, 7, 1)
 
+SELECT * FROM federacja.dbo.zawodnicy
 
--- 13. Zawieszenia
+--13. zawieszenia
+INSERT INTO federacja.dbo.zawieszenia VALUES(4, '2020-11-04', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(5, '2020-09-12', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(9, '2020-09-23', 4);
+INSERT INTO federacja.dbo.zawieszenia VALUES(23, '2020-07-12', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(41, '2020-08-18', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(42, '2020-09-05', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(43, '2020-12-12', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(45, '2020-06-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(119, '2020-07-10', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(119, '2020-09-14', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(168, '2020-07-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(172, '2020-06-15', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(172, '2020-06-30', 5);
+INSERT INTO federacja.dbo.zawieszenia VALUES(287, '2020-07-13', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(287, '2020-09-22', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(282, '2020-06-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(316, '2020-07-17', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(323, '2020-09-20', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(323, '2020-10-19', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(345, '2020-08-12', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(345, '2020-11-09', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(436, '2020-12-02', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(443, '2020-07-11', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(443, '2020-10-11', 5);
+INSERT INTO federacja.dbo.zawieszenia VALUES(537, '2020-12-03', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(539, '2020-11-09', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(676, '2020-07-05', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(676, '2020-08-11', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(993, '2020-12-20', 3);
+INSERT INTO federacja.dbo.zawieszenia VALUES(999, '2020-11-02', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(999, '2020-10-05', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(1003, '2020-06-12', 2);
+INSERT INTO federacja.dbo.zawieszenia VALUES(1003, '2020-07-22', 1);
+INSERT INTO federacja.dbo.zawieszenia VALUES(1003, '2020-11-23', 3);
 
-
--- 14. Mecze
--- rozegrane 
+--14.mecze
 
 INSERT INTO federacja.dbo.mecze VALUES('JAGWKR01', 'JAG', 'WKR', 'W10ADN',  '2020-08-24 18:00', 1, 1);
 INSERT INTO federacja.dbo.mecze VALUES('GZAPOD01', 'GZA', 'POD', 'BCS85A',  '2020-08-23 17:30', 4, 2);
@@ -2091,13 +2225,120 @@ INSERT INTO federacja.dbo.mecze VALUES('WARPOG13', 'WAR', 'POG', 'LPA48D',  '202
 INSERT INTO federacja.dbo.mecze VALUES('ZLUŚLĄ13', 'ZLU', 'ŚLĄ', 'JEO295',  '2020-12-11 20:30', 2, 1);
 INSERT INTO federacja.dbo.mecze VALUES('PODPIA13', 'POD', 'PIA', 'BCS85A',  '2020-12-11 18:00', 0, 5);
 
-INSERT INTO federacja.dbo.mecze VALUES('JAGGZA14', 'JAG', 'GZA', 'LPA48D',  '2020-11-20 17:30', 1, 0);
-INSERT INTO federacja.dbo.mecze VALUES('PIARAK14', 'PIA', 'RAK', 'KAL92V',  '2020-10-20 15:00', 0, 0);
-INSERT INTO federacja.dbo.mecze VALUES('LPOWKR14', 'LPO', 'WKR', 'BCS85A',  '2020-10-19 20:00', 0, 1);
-INSERT INTO federacja.dbo.mecze VALUES('CRALGD14', 'CRA', 'LGD', 'JEO295',  '2020-10-19 17:30', 0, 3);
-INSERT INTO federacja.dbo.mecze VALUES('POGZLU14', 'POG', 'ZLU', 'W10ADN',  '2020-10-19 15:00', 1, 0);
-INSERT INTO federacja.dbo.mecze VALUES('LEGSMI14', 'LEG', 'SMI', 'HDK72L',  '2020-10-18 20:30', 2, 3);
-INSERT INTO federacja.dbo.mecze VALUES('WPŁPOD14', 'WPŁ', 'POD', 'PFO28N',  '2020-10-18 18:00', 4, 1);
-INSERT INTO federacja.dbo.mecze VALUES('ŚLĄWAR14', 'ŚLĄ', 'WAR', 'JK85D5',  '2020-10-17 18:00', 2, 1);
+INSERT INTO federacja.dbo.mecze VALUES('JAGGZA14', 'JAG', 'GZA', 'LPA48D',  '2020-11-29 17:30', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('PIARAK14', 'PIA', 'RAK', 'KAL92V',  '2020-10-29 15:00', 0, 0);
+INSERT INTO federacja.dbo.mecze VALUES('LPOWKR14', 'LPO', 'WKR', 'BCS85A',  '2020-10-30 20:00', 0, 1);
+INSERT INTO federacja.dbo.mecze VALUES('CRALGD14', 'CRA', 'LGD', 'JEO295',  '2020-10-30 17:30', 0, 3);
+INSERT INTO federacja.dbo.mecze VALUES('POGZLU14', 'POG', 'ZLU', 'W10ADN',  '2020-10-30 15:00', 1, 0);
+INSERT INTO federacja.dbo.mecze VALUES('LEGSMI14', 'LEG', 'SMI', 'HDK72L',  '2020-10-31 20:30', 2, 3);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁPOD14', 'WPŁ', 'POD', 'PFO28N',  '2020-10-31 18:00', 4, 1);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄWAR14', 'ŚLĄ', 'WAR', 'JK85D5',  '2020-10-01 18:00', 2, 1);
 
--- nierozegrane
+INSERT INTO federacja.dbo.mecze VALUES('ZLUWPŁ15', 'ZLU', 'WPŁ', 'LPA48D',  '2020-01-29 18:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('RAKPOG15', 'RAK', 'POG', 'KAL92V',  '2020-01-29 20:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WARCRA15', 'WAR', 'CRA', 'BCS85A',  '2020-01-30 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('LGDJAG15', 'LGD', 'JAG', 'JEO295',  '2020-01-30 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('GZALPO15', 'GZA', 'LPO', 'W10ADN',  '2020-01-30 20:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WKRPIA15', 'WKR', 'PIA', 'PFO28N',  '2020-01-31 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('PODLEG15', 'POD', 'LEG', 'HDK72L',  '2020-01-31 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('SMIŚLĄ15', 'SMI', 'ŚLĄ', 'JK85D5',  '2020-02-01 18:00', NULL, NULL);
+
+INSERT INTO federacja.dbo.mecze VALUES('LGDWAR16', 'LGD', 'WAR', 'LPA48D',  '2020-02-05 18:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('LPOZLU16', 'LPO', 'ZLU', 'KAL92V',  '2020-02-05 20:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('PIAŚLĄ16', 'PIA', 'ŚLĄ', 'BCS85A',  '2020-02-06 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('POGCRA16', 'POG', 'CRA', 'JEO295',  '2020-02-06 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('LEGRAK16', 'LEG', 'RAK', 'W10ADN',  '2020-02-06 20:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WKRJAG16', 'WKR', 'JAG', 'HDK72L',  '2020-02-07 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('SMIWPŁ16', 'SMI', 'WPŁ', 'PFO28N',  '2020-02-07 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('PODGZA16', 'POD', 'GZA', 'JK85D5',  '2020-02-08 18:00', NULL, NULL);
+
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄWKR17', 'ŚLĄ', 'WKR', 'LPA48D',  '2020-02-12 30:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('CRAPOD17', 'CRA', 'POD', 'KAL92V',  '2020-02-13 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('POGPIA17', 'POG', 'PIA', 'BCS85A',  '2020-02-13 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('RAKLGD17', 'RAK', 'LGD', 'JEO295',  '2020-02-13 20:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁLPO17', 'WPŁ', 'LPO', 'W10ADN',  '2020-02-14 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('JAGLEG17', 'JAG', 'LEG', 'HDK72L',  '2020-02-14 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WARZLU17', 'WAR', 'ZLU', 'PFO28N',  '2020-02-15 18:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('GZASMI17', 'GZA', 'SMI', 'JK85D5',  '2020-02-15 20:30', NULL, NULL);
+
+INSERT INTO federacja.dbo.mecze VALUES('LPOŚLĄ18', 'LPO', 'ŚLĄ', 'LPA48D',  '2020-02-19 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('LGDGZA18', 'LGD', 'GZA', 'KAL92V',  '2020-02-19 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('LEGWPŁ18', 'LEG', 'WPŁ', 'BCS85A',  '2020-02-20 20:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('PIAWAR18', 'PIA', 'WAR', 'JEO295',  '2020-02-20 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('PODJAG18', 'POD', 'JAG', 'W10ADN',  '2020-02-20 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('SMICRA18', 'SMI', 'CRA', 'HDK72L',  '2020-02-21 20:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WKRPOG18', 'WKR', 'POG', 'PFO28N',  '2020-02-21 20:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('ZLURAK18', 'ZLU', 'RAK', 'JK85D5',  '2020-02-22 18:00', NULL, NULL);
+
+INSERT INTO federacja.dbo.mecze VALUES('CRAZLU19', 'CRA', 'ZLU', 'LPA48D',  '2020-02-26 18:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('GZALEG19', 'GZA', 'LEG', 'KAL92V',  '2020-02-27 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('JAGPIA19', 'JAG', 'PIA', 'BCS85A',  '2020-02-27 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('RAKPOD19', 'RAK', 'POD', 'JEO295',  '2020-02-27 20:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('SMILGD19', 'SMI', 'LGD', 'W10ADN',  '2020-02-28 15:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('ŚLĄPOG19', 'ŚLĄ', 'POG', 'HDK72L',  '2020-02-28 17:30', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WARLPO19', 'WAR', 'LPO', 'PFO28N',  '2020-02-28 20:00', NULL, NULL);
+INSERT INTO federacja.dbo.mecze VALUES('WPŁWKR19', 'WPŁ', 'WKR', 'JK85D5',  '2020-03-01 18:00', NULL, NULL);
+
+INSERT INTO federacja.dbo.mecze VALUES('STORAD11', 'STO', 'RAD', 'JK792B', '2020-11-06 17:40', 0, 1)
+INSERT INTO federacja.dbo.mecze VALUES('MIEWID11', 'MIE', 'WID', 'YAS03D', '2020-11-06 17:40', 1, 1)
+INSERT INTO federacja.dbo.mecze VALUES('ODOJAS11', 'ODO', 'JAS', 'BS68S4', '2020-11-07 12:40', 0, 2)
+INSERT INTO federacja.dbo.mecze VALUES('ŁKSCHG11', 'ŁKS', 'CHG', 'ABC72C', '2020-11-07 12:40', 4, 0)
+INSERT INTO federacja.dbo.mecze VALUES('BBTGKŁ11', 'BBT', 'GKŁ', 'OPO29T', '2020-11-07 12:40', 2, 1)
+INSERT INTO federacja.dbo.mecze VALUES('ZSOKOR11', 'ZSO', 'KOR', 'MIZ832', '2020-11-07 17:00', 1, 3)
+INSERT INTO federacja.dbo.mecze VALUES('BEŁRES11', 'BEŁ', 'RES', 'V09W25', '2020-11-07 17:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('TYCPNI11', 'TYC', 'PNI', 'AOFH64', '2020-11-08 12:40', 1, 1)
+INSERT INTO federacja.dbo.mecze VALUES('SNSARK11', 'SNS', 'ARK', 'UL029S', '2020-11-08 16:00', 1, 5)
+INSERT INTO federacja.dbo.mecze VALUES('ARKBEŁ12', 'ARK', 'BEŁ', 'AOFH64', '2020-11-13 16:00', 1, 2)
+INSERT INTO federacja.dbo.mecze VALUES('CHGSTO12', 'CHG', 'STO', 'REN826', '2020-11-13 17:40', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('PNIODO12', 'PNI', 'ODO', 'GLW321', '2020-11-14 12:30', 1, 0)
+INSERT INTO federacja.dbo.mecze VALUES('JASŁKS12', 'JAS', 'ŁKS', 'YAS03D', '2020-11-14 12:30', 0, 3)
+INSERT INTO federacja.dbo.mecze VALUES('WIDRES12', 'WID', 'RES', 'ABC72C', '2020-11-14 12:40', 2, 0)
+INSERT INTO federacja.dbo.mecze VALUES('RADZSO12', 'RAD', 'ZSO', 'OPO29T', '2020-11-14 13:00', 0, 0)
+INSERT INTO federacja.dbo.mecze VALUES('KORSNS12', 'KOR', 'SNS', 'HVD92L', '2020-11-14 18:00', 1, 0)
+INSERT INTO federacja.dbo.mecze VALUES('MIEBBT12', 'MIE', 'BBT', 'HDK72L', '2020-11-15 12:40', 2, 3)
+INSERT INTO federacja.dbo.mecze VALUES('GKŁTYC12', 'GKŁ', 'TYC', 'KAL92V', '2020-11-15 16:00', 1, 1)
+INSERT INTO federacja.dbo.mecze VALUES('BBTWID13', 'BBT', 'WID', 'OPO29T', '2020-11-20 17:40', 2, 0)
+INSERT INTO federacja.dbo.mecze VALUES('RESARK13', 'RES', 'ARK', 'V09W25', '2020-11-21 12:00', 1, 2)
+INSERT INTO federacja.dbo.mecze VALUES('STOJAS13', 'STO', 'JAS', 'GLW321', '2020-11-21 12:40', 0, 1)
+INSERT INTO federacja.dbo.mecze VALUES('ZSOCHG13', 'ZSO', 'CHG', 'AOFH64', '2020-11-21 17:00', 1, 2)
+INSERT INTO federacja.dbo.mecze VALUES('TYCMIE13', 'TYC', 'MIE', 'JK792B', '2020-11-21 17:00', 0, 2)
+INSERT INTO federacja.dbo.mecze VALUES('BEŁKOR13', 'BEŁ', 'KOR', 'REN826', '2020-11-21 17:00', 0, 1)
+INSERT INTO federacja.dbo.mecze VALUES('SNSRAD13', 'SNS', 'RAD', 'ABC72C', '2020-11-22 12:40', 1, 1)
+INSERT INTO federacja.dbo.mecze VALUES('ODOGKŁ13', 'ODO', 'GKŁ', 'P32ND9', '2020-11-22 12:40', 1, 1)
+INSERT INTO federacja.dbo.mecze VALUES('ŁKSPNI13', 'ŁKS', 'PNI', 'UL029S', '2020-11-22 12:40', 4, 4)
+INSERT INTO federacja.dbo.mecze VALUES('CHOSTA14', 'CHO', 'STA', 'KSL92H', '2020-11-21 16:00', 2, 1)
+INSERT INTO federacja.dbo.mecze VALUES('KKSLP214', 'KKS', 'LP2', 'OW30JC', '2020-11-21 18:00', 2, 0)
+INSERT INTO federacja.dbo.mecze VALUES('ŚL2POL14', 'ŚL2', 'POL', 'TIGH98', '2020-11-22 12:00', 0, 0)
+INSERT INTO federacja.dbo.mecze VALUES('GARPSI14', 'GAR', 'PSI', 'ARP246', '2020-11-22 12:00', 0, 0)
+INSERT INTO federacja.dbo.mecze VALUES('SKROGR14', 'SKR', 'OGR', 'BOG53L', '2020-11-22 13:00', 4, 0)
+INSERT INTO federacja.dbo.mecze VALUES('BŁĘZNI14', 'BŁĘ', 'ZNI', 'CZP08A', '2020-11-22 13:00', 2, 3)
+INSERT INTO federacja.dbo.mecze VALUES('BYTSOK14', 'BYT', 'SOK', 'UIV936', '2020-11-22 14:00', 1, 0)
+INSERT INTO federacja.dbo.mecze VALUES('WIGGKA14', 'WIG', 'GKA', 'REN826', '2020-11-22 15:00', 1, 2)
+INSERT INTO federacja.dbo.mecze VALUES('MOTHUT14', 'MOT', 'HUT', 'V09W25', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('ZNISKR15', 'ZNI', 'SKR', 'HOS203', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('OLIBŁĘ15', 'OLI', 'BŁĘ', 'B23FW9', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('PSIŚL215', 'PSI', 'ŚL2', 'UIV936', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('LP2WIG15', 'LP2', 'WIG', 'CZP08A', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('HUTBYT15', 'HUT', 'BYT', 'BOG53L', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('POLKKS15', 'POL', 'KKS', 'ARP246', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('OGRGAR15', 'OGR', 'GAR', 'JK792B', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('SOKCHO15', 'SOK', 'CHO', 'BS68S4', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('GKAMOT15', 'GKA', 'MOT', 'UL029S', '2020-11-22 19:00', 3, 0)
+INSERT INTO federacja.dbo.mecze VALUES('ŚWIHUR09', 'ŚWI', 'HUR', 'VS36SK', '2020-10-03 13:00', 4, 3)
+INSERT INTO federacja.dbo.mecze VALUES('URSSOA09', 'URS', 'SOA', '7VLS84', '2020-10-03 14:00', 1, 0)
+INSERT INTO federacja.dbo.mecze VALUES('BROKSW09', 'BRO', 'KSW', 'RY1NV2', '2020-10-03 15:00', 1, 1)
+INSERT INTO federacja.dbo.mecze VALUES('BŁOKKS09', 'BŁO', 'KKS', 'QIV25G', '2020-10-03 15:00', 0, 2)
+INSERT INTO federacja.dbo.mecze VALUES('PGRUNI09', 'PGR', 'UNI', 'WF42JR', '2020-10-03 15:30', 1, 0)
+INSERT INTO federacja.dbo.mecze VALUES('LENZBP09', 'LEN', 'ZBP', 'D08LC6', '2020-10-03 15:30', 1, 2)
+INSERT INTO federacja.dbo.mecze VALUES('CONLG209', 'CON', 'LG2', 'HAI0F3', '2020-10-03 16:00', 0, 1)
+INSERT INTO federacja.dbo.mecze VALUES('WIKRWY09', 'WIK', 'RWY', 'TIGH98', '2020-10-03 17:00', 0, 0)
+INSERT INTO federacja.dbo.mecze VALUES('PELOZA09', 'PEL', 'OZA', 'GLW321', '2020-10-04 11:15', 2, 1)
+INSERT INTO federacja.dbo.mecze VALUES('LTMRKS09', 'LTM', 'RKS', 'UIV936', '2020-10-04 15:00', 1, 4)
+INSERT INTO federacja.dbo.mecze VALUES('JA2PLW09', 'JA2', 'PLW', 'GIT8C8', '2020-10-04 15:00', 1, 1)
+INSERT INTO federacja.dbo.mecze VALUES('BTMGOC14', 'BTM', 'GOC', 'LEK22U', '2020-11-10 12:00', 1, 4)
+INSERT INTO federacja.dbo.mecze VALUES('ELAMGN03', 'ELA', 'MGN', 'ROG35Q', '2020-09-04 16:00', 2, 2)
+INSERT INTO federacja.dbo.mecze VALUES('KSZWPU07', 'KSZ', 'WPU', 'IAP24H', '2020-11-28 18:00', 1, 0)
+
+
+
+SELECT * FROM federacja.dbo.mecze
