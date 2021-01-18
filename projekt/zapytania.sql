@@ -180,3 +180,28 @@ FROM federacja.dbo.sponsoring sp, federacja.dbo.sponsorzy s, federacja.dbo.kluby
 	WHERE sp.id_sponsora = s.id_sponsora 
 		and CHARINDEX('S.A.', s.nazwa_sponsora) > 0 and sp.id_klubu = k.id_klubu
 	GROUP BY s.nazwa_sponsora, k.nazwa, sp.dlugosc_umowy_miesiace, sp.data_zawarcia_umowy
+
+--15. Wyświetlenie tabeli ekstraklasy (klub, l. zwycięstw, l. remisów, l.porażek, zdobyte punkty: 
+--    3 za zwycięstwo, 1 za remis, 0 za porażkę). Sortowanie: od największej do najmniejszej ilości punktów
+--    Dalsze kryteria sortowania: ilość zwycięstw, ilość remisów
+
+	SELECT t1.klub, t1.zwyciestwa, t2.remisy, t3.przegrane, 3 * t1.zwyciestwa + 1 * t2.remisy AS punkty 
+	FROM 
+		(SELECT k.nazwa AS klub, COUNT(*) AS zwyciestwa FROM federacja.dbo.mecze m, federacja.dbo.kluby k
+			WHERE ((m.bramki#1 > m.bramki#2 and m.id_klubu#1 = k.id_klubu) 
+				    or (m.bramki#1 < m.bramki#2 and m.id_klubu#2 = k.id_klubu)) and k.id_ligi = 'E01'
+	GROUP BY k.nazwa) t1
+	LEFT JOIN
+		(SELECT k.nazwa AS klub, COUNT(*) AS remisy FROM federacja.dbo.mecze m, federacja.dbo.kluby k
+			WHERE (m.bramki#1 = m.bramki#2 and (m.id_klubu#1 = k.id_klubu or m.id_klubu#2 = k.id_klubu)) 
+				   and k.id_ligi = 'E01'
+	GROUP BY k.nazwa) t2
+	ON t1.klub = t2.klub
+	LEFT JOIN
+		(SELECT k.nazwa AS klub, COUNT(*) AS przegrane FROM federacja.dbo.mecze m, federacja.dbo.kluby k
+			WHERE ((m.bramki#1 < m.bramki#2 and m.id_klubu#1 = k.id_klubu) 
+			       or (m.bramki#1 > m.bramki#2 and m.id_klubu#2 = k.id_klubu)) and k.id_ligi = 'E01'
+	GROUP BY k.nazwa) t3
+	ON t1.klub = t3.klub
+	ORDER BY punkty DESC, zwyciestwa DESC, remisy DESC
+
