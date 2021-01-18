@@ -223,3 +223,6 @@ FROM federacja.dbo.pracownicy p, federacja.dbo.stanowiska s, federacja.dbo.kluby
 		and DATEDIFF(year, p.data_zatrudnienia, GETDATE()) > 10 and p.id_stanowiska = s.id_stanowiska
 		and k.id_klubu = p.id_klubu
 
+
+
+
