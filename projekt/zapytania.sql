@@ -146,3 +146,37 @@ FROM federacja.dbo.sponsorzy sponsor, federacja.dbo.sponsoring sponsoring
 	WHERE sponsor.id_sponsora = sponsoring.id_sponsora
 	GROUP BY sponsor.nazwa_sponsora, sponsor.budzet
 	ORDER BY liczba_klubow DESC, suma DESC
+
+--11. Wyświetlenie poziomu rozgrywkowego wraz ze średnią pojemnością stadionu
+
+SELECT l.poziom_rozgrywkowy, AVG(k.pojemnosc_stadionu) AS srednia_pojemnosc_stadionu 
+FROM federacja.dbo.kluby k, federacja.dbo.ligi l
+	WHERE k.id_ligi = l.id_ligi
+	GROUP BY l.poziom_rozgrywkowy	
+
+--12. Wyświetlenie managerów oraz  max liczby zawodników, których mają w jednym klubie
+
+SELECT tab.man, MAX(tab.licz) 
+FROM (SELECT m.id_managera AS man, k.nazwa AS nazwa, COUNT(zaw.id_zawodnika) AS licz 
+	  FROM federacja.dbo.managerowie m, federacja.dbo.kluby k, federacja.dbo.zawodnicy zaw
+		WHERE m.id_managera = zaw.id_managera and zaw.id_klubu = k.id_klubu
+		GROUP BY m.id_managera, k.nazwa) tab
+GROUP BY tab.man
+
+--13. Wyświetlenie miast, w których nie ma żadnego klubu z bazy danych, posortowane według liczby ludności (malejąco)
+
+SELECT DISTINCT m.nazwa_miasta, m.liczba_ludnosci FROM federacja.dbo.miasta m, federacja.dbo.kluby k
+	WHERE m.id_miasta NOT IN 
+		(SELECT k1.id_miasta FROM federacja.dbo.kluby k1)
+	ORDER BY liczba_ludnosci DESC
+
+
+--14. Wyświetlenie nazwy sponsora (ograniczenie do spółek akcyjnych - S.A.), 
+--    nazwy klubu, daty zawarcia umowy oraz daty obowiązywania umowy 
+
+SELECT s.nazwa_sponsora, k.nazwa AS nazwa_klubu, sp.data_zawarcia_umowy AS od_kiedy, 
+		DATEADD(month, sp.dlugosc_umowy_miesiace, sp.data_zawarcia_umowy) AS do_kiedy 
+FROM federacja.dbo.sponsoring sp, federacja.dbo.sponsorzy s, federacja.dbo.kluby k
+	WHERE sp.id_sponsora = s.id_sponsora 
+		and CHARINDEX('S.A.', s.nazwa_sponsora) > 0 and sp.id_klubu = k.id_klubu
+	GROUP BY s.nazwa_sponsora, k.nazwa, sp.dlugosc_umowy_miesiace, sp.data_zawarcia_umowy
