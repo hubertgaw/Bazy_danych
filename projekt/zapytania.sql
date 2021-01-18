@@ -125,4 +125,24 @@ FROM federacja.dbo.kluby k, federacja.dbo.zawieszenia zawie, federacja.dbo.zawod
 	GROUP BY zawod.imie, zawod.nazwisko, k.nazwa, l.poziom_rozgrywkowy, l.nazwa_ligi
 	ORDER BY l.poziom_rozgrywkowy, ile_zawieszen DESC, przez_ile_meczow_zawieszony DESC
 
---9. 
+--9. Dla każdego zawodnika, z minimum jedną bramką oraz jednym meczem obliczenie współczynnika bramek na mecz,
+--   wypisane tego współczynnika, imienia zawodnika, jego nazwiska, nazwy klubu, nazwy ligi, liczby meczów, liczby goli
+--	 rezultat posortowany względem obliczonego współczynnika malejąco, a współczynnik wyswietlony z dokładnością do dwóch cyfr po przecninku	 
+SELECT  FORMAT(CAST(z.liczba_goli AS float)/CAST(z.liczba_meczow AS float),'N2') AS wspolczynnik, 
+z.imie, z.nazwisko, k.nazwa, l.nazwa_ligi, z.liczba_meczow, z.liczba_goli
+FROM federacja.dbo.zawodnicy z, federacja.dbo.kluby k, federacja.dbo.ligi l
+	WHERE z.id_klubu = k.id_klubu
+		AND k.id_ligi = l.id_ligi
+		AND z.liczba_meczow > 0
+		AND z.liczba_goli > 0
+	ORDER BY wspolczynnik DESC
+
+--10. Dla każdego sponsora z minimum jednym klubem wypisana nazwa sponsora, liczba klubów,
+--    jakie sponsoruje, łączna sumę wkładanych przez niego pieniędzy, oraz jaki % 
+--	  całego jego budżetu to stanowi - posortowane względem ilości klubów, a następnie - łącznej kwoty.
+SELECT sponsor.nazwa_sponsora, COUNT(id_klubu) AS liczba_klubow, SUM(kwota) AS suma, 
+FORMAT(SUM(sponsoring.kwota) / sponsor.budzet,'N3') AS procent
+FROM federacja.dbo.sponsorzy sponsor, federacja.dbo.sponsoring sponsoring
+	WHERE sponsor.id_sponsora = sponsoring.id_sponsora
+	GROUP BY sponsor.nazwa_sponsora, sponsor.budzet
+	ORDER BY liczba_klubow DESC, suma DESC
