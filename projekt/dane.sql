@@ -696,7 +696,7 @@ VALUES('ODO', 'OPO', 'P01', 'Odra Opole', '1945-06-16', 'niebiesko-czerwone', 'S
 INSERT INTO federacja.dbo.kluby
 VALUES('JAS', 'JAS', 'P01', 'GKS 1962 Jastrzębie', '1961-01-01', 'zielono-czarne', 'Stadion Odry Wodzisław (Wodzisław Śląski)', 7400, 'ul. Harcerska 14b');
 INSERT INTO federacja.dbo.kluby
-VALUES('BEŁ', 'BEL', 'P01', 'GKS Bełchatów(kozaki)', '1977-11-26', 'biało-zielone', 'GIEKSA Arena', 5264, 'ul. Sportowa 3');
+VALUES('BEŁ', 'BEL', 'P01', 'GKS Bełchatów', '1977-11-26', 'biało-zielone', 'GIEKSA Arena', 5264, 'ul. Sportowa 3');
 INSERT INTO federacja.dbo.kluby
 VALUES('GKŁ', 'LEC', 'P01', 'Górnik Łęczna', '1979-09-20', 'zielono-czarne', 'Stadion Górnika Łęczna', 7200, 'al. Jana Pawła II 13');
 INSERT INTO federacja.dbo.kluby
@@ -855,9 +855,9 @@ VALUES('T05', 'TRG', 'LPO', 'Dariusz', 'Żuraw', '1978/07/12', '78071298789', '2
 INSERT INTO federacja.dbo.pracownicy
 VALUES('T06', 'TRG', 'LGD', 'Piotr', 'Stokowiec', '1974/08/17', '74081763890', '2016/05/29',70000,'stok@lechia.com','565654123', 'M')
 INSERT INTO federacja.dbo.pracownicy
-VALUES('T07', 'TRG', 'BEŁ', 'Marcin', 'Węglewski', '1980/04/30', '80043056512', '2020/07/01',5000,'wegl@gmail.com','636985654', 'M')
+VALUES('T07', 'TRG', 'BEŁ', 'Marcin', 'Węglewski', '1980/04/30', '80043056512', '2020/07/01',10000,'wegl@gmail.com','636985654', 'M')
 INSERT INTO federacja.dbo.pracownicy
-VALUES('T08', 'TRG', 'ŁKS', 'Wojciech', 'Stawowy', '1959/09/28', '59092865698', '2018/06/10',10000,'stawo@lkslodz.pl','896321236', 'M')
+VALUES('T08', 'TRG', 'ŁKS', 'Wojciech', 'Stawowy', '1959/09/28', '59092865698', '2018/06/10',22500,'stawo@lkslodz.pl','896321236', 'M')
 INSERT INTO federacja.dbo.pracownicy
 VALUES('T09', 'TRG', 'PIA', 'Waldemar', 'Fornalik', '1961/10/12', '61101258552', '2017/08/30',78000,'fornal@onet.pl','898741463', 'M')
 INSERT INTO federacja.dbo.pracownicy

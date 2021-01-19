@@ -26,7 +26,7 @@ GO
 SELECT 
 srednia_ekstraklasa = 
 (
-	SELECT AVG(pensja)
+	SELECT CAST(AVG(pensja) AS decimal(8,2))
 	FROM federacja.dbo.pracownicy p, federacja.dbo.stanowiska s, federacja.dbo.ligi l, federacja.dbo.kluby k
 	WHERE p.id_stanowiska = s.id_stanowiska
 		AND s.nazwa_stanowiska = 'Główny trener'
@@ -36,7 +36,7 @@ srednia_ekstraklasa =
 ),
 srednia_1_liga = 
 (
-	SELECT AVG(pensja)
+	SELECT CAST(AVG(pensja) AS decimal(8,2))
 	FROM federacja.dbo.pracownicy p, federacja.dbo.stanowiska s, federacja.dbo.ligi l, federacja.dbo.kluby k
 	WHERE p.id_stanowiska = s.id_stanowiska
 		AND s.nazwa_stanowiska = 'Główny trener'
@@ -46,7 +46,7 @@ srednia_1_liga =
 ),
 srednia_2_liga =
 (
-	SELECT AVG(pensja)
+	SELECT CAST(AVG(pensja) AS decimal(8,2))
 	FROM federacja.dbo.pracownicy p, federacja.dbo.stanowiska s, federacja.dbo.ligi l, federacja.dbo.kluby k
 	WHERE p.id_stanowiska = s.id_stanowiska
 		AND s.nazwa_stanowiska = 'Główny trener'
@@ -56,7 +56,7 @@ srednia_2_liga =
 ),
 srednia_3_liga = 
 (
-	SELECT AVG(pensja)
+	SELECT CAST(AVG(pensja) AS decimal(8,2))
 	FROM federacja.dbo.pracownicy p, federacja.dbo.stanowiska s, federacja.dbo.ligi l, federacja.dbo.kluby k
 	WHERE p.id_stanowiska = s.id_stanowiska
 		AND s.nazwa_stanowiska = 'Główny trener'
