@@ -156,12 +156,12 @@ FROM federacja.dbo.kluby k, federacja.dbo.ligi l
 
 --12. Wyświetlenie managerów oraz  max liczby zawodników, których mają w jednym klubie
 
-SELECT tab.man, MAX(tab.licz) 
-FROM (SELECT m.id_managera AS man, k.nazwa AS nazwa, COUNT(zaw.id_zawodnika) AS licz 
-	  FROM federacja.dbo.managerowie m, federacja.dbo.kluby k, federacja.dbo.zawodnicy zaw
-		WHERE m.id_managera = zaw.id_managera and zaw.id_klubu = k.id_klubu
-		GROUP BY m.id_managera, k.nazwa) tab
-GROUP BY tab.man
+--SELECT tab.man, MAX(tab.licz) 
+--FROM (SELECT m.id_managera AS man, k.nazwa AS nazwa, COUNT(zaw.id_zawodnika) AS licz 
+--	  FROM federacja.dbo.managerowie m, federacja.dbo.kluby k, federacja.dbo.zawodnicy zaw
+--		WHERE m.id_managera = zaw.id_managera and zaw.id_klubu = k.id_klubu
+--		GROUP BY m.id_managera, k.nazwa) tab
+--GROUP BY tab.man
 
 --13. Wyświetlenie miast, w których nie ma żadnego klubu z bazy danych, posortowane według liczby ludności (malejąco)
 
@@ -224,5 +224,28 @@ FROM federacja.dbo.pracownicy p, federacja.dbo.stanowiska s, federacja.dbo.kluby
 		and k.id_klubu = p.id_klubu
 
 
+--18. Wyświetl kolejno pozycje, na których grający zawodnicy mają: najwięcej meczów, najwięcej żółtych kartek, 
+--	  najwięcej czerwonych kartek, najwięcej goli
+SELECT * FROM federacja.dbo.pozycje
+SELECT * FROM federacja.dbo.zawodnicy
 
 
+
+SELECT sel1.najwiecej_meczow, sel2.najwiecej_zoltych, sel3.najwiecej_czerwonych, sel4.najwiecej_goli FROM 
+	(SELECT p.nazwa_pozycji AS najwiecej_meczow
+	 FROM federacja.dbo.pozycje p, federacja.dbo.zawodnicy z
+		 WHERE p.id_pozycji = z.id_pozycji
+			AND MAX(z.liczba_meczow) = MAX(liczba_meczow) FROM fedederacja.dbo.zawodnicy
+				 ) AS sel1
+
+
+SELECT sel1.nazwa_miasta, sel1.ile_klubow, sel2.ile_sedziow  FROM
+	(SELECT m.id_miasta, m.nazwa_miasta, COUNT(k.id_klubu) as ile_klubow 
+	 FROM federacja.dbo.miasta m, federacja.dbo.kluby k
+		WHERE (m.id_miasta = k.id_miasta)
+		GROUP BY m.id_miasta, m.nazwa_miasta) as sel1,
+	(SELECT m.id_miasta, COUNT(s.id_sedziego) as ile_sedziow FROM federacja.dbo.miasta m
+		LEFT JOIN federacja.dbo.sedziowie s ON m.id_miasta = s.id_miasta
+		GROUP BY m.id_miasta, m.nazwa_miasta) as sel2
+		WHERE sel1.id_miasta = sel2.id_miasta
+		ORDER BY sel1.ile_klubow DESC, sel2.ile_sedziow DESC
