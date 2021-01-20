@@ -119,3 +119,60 @@ SELECT imie, nazwisko, id_managera
 FROM federacja.dbo.zawodnicy
 WHERE imie = 'Dawid' AND nazwisko = 'Nowak'
 GO
+
+--3. Wyzwalacz zmieniający sędziego na losowo wybranego 
+--   (z poza miasta, w którym ma się odbyć mecz i z odpowiednią licencją) w przypadku, gdy sędzia pochodzi
+--   z miasta, w którym odbywać się będzie mecz
+CREATE TRIGGER dodawanie_meczu ON mecze
+AFTER INSERT 
+AS
+	DECLARE @id_meczu 			CHAR(8)
+	DECLARE	@id_sedziego 		CHAR(6) 
+	DECLARE	@id_gospodarza 		CHAR(3) 
+	DECLARE	@miasto_sedziego 	CHAR(3) 
+	DECLARE	@miasto_meczu 		CHAR(3) 
+	DECLARE	@licencja 			CHAR(1) 
+	DECLARE	@poziom_rozgrywkowy INT
+	DECLARE	@dostepnych_sedziow INT 
+	DECLARE	@id_nowego_sedziego CHAR(6)
+	DECLARE	@bramki#1 			INT 
+	DECLARE	@bramki#2 			INT
+
+	SELECT @id_meczu = id_meczu, @id_sedziego = id_sedziego, @id_gospodarza = id_klubu#1, 
+			@bramki#1 = bramki#1, @bramki#2 = bramki#2 FROM inserted 
+	
+	SELECT @miasto_sedziego = mi.id_miasta 
+	FROM federacja.dbo.sedziowie s, federacja.dbo.miasta mi
+		WHERE s.id_sedziego = @id_sedziego and s.id_miasta = mi.id_miasta
+
+	SELECT @miasto_meczu = mi.id_miasta, @poziom_rozgrywkowy = l.poziom_rozgrywkowy 
+	FROM federacja.dbo.kluby k, federacja.dbo.miasta mi, federacja.dbo.ligi l
+		WHERE k.id_klubu = @id_gospodarza and k.id_miasta = mi.id_miasta and l.id_ligi = k.id_ligi
+
+	if (@miasto_meczu = @miasto_sedziego and @bramki#1 IS NULL and @bramki#2 IS NULL)
+	BEGIN
+		SELECT @dostepnych_sedziow = COUNT(*) FROM federacja.dbo.sedziowie s
+			WHERE s.id_miasta != @miasto_meczu and ASCII(s.typ_licencji) <= @poziom_rozgrywkowy + 64 
+		
+		if (@dostepnych_sedziow > 5)
+		BEGIN
+			SELECT TOP(1) @id_nowego_sedziego = s.id_sedziego FROM federacja.dbo.sedziowie s
+				WHERE s.id_miasta != @miasto_meczu and ASCII(s.typ_licencji) <= @poziom_rozgrywkowy + 64 
+			ORDER BY NEWID()
+			
+			UPDATE federacja.dbo.mecze SET id_sedziego = @id_nowego_sedziego 
+				WHERE id_meczu = @id_meczu
+			
+			print(CONCAT('Zmiana sędziego na sędziego z innego miasta. Nowy sędzia: ', @id_nowego_sedziego)
+		END
+		else
+		print('Sędzia z tego samego miasta będzie sędziować mecz, 
+				z powodu braku sędziów z odpowiednią licencją z innych miast')
+	END
+GO
+
+-- Test wyzwalacza nr 1.
+BEGIN
+	INSERT INTO federacja.dbo.mecze VALUES('CRAZLU26', 'CRA', 'ZLU', 'HDK72L',  '2020-02-26 18:00', NULL, NULL);
+END
+SELECT * FROM federacja.dbo.mecze WHERE id_meczu = 'CRAZLU26'
