@@ -53,7 +53,7 @@ BEGIN
 END
 GO
 
---Sprawdzenie wyzwalacza
+--Test wyzwalacza nr 1.
 SELECT id_zawodnika, imie, nazwisko, liczba_zoltych_kartek, liczba_czerwonych_kartek
 FROM federacja.dbo.zawodnicy
 WHERE id_zawodnika = 956
@@ -96,7 +96,7 @@ BEGIN
 END
 GO
 
---Sprawdzenie wyzwalacza
+-- Test wyzwalacza nr 2.
 SELECT id_managera, imie_managera, nazwisko_managera, prowizja
 FROM federacja.dbo.managerowie
 WHERE id_managera = 'MARPIE'
@@ -172,12 +172,12 @@ AS
 	END
 GO
 
--- Test wyzwalacza nr 1.
+-- Test wyzwalacza nr 3.
 BEGIN
 	INSERT INTO federacja.dbo.mecze VALUES('CRAZLU26', 'CRA', 'ZLU', 'HDK72L',  '2020-02-26 18:00', NULL, NULL);
 END
 SELECT * FROM federacja.dbo.mecze WHERE id_meczu = 'CRAZLU26'
-
+GO
 
 
 --4. Przy usunięciu kraju, kraje znajdujące się za nim w rankinku "przesuną się" o 1 miejsce do przodu
@@ -195,7 +195,8 @@ BEGIN
 	WHERE miejsce_w_rankingu > @pozycja_usunietego
 END
 
---Sprawdzenie wyzwalacza
+
+-- Test wyzwalacza nr 4.
 SELECT * FROM federacja.dbo.kraje
 WHERE miejsce_w_rankingu >= 41
 
