@@ -207,3 +207,43 @@ END
 
 SELECT * FROM federacja.dbo.kraje
 WHERE miejsce_w_rankingu >= 41
+
+-- 5. Wyzwalacz służący do alokowania kwoty po rozwiązaniu umowy pomiędzy klubem, 
+--    a sponsorem w budżecie sponsora (odliczając karę umowną 30%)
+
+CREATE TRIGGER usun_umowe_sponsorska 
+ON federacja.dbo.sponsoring
+FOR DELETE 
+AS
+DECLARE @id_sponsora              CHAR(4)
+DECLARE @id_klubu	              CHAR(3)
+DECLARE @kwota					  MONEY
+DECLARE @data_zawarcia_umowy	  SMALLDATETIME
+DECLARE @dlugosc_umowy_miesiace   INT
+DECLARE @procent_kara             FLOAT
+SET @procent_kara = 30
+
+	SELECT @id_klubu = id_klubu, @id_sponsora = id_sponsora, @kwota = kwota, 
+	@data_zawarcia_umowy = data_zawarcia_umowy, @dlugosc_umowy_miesiace = dlugosc_umowy_miesiace 
+	FROM deleted
+
+	UPDATE	federacja.dbo.sponsorzy 
+	SET budzet = budzet 
+		+ ((@dlugosc_umowy_miesiace - DATEDIFF(month, @data_zawarcia_umowy, GETDATE())) * @kwota) 
+		- (@kwota * @procent_kara / 100)
+	WHERE id_sponsora = @id_sponsora
+
+	if (@id_klubu IS NOT NULL and @id_sponsora IS NOT NULL)
+	BEGIN
+		print(CONCAT('Umowa sponsorska pomiędzy klubem ', @id_klubu , ' oraz firmą', @id_sponsora, ' została rozwiązana'))
+	END
+GO
+
+-- Test wyzwalacza nr 5.
+SELECT * FROM federacja.dbo.sponsorzy
+BEGIN
+	DELETE FROM federacja.dbo.sponsoring
+	WHERE id_sponsoringu = 16
+END	
+GO
+SELECT * FROM federacja.dbo.sponsorzy
