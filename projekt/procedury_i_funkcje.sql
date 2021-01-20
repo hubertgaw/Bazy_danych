@@ -1,3 +1,6 @@
+--- Procedury ---
+
+
 --1. Podwyższanie pensji zawodnikom danego klubu na podstawie liczby rozegranych meczów oraz liczby_bramek
 USE federacja
 GO
@@ -11,7 +14,7 @@ SET @dla_ilu_zawodnikow = 0
 --	podwyżka dla wszystkich zawodników z drużyny
 		if @jesli_goli = 0 and @jesli_meczow = 0
 		BEGIN
-			UPDATE federacja.dbo.zawodnicy SET pensja = pensja + (pensja * @procent)
+			UPDATE federacja.dbo.zawodnicy SET pensja = pensja + (pensja * @procent / 100)
 				WHERE id_klubu = @id_klubu
 
 			SELECT @dla_ilu_zawodnikow = COUNT(*) 
@@ -50,6 +53,7 @@ SET @dla_ilu_zawodnikow = 0
 		print('Podany procent jest niepoprawny')
 END
 GO
+-- Test procedury nr 1.
 
 SELECT z.imie, z.nazwisko, z.liczba_goli, z.liczba_meczow, z.pensja from federacja.dbo.zawodnicy z
 	WHERE (z.liczba_goli >= 9 or z.liczba_meczow >= 18) 
@@ -96,6 +100,8 @@ DECLARE @licznik INT = 0
 	END
 END
 GO
+
+-- Test procedury nr 2.
 
 SELECT s.imie_sedziego, s.nazwisko_sedziego, s.typ_licencji, COUNT(*) 
 FROM federacja.dbo.sedziowie s, federacja.dbo.mecze m 
@@ -194,6 +200,88 @@ BEGIN
 END
 */
 
+-- Test procedury nr 3.
+
 EXEC statystyki_pozycje 'gole'
 
+--4. Zwiększanie pojemności stadionu (wyświetlanie pojemności po każdym z etapów, wyświetlanie roku dla każdego z etapów)
+--   Nowa pojemność jest uzależniona od: procentu przyrostu, ilości lat budowy 
+--   oraz od tego czy poprzednia pojemność jest powyżej średniej ligowej czy nie
 
+CREATE PROCEDURE modernizacja_stadionu @id_klubu CHAR(3), 
+@procent_pojemnosci float, @ile_lat INT, @data_rozpoczecia DATE
+AS
+BEGIN
+	DECLARE @srednia_pojemnosc_w_lidze INT, @aktualna_pojemnosc INT, @nowa_pojemnosc INT, @lata INT
+	SET @lata = 1
+
+	SELECT @srednia_pojemnosc_w_lidze = AVG(k.pojemnosc_stadionu) 
+	FROM federacja.dbo.kluby k, federacja.dbo.ligi l
+	WHERE k.id_ligi = l.id_ligi 
+
+	SELECT @aktualna_pojemnosc = k.pojemnosc_stadionu FROM federacja.dbo.kluby k
+	WHERE k.id_klubu = @id_klubu
+
+	if @srednia_pojemnosc_w_lidze > @aktualna_pojemnosc
+		SET @nowa_pojemnosc = @srednia_pojemnosc_w_lidze
+	else
+		SET @nowa_pojemnosc = @aktualna_pojemnosc
+
+	 WHILE @lata <= @ile_lat
+		BEGIN
+			SET @nowa_pojemnosc = @nowa_pojemnosc + @nowa_pojemnosc * (@procent_pojemnosci / 100)
+			print(CONCAT('Etap ', @lata, ': rok ', YEAR(DATEADD(year, @lata, @data_rozpoczecia)), 
+                    ', pojemność ', @nowa_pojemnosc))
+			
+			SET @lata = @lata + 1
+		END
+	UPDATE federacja.dbo.kluby SET pojemnosc_stadionu = @nowa_pojemnosc
+	WHERE id_klubu = @id_klubu
+END
+GO
+
+--  Test procedury nr 4.
+SELECT * FROM federacja.dbo.kluby k
+WHERE k.id_klubu = 'POL'
+GO
+
+EXEC modernizacja_stadionu 'POL', 10, 4, '2022'
+GO
+
+SELECT * FROM federacja.dbo.kluby k
+WHERE k.id_klubu = 'POL'
+
+
+--- Funkcje ---
+
+
+-- 1.  Funkcja zwracająca tabelę managerów wraz z ilością zawodników - klientów, 
+--		którzy grają na pozycji przekazanej jako argument
+
+CREATE FUNCTION wyswietlanie_managerow_i_liczby_zawodnikow(@pozycja_na_boisku CHAR(3))
+RETURNS @tabela TABLE(id_managera CHAR(6), liczba_zawodnikow_wg_pozycji INT) AS
+BEGIN
+	DECLARE @id_managera CHAR(6), @ile INT
+	DECLARE kursor CURSOR FOR
+	SELECT  m.id_managera, COUNT(*) from federacja.dbo.zawodnicy z, federacja.dbo.managerowie m
+	WHERE z.id_managera = m.id_managera and z.id_pozycji = @pozycja_na_boisku
+	GROUP BY m.id_managera
+
+	OPEN kursor;
+	FETCH NEXT FROM kursor INTO @id_managera, @ile
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		INSERT @tabela VALUES(@id_managera, @ile)
+		FETCH NEXT FROM kursor INTO @id_managera, @ile
+	END
+	CLOSE kursor;
+	DEALLOCATE kursor;	
+RETURN
+END
+GO
+
+-- Test funkcji nr 1.
+DECLARE @id_managera CHAR(6)
+DECLARE @ilosc_zawodnikow_na_pozycji INT
+SELECT * FROM wyswietlanie_managerow_i_liczby_zawodnikow('ŚOB')
