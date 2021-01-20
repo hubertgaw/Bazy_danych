@@ -3,48 +3,57 @@ USE federacja
 GO
 
 --1. Podwyższanie pensji zawodnikom danego klubu na podstawie liczby rozegranych meczów oraz liczby_bramek
-CREATE PROCEDURE podwyzka @id_klubu CHAR(3), @procent FLOAT, @jesli_goli INT = 6, @jesli_meczow INT = 15, @dla_ilu_zawodnikow INT OUTPUT
+CREATE PROCEDURE podwyzka @id_klubu           CHAR(3), 
+						  @procent            FLOAT, 
+						  @jesli_goli         INT = 6, 
+						  @jesli_meczow 	  INT = 15, 
+						  @dla_ilu_zawodnikow INT OUTPUT
 AS
 BEGIN
 SET @dla_ilu_zawodnikow = 0
-	if @procent > 0 
+	IF @procent > 0 
 	BEGIN
 --	podwyżka dla wszystkich zawodników z drużyny
 		if @jesli_goli = 0 and @jesli_meczow = 0
 		BEGIN
-			UPDATE federacja.dbo.zawodnicy SET pensja = pensja + (pensja * @procent / 100)
-				WHERE id_klubu = @id_klubu
+			UPDATE federacja.dbo.zawodnicy 
+			SET pensja = pensja + (pensja * @procent / 100)
+			WHERE id_klubu = @id_klubu
 
 			SELECT @dla_ilu_zawodnikow = COUNT(*) 
 			FROM federacja.dbo.zawodnicy z
-				WHERE z.id_klubu = @id_klubu
+			WHERE z.id_klubu = @id_klubu
 		END
 --	podwyżka dla zawodników, którzy zagrali co najmniej @jesli_meczow meczów lub co najmniej strzelili @jesli_goli bramek
-		else
+		ELSE
 		BEGIN
 --	w przypadku spełnienia obu warunków, procent jest powiększany o 5
-			UPDATE federacja.dbo.zawodnicy SET pensja = pensja + (pensja * ((@procent + 5) / 100))
-				WHERE (liczba_goli >= @jesli_goli and liczba_meczow >= @jesli_meczow) 
-					and id_klubu = @id_klubu
+			UPDATE federacja.dbo.zawodnicy
+			SET pensja = pensja + (pensja * ((@procent + 5) / 100))
+			WHERE (liczba_goli >= @jesli_goli and liczba_meczow >= @jesli_meczow) and id_klubu = @id_klubu
 		
 			SELECT @dla_ilu_zawodnikow = COUNT(*) 
 			FROM federacja.dbo.zawodnicy z
-				WHERE (liczba_goli >= @jesli_goli and liczba_meczow >= @jesli_meczow) 
-					and id_klubu = @id_klubu
---  w przeciwnym wypadku pensja jest powiększana o @procent
-			UPDATE federacja.dbo.zawodnicy SET pensja = pensja + (pensja * (@procent / 100))
-				WHERE (liczba_goli >= @jesli_goli or liczba_meczow >= @jesli_meczow) 
-					and id_klubu = @id_klubu and id_zawodnika NOT IN	
-						(SELECT zaw.id_zawodnika FROM federacja.dbo.zawodnicy zaw
-							WHERE (zaw.liczba_goli >= @jesli_goli and zaw.liczba_meczow >= @jesli_meczow) 
-									and zaw.id_klubu = @id_klubu)
+			WHERE (liczba_goli >= @jesli_goli and liczba_meczow >= @jesli_meczow) and id_klubu = @id_klubu
 
-			SELECT @dla_ilu_zawodnikow = @dla_ilu_zawodnikow + COUNT(*) FROM federacja.dbo.zawodnicy z
-				WHERE (z.liczba_goli >= @jesli_goli or z.liczba_meczow >= @jesli_meczow) 
-					and id_klubu = @id_klubu and id_zawodnika NOT IN	
-						(SELECT zaw.id_zawodnika FROM federacja.dbo.zawodnicy zaw
-							WHERE (zaw.liczba_goli >= @jesli_goli and zaw.liczba_meczow >= @jesli_meczow) 
-									and zaw.id_klubu = @id_klubu)
+--  w przeciwnym wypadku pensja jest powiększana o @procent
+			UPDATE federacja.dbo.zawodnicy 
+			SET pensja = pensja + (pensja * (@procent / 100))
+			WHERE (liczba_goli >= @jesli_goli or liczba_meczow >= @jesli_meczow) 
+			and id_klubu = @id_klubu and id_zawodnika NOT IN	
+					(SELECT zaw.id_zawodnika 
+					 FROM federacja.dbo.zawodnicy zaw
+					 WHERE (zaw.liczba_goli >= @jesli_goli and zaw.liczba_meczow >= @jesli_meczow) 
+							and zaw.id_klubu = @id_klubu)
+
+			SELECT @dla_ilu_zawodnikow = @dla_ilu_zawodnikow + COUNT(*) 
+			FROM federacja.dbo.zawodnicy z
+			WHERE (z.liczba_goli >= @jesli_goli or z.liczba_meczow >= @jesli_meczow) 
+				   and id_klubu = @id_klubu and id_zawodnika NOT IN	
+					(SELECT zaw.id_zawodnika 
+					 FROM federacja.dbo.zawodnicy zaw
+					 WHERE (zaw.liczba_goli >= @jesli_goli and zaw.liczba_meczow >= @jesli_meczow) 
+							and zaw.id_klubu = @id_klubu)
 		END
 	END
 	else
@@ -74,7 +83,7 @@ GO
 CREATE PROCEDURE zmiana_licencji @typ_licencji CHAR(1), @ile_lat INT, @ciag_wyjsciowy VARCHAR(50) OUTPUT
 AS
 BEGIN
-DECLARE @licznik INT = 0
+	DECLARE @licznik INT = 0
 	IF @typ_licencji BETWEEN 'B' AND 'I'
 	BEGIN
 		DECLARE @pomA INT = ASCII(@typ_licencji)
@@ -171,6 +180,7 @@ BEGIN
 	EXEC statystyki_pozycje 'gole'
 END
 GO
+
 --4. Zwiększanie pojemności stadionu (wyświetlanie pojemności po każdym z etapów, wyświetlanie roku dla każdego z etapów)
 --   Nowa pojemność jest uzależniona od: procentu przyrostu, ilości lat budowy 
 --   oraz od tego czy poprzednia pojemność jest powyżej średniej ligowej czy nie

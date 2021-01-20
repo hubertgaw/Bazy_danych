@@ -179,19 +179,20 @@ FROM federacja.dbo.sponsoring sp, federacja.dbo.sponsorzy s, federacja.dbo.kluby
 SELECT t1.klub, t1.zwyciestwa, t2.remisy, t3.przegrane, 3 * t1.zwyciestwa + 1 * t2.remisy AS punkty 
 FROM 
 	(SELECT k.nazwa AS klub, COUNT(*) AS zwyciestwa FROM federacja.dbo.mecze m, federacja.dbo.kluby k
-		WHERE ((m.bramki#1 > m.bramki#2 and m.id_klubu#1 = k.id_klubu) 
+	 WHERE ((m.bramki#1 > m.bramki#2 and m.id_klubu#1 = k.id_klubu) 
 			    or (m.bramki#1 < m.bramki#2 and m.id_klubu#2 = k.id_klubu)) and k.id_ligi = 'E01'
 GROUP BY k.nazwa) t1
 LEFT JOIN
 	(SELECT k.nazwa AS klub, COUNT(*) AS remisy FROM federacja.dbo.mecze m, federacja.dbo.kluby k
-		WHERE (m.bramki#1 = m.bramki#2 and (m.id_klubu#1 = k.id_klubu or m.id_klubu#2 = k.id_klubu)) 
-			   and k.id_ligi = 'E01'
+  	 WHERE (m.bramki#1 = m.bramki#2 
+	  		and (m.id_klubu#1 = k.id_klubu or m.id_klubu#2 = k.id_klubu)) 
+		    and k.id_ligi = 'E01'
 GROUP BY k.nazwa) t2
 ON t1.klub = t2.klub
 LEFT JOIN
 	(SELECT k.nazwa AS klub, COUNT(*) AS przegrane FROM federacja.dbo.mecze m, federacja.dbo.kluby k
-		WHERE ((m.bramki#1 < m.bramki#2 and m.id_klubu#1 = k.id_klubu) 
-		       or (m.bramki#1 > m.bramki#2 and m.id_klubu#2 = k.id_klubu)) and k.id_ligi = 'E01'
+	 WHERE ((m.bramki#1 < m.bramki#2 and m.id_klubu#1 = k.id_klubu) 
+	       or (m.bramki#1 > m.bramki#2 and m.id_klubu#2 = k.id_klubu)) and k.id_ligi = 'E01'
 GROUP BY k.nazwa) t3
 ON t1.klub = t3.klub
 ORDER BY punkty DESC, zwyciestwa DESC, remisy DESC
@@ -201,8 +202,10 @@ ORDER BY punkty DESC, zwyciestwa DESC, remisy DESC
 
 SELECT z.imie, z.nazwisko, DATEDIFF(year, z.data_urodzenia, GETDATE()) AS wiek, k.nazwa AS klub, l.nazwa_ligi AS liga 
 FROM federacja.dbo.zawodnicy z, federacja.dbo.kluby k, federacja.dbo.ligi l
-	WHERE RIGHT(z.imie, 1) = LEFT(z.nazwisko, 1) and DATEDIFF(year, z.data_urodzenia, GETDATE()) < 22
-		  and k.id_klubu = z.id_klubu and k.id_ligi = l.id_ligi
+WHERE RIGHT(z.imie, 1) = LEFT(z.nazwisko, 1) 
+	  and DATEDIFF(year, z.data_urodzenia, GETDATE()) < 22
+	  and k.id_klubu = z.id_klubu 
+	  and k.id_ligi = l.id_ligi
 
 --17. Wyświetlenie kobiet, które są pracownikami klubów pracowników 
 --    (imię, nazwisko, stanowisko, wiek, ile lat zatrudniona, klub)
@@ -210,7 +213,8 @@ FROM federacja.dbo.zawodnicy z, federacja.dbo.kluby k, federacja.dbo.ligi l
 SELECT p.imie, p.nazwisko, s.nazwa_stanowiska AS stanowisko, DATEDIFF(year, p.data_urodzenia, GETDATE()) AS wiek, 
 	   DATEDIFF(year, p.data_zatrudnienia, GETDATE()) AS ile_lat_zatrudniona, k.nazwa AS klub
 FROM federacja.dbo.pracownicy p, federacja.dbo.stanowiska s, federacja.dbo.kluby k
-	WHERE p.plec = 'K' and DATEDIFF(year, p.data_urodzenia, p.data_zatrudnienia) < 30 
-		and DATEDIFF(year, p.data_zatrudnienia, GETDATE()) > 10 and p.id_stanowiska = s.id_stanowiska
+WHERE p.plec = 'K' and DATEDIFF(year, p.data_urodzenia, p.data_zatrudnienia) < 30 
+		and DATEDIFF(year, p.data_zatrudnienia, GETDATE()) > 10 
+		and p.id_stanowiska = s.id_stanowiska
 		and k.id_klubu = p.id_klubu
 
