@@ -241,7 +241,6 @@ VALUES('SC', 'Szkocja', 48)
 INSERT INTO federacja.dbo.kraje
 VALUES('AU', 'Australia', 41)
 
-SELECT * FROM federacja.dbo.kraje
 
 -- 6. pozycje
 INSERT INTO federacja.dbo.pozycje
@@ -811,7 +810,6 @@ INSERT INTO federacja.dbo.kluby
 VALUES('KSZ', 'OSS', 'G04', 'KSZO Ostrowiec', '1929-08-11', 'pomarańczowo-czarne', 'Miejski Stadion Sportowy "KSZO"', 8000, 'ul. Świętokrzyska 11');
 INSERT INTO federacja.dbo.kluby
 VALUES('SIT', 'TAR', 'G04', 'Siarka Tarnobrzeg', '1957-10-19', 'żółto-czarne', 'Stadion MOSiR', 3770, 'al. Niepodległości 2');
-SELECT * FROM federacja.dbo.kluby
 
 --10. pracownicy
 INSERT INTO federacja.dbo.pracownicy
@@ -1048,7 +1046,6 @@ VALUES('BTM', 'COCA', '2019/11/12 11:00', '18000', 60);
 INSERT INTO federacja.dbo.sponsoring
 VALUES('KSZ', 'ADID', '2020/01/20 17:00', '9000', 60);
 
-SELECT * FROM federacja.dbo.sponsoring
 
 --12. zawodnicy
 
@@ -2068,7 +2065,6 @@ INSERT INTO federacja.dbo.zawodnicy VALUES('WKR', 'BRA', 'CR', 'MARKUB', 'Darijo
 INSERT INTO federacja.dbo.zawodnicy VALUES('WKR', 'NAP', 'MK', 'MARKUB', 'Javier', 'Hernandez', '1988-03-01', '88030123696', 11000, 11, 14, 2, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('RAK', 'ŚPO', 'FR', 'JORMEN', 'Dimitry', 'Payet', '1985-11-09', '85110965236', 8000, 19, 12, 7, 1)
 
-SELECT * FROM federacja.dbo.zawodnicy
 
 --13. zawieszenia
 INSERT INTO federacja.dbo.zawieszenia VALUES(4, '2020-11-04', 2);
@@ -2339,6 +2335,3 @@ INSERT INTO federacja.dbo.mecze VALUES('BTMGOC14', 'BTM', 'GOC', 'LEK22U', '2020
 INSERT INTO federacja.dbo.mecze VALUES('ELAMGN03', 'ELA', 'MGN', 'ROG35Q', '2020-09-04 16:00', 2, 2)
 INSERT INTO federacja.dbo.mecze VALUES('KSZWPU07', 'KSZ', 'WPU', 'IAP24H', '2020-11-28 18:00', 1, 0)
 
-
-
-SELECT * FROM federacja.dbo.mecze

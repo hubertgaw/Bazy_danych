@@ -1,10 +1,8 @@
 --- Procedury ---
-
-
---1. Podwyższanie pensji zawodnikom danego klubu na podstawie liczby rozegranych meczów oraz liczby_bramek
 USE federacja
 GO
 
+--1. Podwyższanie pensji zawodnikom danego klubu na podstawie liczby rozegranych meczów oraz liczby_bramek
 CREATE PROCEDURE podwyzka @id_klubu CHAR(3), @procent FLOAT, @jesli_goli INT = 6, @jesli_meczow INT = 15, @dla_ilu_zawodnikow INT OUTPUT
 AS
 BEGIN
@@ -59,9 +57,11 @@ SELECT z.imie, z.nazwisko, z.liczba_goli, z.liczba_meczow, z.pensja from federac
 	WHERE (z.liczba_goli >= 9 or z.liczba_meczow >= 18) 
 					and z.id_klubu = 'ARK'
 
-DECLARE @dla_ilu_zawodnikow INT;
-EXEC podwyzka 'ARK', 4.0, 9, 18, @dla_ilu_zawodnikow OUTPUT
-print(CONCAT('Zmiana pensji dla ', @dla_ilu_zawodnikow, ' zawodnikow'))
+BEGIN
+	DECLARE @dla_ilu_zawodnikow INT;
+	EXEC podwyzka 'ARK', 4.0, 9, 18, @dla_ilu_zawodnikow OUTPUT
+	print(CONCAT('Zmiana pensji dla ', @dla_ilu_zawodnikow, ' zawodnikow'))
+END
 GO
 
 SELECT z.imie, z.nazwisko, z.liczba_goli, z.liczba_meczow, z.pensja from federacja.dbo.zawodnicy z
@@ -70,10 +70,8 @@ SELECT z.imie, z.nazwisko, z.liczba_goli, z.liczba_meczow, z.pensja from federac
 
 GO
 
---2. "polepszenie" określonego typu licencji dla sędziów spełniających określone warunki (określony staż) tu chce dorobić żeby jescze po okreslonej liczbie meczów tylko nie wiem jak na razie
-DROP PROCEDURE zmiana_licencji
-GO
-CREATE PROCEDURE zmiana_licencji @typ_licencji CHAR(1), @ile_lat INT, @ile_meczow INT, @ciag_wyjsciowy VARCHAR(50) OUTPUT
+--2. "polepszenie" określonego typu licencji dla sędziów mających odpowiedni staż
+CREATE PROCEDURE zmiana_licencji @typ_licencji CHAR(1), @ile_lat INT, @ciag_wyjsciowy VARCHAR(50) OUTPUT
 AS
 BEGIN
 DECLARE @licznik INT = 0
@@ -87,7 +85,7 @@ DECLARE @licznik INT = 0
 				AND typ_licencji = @typ_licencji
 
 		UPDATE federacja.dbo.sedziowie SET typ_licencji = CHAR(@pomA)		
-			WHERE --(SELECT COUNT(*) FROM federacja.dbo.sedziowie s, federacja.dbo.mecze m WHERE s.id_sedziego = m.id_sedziego) >= @ile_meczow AND
+			WHERE
 				DATEDIFF(year, data_zdobycia_licencji, GETDATE()) >= @ile_lat
 				AND typ_licencji = @typ_licencji
 				--SET @pomInt = (SELECT COUNT(*) FROM federacja.dbo.sedziowie s, federacja.dbo.mecze m WHERE s.id_sedziego = m.id_sedziego)
@@ -103,42 +101,26 @@ GO
 
 -- Test procedury nr 2.
 
-SELECT s.imie_sedziego, s.nazwisko_sedziego, s.typ_licencji, COUNT(*) 
-FROM federacja.dbo.sedziowie s, federacja.dbo.mecze m 
-WHERE s.id_sedziego = m.id_sedziego
-GROUP BY s.typ_licencji, s.imie_sedziego, s.nazwisko_sedziego
+SELECT s.imie_sedziego, s.nazwisko_sedziego, s.typ_licencji
+FROM federacja.dbo.sedziowie s
+WHERE s.typ_licencji = 'B' AND s.typ_licencji = 'A'
 
---SELECT * FROM federacja.dbo.mecze
---order by id_sedziego
-SELECT * FROM federacja.dbo.sedziowie
-ORDER BY typ_licencji
 
-DECLARE @ciag_wyjsciowy VARCHAR(50)
-EXEC zmiana_licencji 'B', 15, 2, @ciag_wyjsciowy OUTPUT
-PRINT @ciag_wyjsciowy
+BEGIN
+	DECLARE @ciag_wyjsciowy VARCHAR(50)
+	EXEC zmiana_licencji 'B', 15, @ciag_wyjsciowy OUTPUT
+	PRINT @ciag_wyjsciowy
+END
 GO
 
-SELECT s.imie_sedziego, s.nazwisko_sedziego, s.typ_licencji, COUNT(*) 
-FROM federacja.dbo.sedziowie s, federacja.dbo.mecze m 
-WHERE s.id_sedziego = m.id_sedziego
-GROUP BY s.typ_licencji, s.imie_sedziego, s.nazwisko_sedziego
 
---SELECT * FROM federacja.dbo.mecze
---order by id_sedziego
-SELECT * FROM federacja.dbo.sedziowie
-ORDER BY typ_licencji
-
-SELECT * FROM federacja.dbo.sedziowie
+SELECT s.imie_sedziego, s.nazwisko_sedziego, s.typ_licencji
+FROM federacja.dbo.sedziowie s
+WHERE s.typ_licencji = 'B' AND s.typ_licencji = 'A'
+GO
 
 
 --3. Procedura wyświetlająca statystyki dotyczace wartości podanej przy wywołaniu procedury z podziałem na pozycje.
-
-SELECT * FROM federacja.dbo.pozycje
-SELECT * FROM federacja.dbo.zawodnicy
-GO
-
-DROP PROCEDURE statystyki_pozycje
-go
 
 CREATE PROCEDURE statystyki_pozycje @akcja VARCHAR(10)
 AS
@@ -183,27 +165,12 @@ BEGIN
 END
 
 go
-/*CREATE PROCEDURE statystyki_pozycje @akcja VARCHAR(10)
-AS
-BEGIN
-	IF @akcja = 'mecze'
-	BEGIN
-		SELECT s.nazwa_pozycji
-		FROM (SELECT p.nazwa_pozycji, SUM(z.liczba_meczow) liczba, z.id_zawodnika
-			FROM federacja.dbo.pozycje p
-			JOIN federacja.dbo.zawodnicy z ON z.id_pozycji = p.id_pozycji
-			GROUP BY p.nazwa_pozycji, z.id_zawodnika) s
-		WHERE s.liczba = (SELECT MAX(liczba_meczow) maxLiczba
-							FROM federacja.dbo.zawodnicy z1
-							WHERE z1.id_zawodnika = s.id_zawodnika)
-	END
-END
-*/
 
 -- Test procedury nr 3.
-
-EXEC statystyki_pozycje 'gole'
-
+BEGIN
+	EXEC statystyki_pozycje 'gole'
+END
+GO
 --4. Zwiększanie pojemności stadionu (wyświetlanie pojemności po każdym z etapów, wyświetlanie roku dla każdego z etapów)
 --   Nowa pojemność jest uzależniona od: procentu przyrostu, ilości lat budowy 
 --   oraz od tego czy poprzednia pojemność jest powyżej średniej ligowej czy nie
@@ -245,12 +212,14 @@ SELECT * FROM federacja.dbo.kluby k
 WHERE k.id_klubu = 'POL'
 GO
 
-EXEC modernizacja_stadionu 'POL', 10, 4, '2022'
+BEGIN
+	EXEC modernizacja_stadionu 'POL', 10, 4, '2022'
+END
 GO
 
 SELECT * FROM federacja.dbo.kluby k
 WHERE k.id_klubu = 'POL'
-
+GO
 
 --- Funkcje ---
 
@@ -282,6 +251,8 @@ END
 GO
 
 -- Test funkcji nr 1.
-DECLARE @id_managera CHAR(6)
-DECLARE @ilosc_zawodnikow_na_pozycji INT
-SELECT * FROM wyswietlanie_managerow_i_liczby_zawodnikow('ŚOB')
+BEGIN
+	DECLARE @id_managera CHAR(6)
+	DECLARE @ilosc_zawodnikow_na_pozycji INT
+	SELECT * FROM wyswietlanie_managerow_i_liczby_zawodnikow('ŚOB')
+END
