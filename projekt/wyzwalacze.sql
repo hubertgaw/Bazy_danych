@@ -119,3 +119,33 @@ SELECT imie, nazwisko, id_managera
 FROM federacja.dbo.zawodnicy
 WHERE imie = 'Dawid' AND nazwisko = 'Nowak'
 GO
+
+
+
+
+--4. Przy usunięciu kraju, kraje znajdujące się za nim w rankinku "przesuną się" o 1 miejsce do przodu
+CREATE TRIGGER usuniecie_kraju
+ON federacja.dbo.kraje
+AFTER DELETE
+AS
+BEGIN
+	DECLARE @pozycja_usunietego INT
+
+	SELECT @pozycja_usunietego = miejsce_w_rankingu FROM deleted
+
+	UPDATE federacja.dbo.kraje
+	SET miejsce_w_rankingu = miejsce_w_rankingu - 1
+	WHERE miejsce_w_rankingu > @pozycja_usunietego
+END
+
+--Sprawdzenie wyzwalacza
+SELECT * FROM federacja.dbo.kraje
+WHERE miejsce_w_rankingu >= 41
+
+--Wywołaniewyzwalacza
+BEGIN
+	DELETE FROM federacja.dbo.kraje WHERE nazwa_kraju = 'Australia'
+END
+
+SELECT * FROM federacja.dbo.kraje
+WHERE miejsce_w_rankingu >= 41
