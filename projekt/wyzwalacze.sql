@@ -1,10 +1,7 @@
 ﻿-- 1. Co 5 żółtych kartek oraz co czerwoną kartkę, dodaj zawodnika do tabeli zawieszenia (za żółte kartki 1 mecz, za czerwoną - 3)
 USE federacja
-SELECT * FROM federacja.dbo.zawodnicy
-SELECT * FROM federacja.dbo.zawieszenia
 GO
 
---DROP TRIGGER zawieszenie_zawodnika
 CREATE TRIGGER zawieszenie_zawodnika 
 ON federacja.dbo.zawodnicy
 AFTER UPDATE
@@ -56,7 +53,7 @@ BEGIN
 END
 GO
 
-
+--Sprawdzenie wyzwalacza
 SELECT id_zawodnika, imie, nazwisko, liczba_zoltych_kartek, liczba_czerwonych_kartek
 FROM federacja.dbo.zawodnicy
 WHERE id_zawodnika = 956
@@ -79,3 +76,46 @@ WHERE id_zawodnika = 956
 
 SELECT * FROM federacja.dbo.zawieszenia
 WHERE id_zawodnika = 956
+GO
+
+-- 2. Przy dodawaniu zawodnika przypisanemu do niego managerowi wzrasta prowizja w zależności od pensji zawodnika: pensja zawodnika / 100 000 w przybliżeniu do części setnych to wzrost prowizji agenta
+CREATE TRIGGER zwiekszenie_prowizji
+ON federacja.dbo.zawodnicy
+AFTER INSERT
+AS
+BEGIN
+	DECLARE @pensja_nowa MONEY
+	DECLARE @id_man_nowe CHAR(6)
+
+	SELECT @pensja_nowa = pensja FROM inserted
+	SELECT @id_man_nowe = id_managera FROM inserted
+	
+	UPDATE federacja.dbo.managerowie
+	SET prowizja = prowizja + @pensja_nowa / 100000.00
+	WHERE id_managera = @id_man_nowe
+END
+GO
+
+--Sprawdzenie wyzwalacza
+SELECT id_managera, imie_managera, nazwisko_managera, prowizja
+FROM federacja.dbo.managerowie
+WHERE id_managera = 'MARPIE'
+
+SELECT imie, nazwisko, id_managera
+FROM federacja.dbo.zawodnicy
+WHERE imie = 'Dawid' AND nazwisko = 'Nowak'
+GO
+
+--wywołanie wyzwalacza
+BEGIN
+	INSERT INTO federacja.dbo.zawodnicy VALUES('BEŁ', 'NAP', 'PL', 'MARPIE', 'Dawid', 'Nowak', '1983-10-14', '83101482767', 11000, 16, 0, 0, 0)
+END
+
+SELECT id_managera, imie_managera, nazwisko_managera, prowizja
+FROM federacja.dbo.managerowie
+WHERE id_managera = 'MARPIE'
+
+SELECT imie, nazwisko, id_managera
+FROM federacja.dbo.zawodnicy
+WHERE imie = 'Dawid' AND nazwisko = 'Nowak'
+GO

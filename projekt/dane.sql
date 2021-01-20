@@ -154,7 +154,7 @@ VALUES('TOMMAG', 'Tomasz', 'Magdziarz', '1978-02-23', 25000, 7.60, '2008-03-25')
 INSERT INTO federacja.dbo.managerowie 
 VALUES('PRZPAŃ', 'Przemysław', 'Pańtak', '1979-07-12', 12000, 13.80, '2003-06-17')
 INSERT INTO federacja.dbo.managerowie 
-VALUES('MARKUB', 'Marcin', 'Kubacki', '1990-09-14', 37000, 04.67, '2017-09-26')
+VALUES('MARKUB', 'Marcin', 'Kubacki', '1990-09-14', 37000, 04.6789, '2017-09-26')
 SELECT * FROM federacja.dbo.managerowie
 
 -- 5. kraje
