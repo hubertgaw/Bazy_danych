@@ -1913,7 +1913,7 @@ INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'ŚPO', 'PL', 'CEZKUC', 'Bruno
 INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'LSZ', 'PL', 'PRZPAŃ', 'Marcel', 'Tomaszewski', '1995-01-14', '95011492874', 2411, 17, 6, 1, 1)
 INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'LSZ', 'PL', 'MARPIE', 'Cezary', 'Kozłowski', '1993-12-06', '93120651432', 3640, 9, 2, 2, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'PSZ', 'PL', 'MINRAI', 'Grzegorz', 'Duda', '1981-03-01', '81030119117', 2552, 19, 2, 6, 0)
-INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'PSZ', 'PL', 'PAUSTR', 'Franciszek', 'Głowacka', '1994-11-02', '94110216532', 2100, 9, 4, 0, 1)
+INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'PSZ', 'PL', 'PAUSTR', 'Franciszek', 'Głowacki', '1994-11-02', '94110216532', 2100, 9, 4, 0, 1)
 INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'NAP', 'PL', 'MARPIE', 'Karol', 'Baranowski', '1994-12-17', '94121754797', 2605, 16, 9, 8, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('ZNI', 'NAP', 'PL', 'CEZKUC', 'Fryderyk', 'Cieślak', '1987-12-13', '87121323555', 2517, 14, 5, 5, 0)
 INSERT INTO federacja.dbo.zawodnicy VALUES('LP2', 'BRA', 'PL', 'BARBOL', 'Adam', 'Zalewski', '1996-08-18', '96081831457', 2760, 20, 0, 1, 0)
